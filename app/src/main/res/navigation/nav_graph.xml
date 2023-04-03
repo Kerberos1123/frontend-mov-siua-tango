@@ -16,6 +16,12 @@
         <action
             android:id="@+id/action_menuApp_to_menuRequests"
             app:destination="@id/menuRequests" />
+        <action
+            android:id="@+id/action_menuApp_to_menuReports"
+            app:destination="@id/menuReports" />
+        <action
+            android:id="@+id/action_menuApp_to_menuTicket"
+            app:destination="@id/menuTicket" />
     </fragment>
     <fragment
         android:id="@+id/profileMenu"
@@ -29,6 +35,24 @@
         tools:layout="@layout/fragment_menu_requests" >
         <action
             android:id="@+id/action_menuRequests_to_menuApp"
+            app:destination="@id/menuApp" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuReports"
+        android:name="com.una.FrontEndTango.MenuReports"
+        android:label="fragment_menu_reports"
+        tools:layout="@layout/fragment_menu_reports" >
+        <action
+            android:id="@+id/action_menuReports_to_menuApp"
+            app:destination="@id/menuApp" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuTicket"
+        android:name="com.una.FrontEndTango.MenuTicket"
+        android:label="fragment_menu_ticket"
+        tools:layout="@layout/fragment_menu_ticket" >
+        <action
+            android:id="@+id/action_menuTicket_to_menuApp"
             app:destination="@id/menuApp" />
     </fragment>
 </navigation>

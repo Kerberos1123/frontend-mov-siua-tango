@@ -19,7 +19,7 @@ class MenuApp : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_menu_user, container, false)
 
-        // Boton Requests
+        // --- Boton Requests ---
         // Variable donde tenemos el boton
         val botonRequests: ImageButton = view.findViewById(R.id.btRequests)
 
@@ -28,6 +28,30 @@ class MenuApp : Fragment() {
             // Hacer la navegacion de un fragment a otro, segun ruta encontrada en grafico de navegacion
             findNavController().navigate(R.id.action_menuApp_to_menuRequests)
         }
+        // --- -------------- ---
+
+        // --- Boton Reports ---
+        // Variable donde tenemos el boton
+        val botonReports: ImageButton = view.findViewById(R.id.btReports)
+
+        // Hacer funcion del boton tras hacerle click
+        botonReports.setOnClickListener{
+            // Hacer la navegacion de un fragment a otro, segun ruta encontrada en grafico de navegacion
+            findNavController().navigate(R.id.action_menuApp_to_menuReports)
+        }
+        // --- -------------- ---
+
+        // --- Boton Ticket ---
+        // Variable donde tenemos el boton
+        val botonTicket: ImageButton = view.findViewById(R.id.btTicket)
+
+        // Hacer funcion del boton tras hacerle click
+        botonTicket.setOnClickListener{
+            // Hacer la navegacion de un fragment a otro, segun ruta encontrada en grafico de navegacion
+            findNavController().navigate(R.id.action_menuApp_to_menuTicket)
+        }
+        // --- -------------- ---
+
 
         return view
     }
