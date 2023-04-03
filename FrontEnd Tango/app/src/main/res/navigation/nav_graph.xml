@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/menuApp">
+
+    <fragment
+        android:id="@+id/menuApp"
+        android:name="com.una.FrontEndTango.MenuApp"
+        android:label="fragment_menu_user"
+        tools:layout="@layout/fragment_menu_user" >
+        <action
+            android:id="@+id/action_menuApp_to_profileMenu"
+            app:destination="@id/profileMenu" />
+        <action
+            android:id="@+id/action_menuApp_to_menuRequests"
+            app:destination="@id/menuRequests" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileMenu"
+        android:name="com.una.FrontEndTango.ProfileMenu"
+        android:label="fragment_profile_menu"
+        tools:layout="@layout/fragment_profile_menu" />
+    <fragment
+        android:id="@+id/menuRequests"
+        android:name="com.una.FrontEndTango.MenuRequests"
+        android:label="fragment_menu_requests"
+        tools:layout="@layout/fragment_menu_requests" >
+        <action
+            android:id="@+id/action_menuRequests_to_menuApp"
+            app:destination="@id/menuApp" />
+    </fragment>
+</navigation>

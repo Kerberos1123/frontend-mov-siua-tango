@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:icon="@android:drawable/ic_menu_revert"
+        android:id="@+id/returnh"
+        android:title="Return" />
+    <item
+        android:icon="@android:drawable/ic_menu_gallery"
+        android:id="@+id/menuApp"
+        android:title="Home" />
+    <item
+        android:icon="@android:drawable/ic_menu_my_calendar"
+        android:id="@+id/profileMenu"
+        android:title="Profile" />
+</menu>
