@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.app_fragment) as NavHostFragment
         navController = navHostFragment.navController
 
+
         // Navegacion de la barra de abajo
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         bottomNavigationView.setupWithNavController(navController)

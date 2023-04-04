@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/menuApp"
-        android:name="com.una.FrontEndTango.MenuApp"
+        android:name="com.una.FrontEndTango.Fragments.MenuApp"
         android:label="fragment_menu_user"
         tools:layout="@layout/fragment_menu_user" >
         <action
@@ -25,12 +25,12 @@
     </fragment>
     <fragment
         android:id="@+id/profileMenu"
-        android:name="com.una.FrontEndTango.ProfileMenu"
+        android:name="com.una.FrontEndTango.Fragments.ProfileMenu"
         android:label="fragment_profile_menu"
         tools:layout="@layout/fragment_profile_menu" />
     <fragment
         android:id="@+id/menuRequests"
-        android:name="com.una.FrontEndTango.MenuRequests"
+        android:name="com.una.FrontEndTango.Fragments.MenuRequests"
         android:label="fragment_menu_requests"
         tools:layout="@layout/fragment_menu_requests" >
         <action
@@ -39,7 +39,7 @@
     </fragment>
     <fragment
         android:id="@+id/menuReports"
-        android:name="com.una.FrontEndTango.MenuReports"
+        android:name="com.una.FrontEndTango.Fragments.MenuReports"
         android:label="fragment_menu_reports"
         tools:layout="@layout/fragment_menu_reports" >
         <action
@@ -48,11 +48,29 @@
     </fragment>
     <fragment
         android:id="@+id/menuTicket"
-        android:name="com.una.FrontEndTango.MenuTicket"
+        android:name="com.una.FrontEndTango.Fragments.MenuTicket"
         android:label="fragment_menu_ticket"
         tools:layout="@layout/fragment_menu_ticket" >
         <action
             android:id="@+id/action_menuTicket_to_menuApp"
             app:destination="@id/menuApp" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuGuarda"
+        android:name="com.una.FrontEndTango.Fragments.MenuGuarda"
+        android:label="fragment_menu_guarda"
+        tools:layout="@layout/fragment_menu_guarda" >
+        <action
+            android:id="@+id/action_menuGuarda_to_requestsGuarda"
+            app:destination="@id/requestsGuarda" />
+    </fragment>
+    <fragment
+        android:id="@+id/requestsGuarda"
+        android:name="com.una.FrontEndTango.Fragments.RequestsGuarda"
+        android:label="fragment_requests_guarda"
+        tools:layout="@layout/fragment_requests_guarda" >
+        <action
+            android:id="@+id/action_requestsGuarda_to_menuGuarda"
+            app:destination="@id/menuGuarda" />
     </fragment>
 </navigation>

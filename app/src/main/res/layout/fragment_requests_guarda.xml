@@ -3,14 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#955D5D"
-    tools:context=".Fragments.MenuReports">
+    tools:context=".Fragments.RequestsGuarda">
 
     <!-- TODO: Update blank fragment layout -->
-    <Button
-        android:id="@+id/btVolver"
-        android:layout_width="232dp"
-        android:layout_height="wrap_content"
-        android:text="Button" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/hello_blank_fragment" />
 
 </FrameLayout>

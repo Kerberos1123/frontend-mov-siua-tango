@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#CBCBCB"
-    tools:context=".Fragments.MenuApp">
+    tools:context=".Fragments.MenuGuarda">
 
     <TableLayout
         android:layout_width="match_parent"
@@ -144,24 +144,8 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <ImageButton
-                    android:id="@+id/botonMenu6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:contentDescription="Menu6"
-                    android:src="@drawable/placeholder_icon" />
-
-                <TextView
-                    android:id="@+id/textMenu6"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="MENU6"
-                    android:textAlignment="center"
-                    android:textStyle="bold" />
-            </LinearLayout>
+                android:layout_height="match_parent"
+                android:orientation="vertical" />
         </TableRow>
 
     </TableLayout>
