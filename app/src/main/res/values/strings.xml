@@ -3,6 +3,15 @@
     <string name="login">Login</string>
     <string name="password">Password</string>
     <string name="email">Email</string>
+
     <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Titulos -->
+    <string name="T1">Prueba T1</string>
+
+    <!-- Descripciones -->
+    <string name="D1">Prueba D1</string>
+
 </resources>
