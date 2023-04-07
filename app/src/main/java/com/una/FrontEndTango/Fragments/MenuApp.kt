@@ -20,7 +20,7 @@ class MenuApp : Fragment() {
 
         // --- Boton Requests ---
         // Variable donde tenemos el boton
-        val botonRequests: ImageButton = view.findViewById(R.id.btClasesProfe)
+        val botonRequests: ImageButton = view.findViewById(R.id.btRequestsUser)
 
         // Hacer funcion del boton tras hacerle click
         botonRequests.setOnClickListener{
@@ -31,7 +31,7 @@ class MenuApp : Fragment() {
 
         // --- Boton Reports ---
         // Variable donde tenemos el boton
-        val botonReports: ImageButton = view.findViewById(R.id.btReports)
+        val botonReports: ImageButton = view.findViewById(R.id.btReportsUser)
 
         // Hacer funcion del boton tras hacerle click
         botonReports.setOnClickListener{
@@ -42,7 +42,7 @@ class MenuApp : Fragment() {
 
         // --- Boton Active Units ---
         // Variable donde tenemos el boton
-        val botonActiveUnits: ImageButton = view.findViewById(R.id.btActiveUnits)
+        val botonActiveUnits: ImageButton = view.findViewById(R.id.btActiveUnitsUser)
 
         // Hacer funcion del boton tras hacerle click
         botonActiveUnits.setOnClickListener{
@@ -53,7 +53,7 @@ class MenuApp : Fragment() {
 
         // --- Boton Ticket ---
         // Variable donde tenemos el boton
-        val botonTicket: ImageButton = view.findViewById(R.id.btTicket)
+        val botonTicket: ImageButton = view.findViewById(R.id.btTicketUser)
 
         // Hacer funcion del boton tras hacerle click
         botonTicket.setOnClickListener{

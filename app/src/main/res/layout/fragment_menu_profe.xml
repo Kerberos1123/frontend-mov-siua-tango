@@ -26,9 +26,8 @@
 
                 <ImageButton
                     android:id="@+id/btClasesProfe"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:contentDescription="Clases Profesor"
                     android:src="@drawable/icon_group" />
 
                 <TextView
@@ -48,16 +47,15 @@
                 android:orientation="vertical">
 
                 <ImageButton
-                    android:id="@+id/btReports"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/btCreateRequestProfe"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:contentDescription="Reports"
                     android:src="@drawable/icon_create_request" />
 
                 <TextView
                     android:id="@+id/textReports"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="120dp"
+                    android:layout_height="50dp"
                     android:fontFamily="sans-serif-black"
                     android:text="CREATE REQUEST"
                     android:textAlignment="center"
@@ -81,10 +79,9 @@
                 android:orientation="vertical">
 
                 <ImageButton
-                    android:id="@+id/btActiveUnits"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/btTicketProfe"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:contentDescription="ActiveUnits"
                     android:src="@drawable/icon_ticket" />
 
                 <TextView
@@ -106,7 +103,7 @@
                 tools:visibility="invisible">
 
                 <ImageButton
-                    android:id="@+id/btTicket"
+                    android:id="@+id/btTicketUser"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contentDescription="Tickets"
@@ -137,7 +134,7 @@
                 android:orientation="vertical">
 
                 <ImageButton
-                    android:id="@+id/botonClasses"
+                    android:id="@+id/btClassesUser"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contentDescription="Classes"
@@ -159,7 +156,7 @@
                 android:orientation="vertical">
 
                 <ImageButton
-                    android:id="@+id/botonMenu6"
+                    android:id="@+id/btMenu6User"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contentDescription="Menu6"

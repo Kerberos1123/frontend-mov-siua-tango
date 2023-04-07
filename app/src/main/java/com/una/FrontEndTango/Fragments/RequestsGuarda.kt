@@ -42,7 +42,7 @@ class RequestsGuarda : Fragment() {
         //seteamos parametros del recycle view y su layout manager
         val layoutManager = LinearLayoutManager(context)
 
-        recyclerView = view.findViewById(R.id.recycler_clases_profe)
+        recyclerView = view.findViewById(R.id.reciclerView)
 
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)

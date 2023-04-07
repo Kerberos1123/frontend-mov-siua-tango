@@ -8,12 +8,11 @@
     tools:context=".Fragments.RequestsGuarda">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_clases_profe"
+        android:id="@+id/reciclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical"
-        tools:listitem="@layout/requests_layout"
-        />
+        tools:listitem="@layout/requests_layout" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

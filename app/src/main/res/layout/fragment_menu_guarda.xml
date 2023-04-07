@@ -24,19 +24,21 @@
                 android:layout_marginEnd="20dp"
                 android:orientation="vertical">
 
-                <ImageButton
-                    android:id="@+id/btRequests"
-                    android:layout_width="wrap_content"
+                <ImageView
+                    android:id="@+id/btRequestGuarda"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:contentDescription="Requests"
+                    android:scaleType="center"
                     android:src="@drawable/placeholder_icon" />
 
                 <TextView
                     android:id="@+id/textRequests"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
                     android:text="REQUESTS"
                     android:textAlignment="center"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -45,19 +47,20 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <ImageButton
-                    android:id="@+id/btReports"
-                    android:layout_width="wrap_content"
+                <ImageView
+                    android:id="@+id/btReportsGuarda"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:contentDescription="Reports"
                     android:src="@drawable/placeholder_icon" />
 
                 <TextView
                     android:id="@+id/textReports"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
                     android:text="REPORTS"
                     android:textAlignment="center"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -76,19 +79,20 @@
                 android:layout_marginEnd="20dp"
                 android:orientation="vertical">
 
-                <ImageButton
-                    android:id="@+id/botonActiveUnits"
-                    android:layout_width="wrap_content"
+                <ImageView
+                    android:id="@+id/btActiveUnitsGuarda"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:contentDescription="ActiveUnits"
                     android:src="@drawable/placeholder_icon" />
 
                 <TextView
                     android:id="@+id/textActiveUnits"
-                    android:layout_width="match_parent"
+                    android:layout_width="123dp"
                     android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
                     android:text="ACTIVE UNITS"
                     android:textAlignment="center"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -97,19 +101,20 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <ImageButton
-                    android:id="@+id/btTicket"
-                    android:layout_width="wrap_content"
+                <ImageView
+                    android:id="@+id/btTicketGuarda"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:contentDescription="Tickets"
                     android:src="@drawable/placeholder_icon" />
 
                 <TextView
                     android:id="@+id/textTickets"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
                     android:text="TICKET"
                     android:textAlignment="center"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
             </LinearLayout>
         </TableRow>
@@ -126,19 +131,20 @@
                 android:layout_marginEnd="20dp"
                 android:orientation="vertical">
 
-                <ImageButton
-                    android:id="@+id/botonClasses"
-                    android:layout_width="wrap_content"
+                <ImageView
+                    android:id="@+id/btClassesGuarda"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:contentDescription="Classes"
                     android:src="@drawable/placeholder_icon" />
 
                 <TextView
                     android:id="@+id/textClasses"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
                     android:text="CLASSES"
                     android:textAlignment="center"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
             </LinearLayout>
 

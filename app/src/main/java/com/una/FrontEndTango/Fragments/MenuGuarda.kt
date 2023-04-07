@@ -20,7 +20,7 @@ class MenuGuarda : Fragment() {
         val view = inflater.inflate(R.layout.fragment_menu_guarda, container, false)
 
         // --- Boton Requests
-        val botonRequests: ImageButton = view.findViewById(R.id.btRequests)
+        val botonRequests: ImageButton = view.findViewById(R.id.btRequestGuarda)
 
         botonRequests.setOnClickListener {
             findNavController().navigate(R.id.action_menuGuarda_to_requestsGuarda)
