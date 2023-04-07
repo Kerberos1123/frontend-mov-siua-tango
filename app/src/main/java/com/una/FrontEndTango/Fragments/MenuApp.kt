@@ -20,7 +20,7 @@ class MenuApp : Fragment() {
 
         // --- Boton Requests ---
         // Variable donde tenemos el boton
-        val botonRequests: ImageButton = view.findViewById(R.id.btRequests)
+        val botonRequests: ImageButton = view.findViewById(R.id.btClasesProfe)
 
         // Hacer funcion del boton tras hacerle click
         botonRequests.setOnClickListener{
@@ -37,6 +37,17 @@ class MenuApp : Fragment() {
         botonReports.setOnClickListener{
             // Hacer la navegacion de un fragment a otro, segun ruta encontrada en grafico de navegacion
             findNavController().navigate(R.id.action_menuApp_to_menuReports)
+        }
+        // --- -------------- ---
+
+        // --- Boton Active Units ---
+        // Variable donde tenemos el boton
+        val botonActiveUnits: ImageButton = view.findViewById(R.id.btActiveUnits)
+
+        // Hacer funcion del boton tras hacerle click
+        botonActiveUnits.setOnClickListener{
+            // Hacer la navegacion de un fragment a otro, segun ruta encontrada en grafico de navegacion
+            findNavController().navigate(R.id.action_menuApp_to_menuProfe)
         }
         // --- -------------- ---
 

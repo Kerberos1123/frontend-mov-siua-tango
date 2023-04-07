@@ -10,8 +10,12 @@
 
     <!-- Titulos -->
     <string name="T1">Prueba T1</string>
+    <string name="T2">PROGRAMACION IV</string>
+    <string name="T3">ALGEBRA LINEAL</string>
 
     <!-- Descripciones -->
     <string name="D1">Prueba D1</string>
+    <string name="D2">C18</string>
+    <string name="D3">C19</string>
 
 </resources>

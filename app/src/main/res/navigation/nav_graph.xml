@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_menuApp_to_menuTicket"
             app:destination="@id/menuTicket" />
+        <action
+            android:id="@+id/action_menuApp_to_menuProfe"
+            app:destination="@id/menuProfe" />
     </fragment>
     <fragment
         android:id="@+id/profileMenu"
@@ -73,4 +76,27 @@
             android:id="@+id/action_requestsGuarda_to_menuGuarda"
             app:destination="@id/menuGuarda" />
     </fragment>
+    <fragment
+        android:id="@+id/menuProfe"
+        android:name="com.una.FrontEndTango.Fragments.MenuProfe"
+        android:label="fragment_menu_profe"
+        tools:layout="@layout/fragment_menu_profe" >
+        <action
+            android:id="@+id/action_menuProfe_to_clasesProfe"
+            app:destination="@id/clasesProfe" />
+    </fragment>
+    <fragment
+        android:id="@+id/clasesProfe"
+        android:name="com.una.FrontEndTango.Fragments.ClasesProfe"
+        android:label="fragment_clases_profe"
+        tools:layout="@layout/fragment_clases_profe" >
+        <action
+            android:id="@+id/action_clasesProfe_to_unitStatus"
+            app:destination="@id/unitStatus" />
+    </fragment>
+    <fragment
+        android:id="@+id/unitStatus"
+        android:name="com.una.FrontEndTango.Fragments.UnitStatus"
+        android:label="fragment_unit_status"
+        tools:layout="@layout/fragment_unit_status" />
 </navigation>

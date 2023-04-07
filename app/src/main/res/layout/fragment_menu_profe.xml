@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#CBCBCB"
-    tools:context=".Fragments.MenuApp">
+    tools:context=".Fragments.MenuProfe">
 
     <TableLayout
         android:layout_width="match_parent"
@@ -28,15 +28,15 @@
                     android:id="@+id/btClasesProfe"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:contentDescription="Requests"
-                    android:src="@drawable/icon_requests" />
+                    android:contentDescription="Clases Profesor"
+                    android:src="@drawable/icon_group" />
 
                 <TextView
                     android:id="@+id/textRequests"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-black"
-                    android:text="REQUESTS"
+                    android:text="MY CLASSES"
                     android:textAlignment="center"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -52,14 +52,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contentDescription="Reports"
-                    android:src="@drawable/icon_reports" />
+                    android:src="@drawable/icon_create_request" />
 
                 <TextView
                     android:id="@+id/textReports"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-black"
-                    android:text="REPORTS"
+                    android:text="CREATE REQUEST"
                     android:textAlignment="center"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -85,14 +85,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contentDescription="ActiveUnits"
-                    android:src="@drawable/icon_active_units" />
+                    android:src="@drawable/icon_ticket" />
 
                 <TextView
                     android:id="@+id/textActiveUnits"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-black"
-                    android:text="ACTIVE UNITS"
+                    android:text="TICKET"
                     android:textAlignment="center"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -101,21 +101,22 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:visibility="invisible"
+                tools:visibility="invisible">
 
                 <ImageButton
                     android:id="@+id/btTicket"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contentDescription="Tickets"
-                    android:src="@drawable/icon_ticket" />
+                    android:src="@drawable/placeholder_icon" />
 
                 <TextView
                     android:id="@+id/textTickets"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-black"
-                    android:text="TICKET"
                     android:textAlignment="center"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -126,7 +127,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginHorizontal="32dp"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:visibility="invisible">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -139,14 +141,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contentDescription="Classes"
-                    android:src="@drawable/icon_group" />
+                    android:src="@drawable/placeholder_icon" />
 
                 <TextView
                     android:id="@+id/textClasses"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-black"
-                    android:text="CLASSES"
                     android:textAlignment="center"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -169,7 +170,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-black"
-                    android:text="MENU6"
                     android:textAlignment="center"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -177,5 +177,4 @@
         </TableRow>
 
     </TableLayout>
-
 </FrameLayout>
