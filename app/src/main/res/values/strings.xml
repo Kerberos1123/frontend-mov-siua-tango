@@ -29,4 +29,19 @@
         <item>OTHER</item>
     </string-array>
 
+    <string-array name="unidades_estudiante">
+        <item>LAPTOP</item>
+        <item>BOOK</item>
+    </string-array>
+
+    <string-array name="ej_unidades">
+        <item>LAPTOP 01</item>
+        <item>LAPTOP 03</item>
+        <item>LAPTOP 04</item>
+        <item>LAPTOP 08</item>
+        <item>LAPTOP 15</item>
+        <item>LAPTOP 21</item>
+        <item>LAPTOP 23</item>
+    </string-array>
+
 </resources>

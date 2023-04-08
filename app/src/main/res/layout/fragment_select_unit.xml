@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CBCBCB"
+    tools:context=".Fragments.SelectUnit" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:text="SELECT UNIT"
+            android:textAlignment="center"
+            android:textAppearance="@style/title_style" />
+
+        <TextView
+            android:id="@+id/id_aula_display"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CLASSROOM C18"
+            android:textAlignment="center"
+            android:textAppearance="@style/label_style" />
+
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:text="UNIT TYPE"
+            android:textAppearance="@style/label_style" />
+
+        <!-- Dropdown Menu Seleccionar tipo de Unidad-->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="20dp"
+            >
+
+            <AutoCompleteTextView
+                android:id="@+id/lista_tipos_unidad_sel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="SELECT UNIT TYPE"
+                android:inputType="none" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:text="AVAILABLE UNITS"
+            android:textAppearance="@style/label_style"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:layout_marginHorizontal="20dp"
+            android:background="#FFFFFF">
+
+            <ListView
+                android:id="@+id/l_unidades_disponibles"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:listSelector="#AFE1F1" />
+        </FrameLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/btSelectUnit"
+                    style="@style/button_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="1"
+                    android:text="SELECT" />
+
+                <Button
+                    android:id="@+id/btCancelSelectUnit"
+                    style="@style/button_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="20dp"
+                    android:backgroundTint="#E91E63"
+                    android:paddingHorizontal="28dp"
+                    android:text="CANCEL" />
+            </TableRow>
+
+        </LinearLayout>
+        <!-- -->
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
