@@ -109,7 +109,11 @@
         android:id="@+id/unitRequest"
         android:name="com.una.FrontEndTango.Fragments.UnitRequest"
         android:label="fragment_unit_request"
-        tools:layout="@layout/fragment_unit_request" />
+        tools:layout="@layout/fragment_unit_request" >
+        <action
+            android:id="@+id/action_unitRequest_to_menuProfe"
+            app:destination="@id/menuProfe" />
+    </fragment>
     <fragment
         android:id="@+id/createTicket"
         android:name="com.una.FrontEndTango.Fragments.CreateTicket"
