@@ -30,6 +30,28 @@ class MenuProfe : Fragment() {
         }
         // --- -------------- ---
 
+        // --- Boton Request ---
+        // Variable donde tenemos el boton
+        val botonRequest: ImageButton = view.findViewById(R.id.btRequestProfe)
+
+        // Hacer funcion del boton tras hacerle click
+        botonRequest.setOnClickListener{
+            // Hacer la navegacion de un fragment a otro, segun ruta encontrada en grafico de navegacion
+            findNavController().navigate(R.id.action_menuProfe_to_unitRequest)
+        }
+        // --- -------------- ---
+
+        // --- Boton Ticket ---
+        // Variable donde tenemos el boton
+        val botonTicket: ImageButton = view.findViewById(R.id.btTicketProfe)
+
+        // Hacer funcion del boton tras hacerle click
+        botonTicket.setOnClickListener{
+            // Hacer la navegacion de un fragment a otro, segun ruta encontrada en grafico de navegacion
+            findNavController().navigate(R.id.action_menuProfe_to_createTicket)
+        }
+        // --- -------------- ---
+
         return view
     }
 

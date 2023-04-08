@@ -84,6 +84,12 @@
         <action
             android:id="@+id/action_menuProfe_to_clasesProfe"
             app:destination="@id/clasesProfe" />
+        <action
+            android:id="@+id/action_menuProfe_to_unitRequest"
+            app:destination="@id/unitRequest" />
+        <action
+            android:id="@+id/action_menuProfe_to_createTicket"
+            app:destination="@id/createTicket" />
     </fragment>
     <fragment
         android:id="@+id/clasesProfe"
@@ -99,4 +105,14 @@
         android:name="com.una.FrontEndTango.Fragments.UnitStatus"
         android:label="fragment_unit_status"
         tools:layout="@layout/fragment_unit_status" />
+    <fragment
+        android:id="@+id/unitRequest"
+        android:name="com.una.FrontEndTango.Fragments.UnitRequest"
+        android:label="fragment_unit_request"
+        tools:layout="@layout/fragment_unit_request" />
+    <fragment
+        android:id="@+id/createTicket"
+        android:name="com.una.FrontEndTango.Fragments.CreateTicket"
+        android:label="fragment_create_ticket"
+        tools:layout="@layout/fragment_create_ticket" />
 </navigation>

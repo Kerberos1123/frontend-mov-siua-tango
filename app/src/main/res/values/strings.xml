@@ -4,8 +4,6 @@
     <string name="password">Password</string>
     <string name="email">Email</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!-- Titulos -->
@@ -17,5 +15,18 @@
     <string name="D1">Prueba D1</string>
     <string name="D2">C18</string>
     <string name="D3">C19</string>
+
+    <!-- Arrays -->
+    <string-array name="test_array">
+        <item>OBJ1</item>
+        <item>OBJ2</item>
+        <item>OBJ3</item>
+        <item>OBJ4</item>
+    </string-array>
+
+    <string-array name="motivos_ticket">
+        <item>DAMAGE</item>
+        <item>OTHER</item>
+    </string-array>
 
 </resources>
