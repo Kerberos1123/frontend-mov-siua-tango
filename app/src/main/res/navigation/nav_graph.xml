@@ -113,6 +113,9 @@
         <action
             android:id="@+id/action_unitRequest_to_menuProfe"
             app:destination="@id/menuProfe" />
+        <action
+            android:id="@+id/action_unitRequest_to_selectUnit"
+            app:destination="@id/selectUnit" />
     </fragment>
     <fragment
         android:id="@+id/createTicket"
@@ -128,4 +131,13 @@
         android:name="com.una.FrontEndTango.Fragments.MenuEstudiante"
         android:label="fragment_menu_estudiante"
         tools:layout="@layout/fragment_menu_estudiante" />
+    <fragment
+        android:id="@+id/selectUnit"
+        android:name="com.una.FrontEndTango.Fragments.SelectUnit"
+        android:label="fragment_select_unit"
+        tools:layout="@layout/fragment_select_unit" >
+        <action
+            android:id="@+id/action_selectUnit_to_unitRequest"
+            app:destination="@id/unitRequest" />
+    </fragment>
 </navigation>

@@ -30,6 +30,29 @@ class UnitRequest : Fragment() {
         lista_display.setAdapter(adaptador_lista) // Ponerle el adaptador a la lista
         // --- ---
 
+        // --- Boton Select Unit ---
+        // Variable donde tenemos el boton
+        val botonSelectUnit: Button = view.findViewById(R.id.btSelectUnit)
+        // Hacer funcion del boton tras hacerle click
+        botonSelectUnit.setOnClickListener{
+            // Hacer la navegacion de un fragment a otro, segun ruta encontrada en grafico de navegacion
+            findNavController().navigate(R.id.action_unitRequest_to_selectUnit)
+        }
+        // --- -------------- ---
+
+        // --- Boton Send Request ---
+        // Variable donde tenemos el boton
+        val botonSend: Button = view.findViewById(R.id.btSendRequest)
+
+        // Hacer funcion del boton tras hacerle click
+        botonSend.setOnClickListener{
+            // Hacer la validacion de los datos
+
+            // Hacer la navegacion de un fragment a otro, segun ruta encontrada en grafico de navegacion
+            findNavController().navigate(R.id.action_unitRequest_to_menuProfe)
+        }
+        // --- -------------- ---
+
         // --- Boton Cancel ---
         // Variable donde tenemos el boton
         val botonCancel: Button = view.findViewById(R.id.btCancelUnitRequest)
