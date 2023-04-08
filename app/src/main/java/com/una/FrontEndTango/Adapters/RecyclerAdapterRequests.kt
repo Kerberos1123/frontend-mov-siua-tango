@@ -20,7 +20,7 @@ class RecyclerAdapterRequests(private val requestList:ArrayList<Request>) : Recy
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
         //inflamos layout de requests
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.requests_layout,parent,false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.layout_requests,parent,false)
 
         return ViewHolder(itemView)
     }

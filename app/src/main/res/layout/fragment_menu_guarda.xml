@@ -24,12 +24,13 @@
                 android:layout_marginEnd="20dp"
                 android:orientation="vertical">
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/btRequestGuarda"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:scaleType="center"
-                    android:src="@drawable/placeholder_icon" />
+                    android:contentDescription="Requests"
+                    android:src="@drawable/icon_requests" />
 
                 <TextView
                     android:id="@+id/textRequests"
@@ -47,11 +48,12 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/btReportsGuarda"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/placeholder_icon" />
+                    android:contentDescription="Reports"
+                    android:src="@drawable/icon_reports" />
 
                 <TextView
                     android:id="@+id/textReports"
@@ -79,11 +81,12 @@
                 android:layout_marginEnd="20dp"
                 android:orientation="vertical">
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/btActiveUnitsGuarda"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/placeholder_icon" />
+                    android:contentDescription="ActiveUnits"
+                    android:src="@drawable/icon_my_units" />
 
                 <TextView
                     android:id="@+id/textActiveUnits"
@@ -101,11 +104,12 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/btTicketGuarda"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/placeholder_icon" />
+                    android:contentDescription="Tickets"
+                    android:src="@drawable/icon_ticket" />
 
                 <TextView
                     android:id="@+id/textTickets"
@@ -131,11 +135,12 @@
                 android:layout_marginEnd="20dp"
                 android:orientation="vertical">
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/btClassesGuarda"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/placeholder_icon" />
+                    android:contentDescription="Classes"
+                    android:src="@drawable/icon_group" />
 
                 <TextView
                     android:id="@+id/textClasses"

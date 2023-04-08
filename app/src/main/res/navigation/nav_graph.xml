@@ -115,4 +115,9 @@
         android:name="com.una.FrontEndTango.Fragments.CreateTicket"
         android:label="fragment_create_ticket"
         tools:layout="@layout/fragment_create_ticket" />
+    <fragment
+        android:id="@+id/menuEstudiante"
+        android:name="com.una.FrontEndTango.Fragments.MenuEstudiante"
+        android:label="fragment_menu_estudiante"
+        tools:layout="@layout/fragment_menu_estudiante" />
 </navigation>
