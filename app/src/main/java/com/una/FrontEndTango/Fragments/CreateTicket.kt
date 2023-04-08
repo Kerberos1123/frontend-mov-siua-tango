@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
+import android.widget.Button
 import android.widget.ImageButton
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -37,6 +38,17 @@ class CreateTicket : Fragment() {
         val adaptador_lista2 = getActivity()?.let { ArrayAdapter(it.getApplicationContext(),R.layout.item_lista,items_lista2) } // Crear adaptador, item_lista es el diseño que tiene cada item en el dropdown
         lista_display2.setAdapter(adaptador_lista2) // Ponerle el adaptador a la lista
         // --- ---
+
+        // --- Boton Cancel ---
+        // Variable donde tenemos el boton
+        val botonCancel: Button = view.findViewById(R.id.btCancelTicket)
+
+        // Hacer funcion del boton tras hacerle click
+        botonCancel.setOnClickListener{
+            // Hacer la navegacion de un fragment a otro, segun ruta encontrada en grafico de navegacion
+            findNavController().navigate(R.id.action_createTicket_to_menuProfe)
+        }
+        // --- -------------- ---
 
 
         return view
