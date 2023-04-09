@@ -130,6 +130,9 @@
         <action
             android:id="@+id/action_unitRequest_to_selectUnit"
             app:destination="@id/selectUnit" />
+        <action
+            android:id="@+id/action_unitRequest_to_menuEstudiante"
+            app:destination="@id/menuEstudiante" />
     </fragment>
     <fragment
         android:id="@+id/createTicket"
@@ -139,12 +142,22 @@
         <action
             android:id="@+id/action_createTicket_to_menuProfe"
             app:destination="@id/menuProfe" />
+        <action
+            android:id="@+id/action_createTicket_to_menuEstudiante"
+            app:destination="@id/menuEstudiante" />
     </fragment>
     <fragment
         android:id="@+id/menuEstudiante"
         android:name="com.una.FrontEndTango.Fragments.MenuEstudiante"
         android:label="fragment_menu_estudiante"
-        tools:layout="@layout/fragment_menu_estudiante" />
+        tools:layout="@layout/fragment_menu_estudiante" >
+        <action
+            android:id="@+id/action_menuEstudiante_to_unitRequest"
+            app:destination="@id/unitRequest" />
+        <action
+            android:id="@+id/action_menuEstudiante_to_createTicket"
+            app:destination="@id/createTicket" />
+    </fragment>
     <fragment
         android:id="@+id/selectUnit"
         android:name="com.una.FrontEndTango.Fragments.SelectUnit"
@@ -171,6 +184,9 @@
         <action
             android:id="@+id/action_requestDetails_to_requestsGuarda"
             app:destination="@id/requestsGuarda" />
+        <action
+            android:id="@+id/action_requestDetails_to_requestPopUp"
+            app:destination="@id/requestPopUp" />
     </fragment>
     <fragment
         android:id="@+id/menuAdmin"
@@ -211,4 +227,13 @@
             android:id="@+id/action_createReport_to_menuGuarda"
             app:destination="@id/menuGuarda" />
     </fragment>
+    <dialog
+        android:id="@+id/requestPopUp"
+        android:name="com.una.FrontEndTango.Fragments.RequestPopUp"
+        android:label="fragment_request_pop_up"
+        tools:layout="@layout/fragment_request_pop_up" >
+        <action
+            android:id="@+id/action_requestPopUp_to_requestDetails"
+            app:destination="@id/requestDetails" />
+    </dialog>
 </navigation>
