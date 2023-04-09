@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.DialogFragment
 import com.una.FrontEndTango.R
 
@@ -15,6 +16,16 @@ class RequestPopUp : DialogFragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_request_pop_up, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        //Boton Ok
+        val botonOk:Button=view.findViewById(R.id.btnOk)
+
+        //Funcionlidad Boton Ok
+        botonOk.setOnClickListener { dismiss() }
     }
 
 }

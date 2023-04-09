@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
 import com.una.FrontEndTango.R
 
@@ -27,6 +28,20 @@ class RequestDetails : Fragment() {
         }
 
         return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        //Boton Confirm
+        val botonConfirm:Button =view.findViewById(R.id.btnConfirm)
+
+        //Funcionalidad Boton Confirm
+        botonConfirm.setOnClickListener{
+            val popUpRequest = RequestPopUp()
+            popUpRequest.show((activity as AppCompatActivity).supportFragmentManager,"popUpRequest")
+        }
+
     }
 
 }
