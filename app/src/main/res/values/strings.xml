@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Titulos -->
+    <string name="T1">Prueba T1</string>
+    <string name="T2">PROGRAMACION IV</string>
+    <string name="T3">ALGEBRA LINEAL</string>
+
+    <!-- Descripciones -->
+    <string name="D1">Prueba D1</string>
+    <string name="D2">C18</string>
+    <string name="D3">C19</string>
+
+    <!-- Arrays -->
+    <string-array name="test_array">
+        <item>OBJ1</item>
+        <item>OBJ2</item>
+        <item>OBJ3</item>
+        <item>OBJ4</item>
+    </string-array>
+
+    <string-array name="motivos_ticket">
+        <item>DAMAGE</item>
+        <item>OTHER</item>
+    </string-array>
+
+    <string-array name="unidades_estudiante">
+        <item>LAPTOP</item>
+        <item>BOOK</item>
+    </string-array>
+
+    <string-array name="ej_profes">
+        <item>CRISTOPHER MONTERO</item>
+        <item>MAIKOL GUZMAN</item>
+        <item>RODOLFO SANCHEZ</item>
+    </string-array>
+
+    <string-array name="ej_aulas">
+        <item>C18</item>
+        <item>C19</item>
+        <item>D05</item>
+    </string-array>
+
+    <string-array name="ej_unidades">
+        <item>LAPTOP 01</item>
+        <item>LAPTOP 03</item>
+        <item>LAPTOP 04</item>
+        <item>LAPTOP 08</item>
+        <item>LAPTOP 15</item>
+        <item>LAPTOP 21</item>
+        <item>LAPTOP 23</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cLayoutCreateTicket"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CBCBCB"
+    tools:context=".Fragments.CreateTicket">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/titulo_create_ticket"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:text="NEW TICKET"
+            android:textAlignment="center"
+            android:textAppearance="@style/title_style"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:text="UNIT"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/label_style"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <!-- Dropdown Menu-->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="20dp"
+            app:boxBackgroundColor="#FFFFFF">
+
+            <AutoCompleteTextView
+                android:id="@+id/auto_complete_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="SELECT UNIT"
+                android:inputType="none" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <!-- -->
+
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:text="REASON"
+            android:textAppearance="@style/label_style"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <!-- Dropdown Menu 2-->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="20dp"
+            app:boxBackgroundColor="#FFFFFF">
+
+            <AutoCompleteTextView
+                android:id="@+id/auto_complete_list2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="TICKET MOTIVE"
+                android:inputType="none" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <!---->
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="225dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="#FFFFFF">
+
+            <EditText
+                android:id="@+id/editTextTextMultiLine3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:layout_marginHorizontal="2dp"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="Aditional Details..."
+                android:inputType="textMultiLine" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/btCreateTicket"
+                    style="@style/button_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:paddingHorizontal="32dp"
+                    android:text="CREATE" />
+
+                <Button
+                    android:id="@+id/btCancelTicket"
+                    style="@style/button_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="20dp"
+                    android:backgroundTint="#E91E63"
+                    android:text="CANCEL" />
+
+            </TableRow>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
