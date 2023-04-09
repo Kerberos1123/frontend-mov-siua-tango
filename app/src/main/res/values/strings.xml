@@ -34,6 +34,18 @@
         <item>BOOK</item>
     </string-array>
 
+    <string-array name="ej_profes">
+        <item>CRISTOPHER MONTERO</item>
+        <item>MAIKOL GUZMAN</item>
+        <item>RODOLFO SANCHEZ</item>
+    </string-array>
+
+    <string-array name="ej_aulas">
+        <item>C18</item>
+        <item>C19</item>
+        <item>D05</item>
+    </string-array>
+
     <string-array name="ej_unidades">
         <item>LAPTOP 01</item>
         <item>LAPTOP 03</item>

@@ -70,6 +70,9 @@
         <action
             android:id="@+id/action_menuGuarda_to_requestsGuarda"
             app:destination="@id/requestsGuarda" />
+        <action
+            android:id="@+id/action_menuGuarda_to_createReport"
+            app:destination="@id/createReport" />
     </fragment>
     <fragment
         android:id="@+id/requestsGuarda"
@@ -168,5 +171,44 @@
         <action
             android:id="@+id/action_requestDetails_to_requestsGuarda"
             app:destination="@id/requestsGuarda" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuAdmin"
+        android:name="com.una.FrontEndTango.Fragments.MenuAdmin"
+        android:label="fragment_menu_admin"
+        tools:layout="@layout/fragment_menu_admin" >
+        <action
+            android:id="@+id/action_menuAdmin_to_createClass1"
+            app:destination="@id/createClass1" />
+    </fragment>
+    <fragment
+        android:id="@+id/createClass1"
+        android:name="com.una.FrontEndTango.Fragments.CreateClass1"
+        android:label="fragment_create_class1"
+        tools:layout="@layout/fragment_create_class1" >
+        <action
+            android:id="@+id/action_createClass1_to_createClass2"
+            app:destination="@id/createClass2" />
+        <action
+            android:id="@+id/action_createClass1_to_menuAdmin"
+            app:destination="@id/menuAdmin" />
+    </fragment>
+    <fragment
+        android:id="@+id/createClass2"
+        android:name="com.una.FrontEndTango.Fragments.CreateClass2"
+        android:label="fragment_create_class2"
+        tools:layout="@layout/fragment_create_class2" >
+        <action
+            android:id="@+id/action_createClass2_to_menuAdmin"
+            app:destination="@id/menuAdmin" />
+    </fragment>
+    <fragment
+        android:id="@+id/createReport"
+        android:name="com.una.FrontEndTango.Fragments.CreateReport"
+        android:label="fragment_create_report"
+        tools:layout="@layout/fragment_create_report" >
+        <action
+            android:id="@+id/action_createReport_to_menuGuarda"
+            app:destination="@id/menuGuarda" />
     </fragment>
 </navigation>
