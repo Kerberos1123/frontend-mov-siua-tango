@@ -79,6 +79,9 @@
         <action
             android:id="@+id/action_requestsGuarda_to_menuGuarda"
             app:destination="@id/menuGuarda" />
+        <action
+            android:id="@+id/action_requestsGuarda_to_requestDetails"
+            app:destination="@id/requestDetails" />
     </fragment>
     <fragment
         android:id="@+id/menuProfe"
@@ -161,5 +164,9 @@
         android:id="@+id/requestDetails"
         android:name="com.una.FrontEndTango.Fragments.RequestDetails"
         android:label="fragment_request_details"
-        tools:layout="@layout/fragment_request_details" />
+        tools:layout="@layout/fragment_request_details" >
+        <action
+            android:id="@+id/action_requestDetails_to_requestsGuarda"
+            app:destination="@id/requestsGuarda" />
+    </fragment>
 </navigation>
