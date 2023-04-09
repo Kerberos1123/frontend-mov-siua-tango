@@ -104,7 +104,11 @@
         android:id="@+id/unitStatus"
         android:name="com.una.FrontEndTango.Fragments.UnitStatus"
         android:label="fragment_unit_status"
-        tools:layout="@layout/fragment_unit_status" />
+        tools:layout="@layout/fragment_unit_status" >
+        <action
+            android:id="@+id/action_unitStatus_to_clasesProfe"
+            app:destination="@id/clasesProfe" />
+    </fragment>
     <fragment
         android:id="@+id/unitRequest"
         android:name="com.una.FrontEndTango.Fragments.UnitRequest"
