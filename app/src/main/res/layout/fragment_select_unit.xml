@@ -17,16 +17,17 @@
             android:id="@+id/textView20"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="-16dp"
             android:text="SELECT UNIT"
             android:textAlignment="center"
             android:textAppearance="@style/title_style" />
 
         <TextView
-            android:id="@+id/id_aula_display"
+            android:id="@+id/id_clase_display"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="CLASSROOM C18"
+            android:text="PROGRAMACION IV"
             android:textAlignment="center"
             android:textAppearance="@style/label_style" />
 
