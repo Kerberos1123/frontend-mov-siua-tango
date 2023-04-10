@@ -32,7 +32,7 @@ class MenuEstudiante : Fragment() {
         //Funcionalidad Boton Create Request
         botonCreateRequest.setOnClickListener{
             // Hacer la navegacion de un fragment a otro, segun ruta encontrada en grafico de navegacion
-            findNavController().navigate(R.id.action_menuEstudiante_to_unitRequest)
+            findNavController().navigate(R.id.action_menuEstudiante_to_unitRequest2)
         }
 
         //Boton Ticket User
@@ -41,7 +41,7 @@ class MenuEstudiante : Fragment() {
         //Funcionalidad Boton Ticket User
         botonTicketUser.setOnClickListener{
             // Hacer la navegacion de un fragment a otro, segun ruta encontrada en grafico de navegacion
-            findNavController().navigate(R.id.action_menuEstudiante_to_createTicket)
+            findNavController().navigate(R.id.action_menuEstudiante_to_createTicket2)
         }
 
         return view
