@@ -5,56 +5,63 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
+import android.widget.Button
+import androidx.navigation.fragment.findNavController
 import com.una.FrontEndTango.R
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [RequestEstudiante.newInstance] factory method to
- * create an instance of this fragment.
- */
 class RequestEstudiante : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_request_estudiante, container, false)
+        // Inflate the layout for this fragment
+        val view = inflater.inflate(R.layout.fragment_request_estudiante, container, false)
+
+        // --- Crear una lista con opciones seleccionables ---
+        val lista_display : AutoCompleteTextView = view.findViewById(R.id.lista_clases_sel) // Referencia al display
+        val items_lista = resources.getStringArray(R.array.test_array) // Sacar los datos de un array de strings.xml para meter en la lista
+        val adaptador_lista = getActivity()?.let { ArrayAdapter(it.getApplicationContext(),R.layout.item_lista,items_lista) } // Crear adaptador, item_lista es el diseño que tiene cada item en el dropdown
+        lista_display.setAdapter(adaptador_lista) // Ponerle el adaptador a la lista
+        // --- ---
+
+        // --- Boton Select Unit ---
+        // Variable donde tenemos el boton
+       // val botonSelectUnit: Button = view.findViewById(R.id.btSelectUnit)
+        // Hacer funcion del boton tras hacerle click
+       /* botonSelectUnit.setOnClickListener{
+            // Hacer la navegacion de un fragment a otro, segun ruta encontrada en grafico de navegacion
+            findNavController().navigate(R.id.action_unitRequest_to_selectUnit)
+        }*/
+        // --- -------------- ---
+
+        // --- Boton Send Request ---
+        // Variable donde tenemos el boton
+        val botonSend: Button = view.findViewById(R.id.btSendRequest)
+
+        // Hacer funcion del boton tras hacerle click
+        botonSend.setOnClickListener{
+            // Hacer la validacion de los datos
+
+            // Hacer la navegacion de un fragment a otro, segun ruta encontrada en grafico de navegacion
+            findNavController().navigate(R.id.action_requestEstudiante_to_menuEstudiante)
+        }
+        // --- -------------- ---
+
+        // --- Boton Cancel ---
+        // Variable donde tenemos el boton
+        val botonCancel: Button = view.findViewById(R.id.btCancelUnitRequest)
+
+        // Hacer funcion del boton tras hacerle click
+        botonCancel.setOnClickListener{
+            // Hacer la navegacion de un fragment a otro, segun ruta encontrada en grafico de navegacion
+            findNavController().navigate(R.id.action_requestEstudiante_to_menuEstudiante)
+        }
+        // --- -------------- ---
+
+        return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment RequestEstudiante.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            RequestEstudiante().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
 }
