@@ -154,6 +154,9 @@
         <action
             android:id="@+id/action_menuEstudiante_to_createTicketUser"
             app:destination="@id/createTicketUser" />
+        <action
+            android:id="@+id/action_menuEstudiante_to_requestEstudiante"
+            app:destination="@id/requestEstudiante" />
     </fragment>
     <fragment
         android:id="@+id/selectUnit"
@@ -249,6 +252,15 @@
         tools:layout="@layout/fragment_create_ticket_user" >
         <action
             android:id="@+id/action_createTicketUser_to_menuEstudiante"
+            app:destination="@id/menuEstudiante" />
+    </fragment>
+    <fragment
+        android:id="@+id/requestEstudiante"
+        android:name="com.una.FrontEndTango.Fragments.RequestEstudiante"
+        android:label="fragment_request_estudiante"
+        tools:layout="@layout/fragment_request_estudiante" >
+        <action
+            android:id="@+id/action_requestEstudiante_to_menuEstudiante"
             app:destination="@id/menuEstudiante" />
     </fragment>
 </navigation>
