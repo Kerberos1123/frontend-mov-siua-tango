@@ -21,7 +21,7 @@ class CreateTicketUser : Fragment() {
         var view = inflater.inflate(R.layout.fragment_create_ticket_user, container, false)
 
         // --- Crear una lista con opciones seleccionables ---
-        val lista_display : AutoCompleteTextView = view.findViewById(R.id.auto_complete_list_user) // Referencia al display
+        val lista_display : AutoCompleteTextView = view.findViewById(R.id.auto_complete_list) // Referencia al display
         val items_lista = resources.getStringArray(R.array.test_array) // Sacar los datos de un array de strings.xml para meter en la lista
         val adaptador_lista = getActivity()?.let { ArrayAdapter(it.getApplicationContext(),R.layout.item_lista,items_lista) } // Crear adaptador, item_lista es el diseño que tiene cada item en el dropdown
         lista_display.setAdapter(adaptador_lista) // Ponerle el adaptador a la lista
@@ -41,7 +41,7 @@ class CreateTicketUser : Fragment() {
         // Hacer funcion del boton tras hacerle click
         botonCancel.setOnClickListener{
             // Hacer la navegacion de un fragment a otro, segun ruta encontrada en grafico de navegacion
-            findNavController().navigate(R.id.action_createTicket_to_menuProfe)
+            findNavController().navigate(R.id.action_createTicketUser_to_menuEstudiante)
         }
         // --- -------------- ---
 

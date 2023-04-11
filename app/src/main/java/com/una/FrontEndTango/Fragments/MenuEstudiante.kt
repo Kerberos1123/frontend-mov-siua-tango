@@ -41,7 +41,7 @@ class MenuEstudiante : Fragment() {
         //Funcionalidad Boton Ticket User
         botonTicketUser.setOnClickListener{
             // Hacer la navegacion de un fragment a otro, segun ruta encontrada en grafico de navegacion
-            findNavController().navigate(R.id.action_menuEstudiante_to_createTicket2)
+            findNavController().navigate(R.id.action_menuEstudiante_to_createTicketUser)
         }
 
         return view

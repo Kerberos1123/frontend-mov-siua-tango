@@ -9,27 +9,6 @@
         android:id="@+id/action_selectUnit_to_unitRequest"
         app:destination="@id/unitRequest" />
     <fragment
-        android:id="@+id/unitRequest2"
-        android:name="com.una.FrontEndTango.Fragments.UnitRequest"
-        android:label="fragment_unit_request"
-        tools:layout="@layout/fragment_unit_request">
-        <action
-            android:id="@+id/action_unitRequest2_to_selectUnit2"
-            app:destination="@id/selectUnit2" />
-        <action
-            android:id="@+id/action_unitRequest2_to_menuEstudiante"
-            app:destination="@id/menuEstudiante" />
-    </fragment>
-    <fragment
-        android:id="@+id/selectUnit2"
-        android:name="com.una.FrontEndTango.Fragments.SelectUnit"
-        android:label="fragment_select_unit"
-        tools:layout="@layout/fragment_select_unit">
-        <action
-            android:id="@+id/action_selectUnit2_to_unitRequest2"
-            app:destination="@id/unitRequest2" />
-    </fragment>
-    <fragment
         android:id="@+id/menuApp"
         android:name="com.una.FrontEndTango.Fragments.MenuApp"
         android:label="fragment_menu_user"
@@ -165,15 +144,6 @@
             app:destination="@id/menuProfe" />
     </fragment>
     <fragment
-        android:id="@+id/createTicket2"
-        android:name="com.una.FrontEndTango.Fragments.CreateTicket"
-        android:label="fragment_create_ticket"
-        tools:layout="@layout/fragment_create_ticket">
-        <action
-            android:id="@+id/action_createTicket2_to_menuEstudiante"
-            app:destination="@id/menuEstudiante" />
-    </fragment>
-    <fragment
         android:id="@+id/menuEstudiante"
         android:name="com.una.FrontEndTango.Fragments.MenuEstudiante"
         android:label="fragment_menu_estudiante"
@@ -182,11 +152,8 @@
             android:id="@+id/action_menuEstudiante_to_activeUnits"
             app:destination="@id/activeUnits" />
         <action
-            android:id="@+id/action_menuEstudiante_to_unitRequest2"
-            app:destination="@id/unitRequest2" />
-        <action
-            android:id="@+id/action_menuEstudiante_to_createTicket2"
-            app:destination="@id/createTicket2" />
+            android:id="@+id/action_menuEstudiante_to_createTicketUser"
+            app:destination="@id/createTicketUser" />
     </fragment>
     <fragment
         android:id="@+id/selectUnit"
@@ -273,6 +240,15 @@
         tools:layout="@layout/fragment_active_units" >
         <action
             android:id="@+id/action_activeUnits_to_menuEstudiante"
+            app:destination="@id/menuEstudiante" />
+    </fragment>
+    <fragment
+        android:id="@+id/createTicketUser"
+        android:name="com.una.FrontEndTango.Fragments.CreateTicketUser"
+        android:label="fragment_create_ticket_user"
+        tools:layout="@layout/fragment_create_ticket_user" >
+        <action
+            android:id="@+id/action_createTicketUser_to_menuEstudiante"
             app:destination="@id/menuEstudiante" />
     </fragment>
 </navigation>
