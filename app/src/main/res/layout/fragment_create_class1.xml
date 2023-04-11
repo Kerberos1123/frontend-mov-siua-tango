@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#CBCBCB"
-    tools:context=".Fragments.CreateClass1" >
+    android:background="@color/grey"
+    tools:context=".Fragments.CreateClass1">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -169,7 +169,6 @@
             android:layout_marginHorizontal="20dp"
             android:layout_marginBottom="20dp"
             android:background="#FFFFFF" />
-
 
 
         <LinearLayout

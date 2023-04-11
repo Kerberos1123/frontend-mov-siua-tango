@@ -8,18 +8,18 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.una.FrontEndTango.Adapters.RecyclerAdapterClases
+import com.una.FrontEndTango.Adapters.RecyclerAdapterTickets
 import com.una.FrontEndTango.R
 import com.una.FrontEndTango.Adapters.RecyclerAdapterRequests
-import com.una.FrontEndTango.DataClasses.Request
+import com.una.FrontEndTango.DataClasses.Ticket
 
-class RequestsGuarda : Fragment() {
+class TicketsAdmin : Fragment() {
 
     //variables de referencia
-    private lateinit var adapter : RecyclerAdapterRequests
+    private lateinit var adapter : RecyclerAdapterTickets
     private lateinit var recyclerView: RecyclerView
 
-    private lateinit var requestArrayList: ArrayList<Request>
+    private lateinit var requestArrayList: ArrayList<Ticket>
 
     //Arrays para titulos y descripciones
     lateinit var titulo : Array<String>
@@ -30,7 +30,7 @@ class RequestsGuarda : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_requests_guarda, container, false)
+        return inflater.inflate(R.layout.fragment_tickets_admin, container, false)
 
     }
 
@@ -44,18 +44,18 @@ class RequestsGuarda : Fragment() {
         //seteamos parametros del recycle view y su layout manager
         val layoutManager = LinearLayoutManager(context)
 
-        recyclerView = view.findViewById(R.id.reciclerView)
+        recyclerView = view.findViewById(R.id.recycler_tickets_admin)
 
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
-        adapter = RecyclerAdapterRequests(requestArrayList)
+        adapter = RecyclerAdapterTickets(requestArrayList)
         recyclerView.adapter = adapter
 
 
         // Agregar el click listener
-        adapter.setOnItemClickListener(object: RecyclerAdapterRequests.onItemClickListener{
+        adapter.setOnItemClickListener(object: RecyclerAdapterTickets.onItemClickListener{
             override fun onItemClick(position: Int) { // Implementar logica al hacer click en seccion de recycler
-                findNavController().navigate(R.id.action_requestsGuarda_to_requestDetails)
+                //findNavController().navigate(R.id.action_requestsGuarda_to_requestDetails)
             }
         })
         // --- ---
@@ -64,7 +64,7 @@ class RequestsGuarda : Fragment() {
     private fun dataInitialize(){ //inicializacion de datos
 
 
-        requestArrayList = arrayListOf<Request>()    //se crea arraylist que almacena el contenido de las request
+        requestArrayList = arrayListOf<Ticket>()    //se crea arraylist que almacena el contenido de las request
 
         titulo = arrayOf( //se inicializan datos de los titulos
 
@@ -77,12 +77,12 @@ class RequestsGuarda : Fragment() {
 
         for ( i in titulo.indices){
 
-            //creamos objeto request
+            //creamos objeto ticket
 
-            val request = Request(titulo[i],descripcion[i])
+            val ticket = Ticket(titulo[i],descripcion[i])
 
             //se añade a la lista
-            requestArrayList.add(request)
+            requestArrayList.add(ticket)
         }
     }
 

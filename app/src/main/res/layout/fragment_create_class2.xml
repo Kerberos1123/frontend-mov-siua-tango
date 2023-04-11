@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginVertical="20dp"
-            android:text="CLASS DETAILS"
+            android:text="NEW CLASS"
             android:textAlignment="center"
             android:textAppearance="@style/title_style"
             android:textColor="@color/black"
@@ -162,14 +162,14 @@
                     android:text="CREATE" />
 
                 <Button
-                    android:id="@+id/btCancelCreateClass2"
+                    android:id="@+id/btBackCreateClass2"
                     style="@style/button_style"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="20dp"
                     android:backgroundTint="#E91E63"
-                    android:text="CANCEL" />
+                    android:text="BACK" />
 
             </TableRow>
 

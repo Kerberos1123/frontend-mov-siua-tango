@@ -136,7 +136,7 @@
                 android:orientation="vertical">
 
                 <ImageButton
-                    android:id="@+id/btClassesGuarda"
+                    android:id="@+id/btClasesGuarda"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:contentDescription="Classes"

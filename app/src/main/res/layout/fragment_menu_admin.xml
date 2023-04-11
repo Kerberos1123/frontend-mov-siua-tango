@@ -24,7 +24,7 @@
                 android:orientation="vertical">
 
                 <ImageButton
-                    android:id="@+id/btCreateClasesAdmin"
+                    android:id="@+id/btClasesAdmin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:src="@drawable/icon_group" />
@@ -34,7 +34,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-black"
-                    android:text="CREATE\nCLASSES"
+                    android:text="CLASSES"
                     android:textAlignment="center"
                     android:textSize="20sp"
                     android:textStyle="bold" />

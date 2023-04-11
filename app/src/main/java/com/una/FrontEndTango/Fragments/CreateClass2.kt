@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
+import android.widget.Button
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.una.FrontEndTango.R
 
 
@@ -32,6 +34,13 @@ class CreateClass2 : Fragment() {
         val adaptador_lista2 = getActivity()?.let { ArrayAdapter(it.getApplicationContext(),R.layout.item_lista,items_lista2) } // Crear adaptador, item_lista es el diseño que tiene cada item en el dropdown
         lista_display2.setAdapter(adaptador_lista2) // Ponerle el adaptador a la lista
         // --- ---
+
+        // --- Boton BACK ---
+        val botonBack: Button = view.findViewById(R.id.btBackCreateClass2)
+        botonBack.setOnClickListener{ // Hacer funcion del boton tras hacerle click
+            // Hacer la navegacion de un fragment a otro, segun ruta encontrada en grafico de navegacion
+            findNavController().navigate(R.id.action_createClass2_to_createClass1)
+        }
 
         return view
     }

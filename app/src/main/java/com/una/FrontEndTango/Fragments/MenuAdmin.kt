@@ -19,16 +19,22 @@ class MenuAdmin : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_menu_admin, container, false)
 
-        // --- Boton Create Class ---
+        // --- Boton Clases ---
         // Variable donde tenemos el boton
-        val botonCreateClass: ImageButton = view.findViewById(R.id.btCreateClasesAdmin)
-
-        // Hacer funcion del boton tras hacerle click
-        botonCreateClass.setOnClickListener{
+        val botonClasses: ImageButton = view.findViewById(R.id.btClasesAdmin)
+        botonClasses.setOnClickListener{
             // Hacer la navegacion de un fragment a otro, segun ruta encontrada en grafico de navegacion
-            findNavController().navigate(R.id.action_menuAdmin_to_createClass1)
+            findNavController().navigate(R.id.action_menuAdmin_to_clasesAdmin)
         }
-        // --- -------------- ---
+
+        // --- Boton Tickets ---
+        // Variable donde tenemos el boton
+        val botonTickets: ImageButton = view.findViewById(R.id.btViewTicketsAdmin)
+        botonTickets.setOnClickListener{
+            // Hacer la navegacion de un fragment a otro, segun ruta encontrada en grafico de navegacion
+            findNavController().navigate(R.id.action_menuAdmin_to_ticketsAdmin)
+        }
+
 
         return view
     }

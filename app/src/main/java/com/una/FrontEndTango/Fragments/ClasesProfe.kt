@@ -1,11 +1,9 @@
 package com.una.FrontEndTango.Fragments
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -57,7 +55,6 @@ class ClasesProfe : Fragment() {
             override fun onItemClick(position: Int) { // Implementar logica al hacer click en seccion de recycler
                 findNavController().navigate(R.id.action_clasesProfe_to_unitStatus)
             }
-
         })
         // --- ---
 

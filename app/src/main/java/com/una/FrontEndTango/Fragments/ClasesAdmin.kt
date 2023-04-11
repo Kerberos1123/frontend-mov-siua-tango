@@ -4,22 +4,23 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ImageButton
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.una.FrontEndTango.Adapters.RecyclerAdapterClases
 import com.una.FrontEndTango.R
-import com.una.FrontEndTango.Adapters.RecyclerAdapterRequests
-import com.una.FrontEndTango.DataClasses.Request
+import com.una.FrontEndTango.Adapters.RecyclerAdapterClases
+import com.una.FrontEndTango.DataClasses.Clase
 
-class RequestsGuarda : Fragment() {
+class ClasesAdmin : Fragment() {
 
     //variables de referencia
-    private lateinit var adapter : RecyclerAdapterRequests
+    private lateinit var adapter : RecyclerAdapterClases
     private lateinit var recyclerView: RecyclerView
 
-    private lateinit var requestArrayList: ArrayList<Request>
+    private lateinit var claseArrayList: ArrayList<Clase>
 
     //Arrays para titulos y descripciones
     lateinit var titulo : Array<String>
@@ -30,7 +31,7 @@ class RequestsGuarda : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_requests_guarda, container, false)
+        return inflater.inflate(R.layout.fragment_clases_admin, container, false)
 
     }
 
@@ -44,48 +45,55 @@ class RequestsGuarda : Fragment() {
         //seteamos parametros del recycle view y su layout manager
         val layoutManager = LinearLayoutManager(context)
 
-        recyclerView = view.findViewById(R.id.reciclerView)
+        recyclerView = view.findViewById(R.id.recycler_clases_admin)
 
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
-        adapter = RecyclerAdapterRequests(requestArrayList)
+        adapter = RecyclerAdapterClases(claseArrayList)
         recyclerView.adapter = adapter
 
-
         // Agregar el click listener
-        adapter.setOnItemClickListener(object: RecyclerAdapterRequests.onItemClickListener{
+        adapter.setOnItemClickListener(object: RecyclerAdapterClases.onItemClickListener{
             override fun onItemClick(position: Int) { // Implementar logica al hacer click en seccion de recycler
-                findNavController().navigate(R.id.action_requestsGuarda_to_requestDetails)
+                findNavController().navigate(R.id.action_clasesAdmin_to_createClass1)
             }
         })
         // --- ---
 
+        // --- Boton CreateClass
+        val botonCreateClass: Button = view.findViewById(R.id.btCreateClass)
+        botonCreateClass.setOnClickListener {
+            findNavController().navigate(R.id.action_clasesAdmin_to_createClass1)
+        }
+
     }
+
     private fun dataInitialize(){ //inicializacion de datos
 
 
-        requestArrayList = arrayListOf<Request>()    //se crea arraylist que almacena el contenido de las request
+        claseArrayList = arrayListOf<Clase>()    //se crea arraylist que almacena el contenido de las clases
 
-        titulo = arrayOf( //se inicializan datos de los titulos
+        titulo = arrayOf(
+            //se inicializan datos de los titulos
 
-            getString(R.string.T1)
+            getString(R.string.T2), getString(R.string.T3)
         )
         descripcion = arrayOf( //se inicializan datos de los descripcion
 
-            getString(R.string.D1)
+            getString(R.string.D2), getString(R.string.D3)
         )
 
         for ( i in titulo.indices){
 
-            //creamos objeto request
 
-            val request = Request(titulo[i],descripcion[i])
+            //creamos objeto clase
+
+            val clase = Clase(titulo[i],descripcion[i])
 
             //se añade a la lista
-            requestArrayList.add(request)
+            claseArrayList.add(clase)
         }
     }
-
 
 
 }

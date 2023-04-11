@@ -11,6 +11,7 @@ import android.widget.AutoCompleteTextView
 import android.widget.Button
 import android.widget.ImageButton
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.fragment.findNavController
 import com.una.FrontEndTango.R
 
@@ -46,7 +47,7 @@ class CreateTicket : Fragment() {
         // Hacer funcion del boton tras hacerle click
         botonCancel.setOnClickListener{
             // Hacer la navegacion de un fragment a otro, segun ruta encontrada en grafico de navegacion
-            findNavController().navigate(R.id.action_createTicket_to_menuProfe)
+            findNavController().navigateUp()
         }
         // --- -------------- ---
 

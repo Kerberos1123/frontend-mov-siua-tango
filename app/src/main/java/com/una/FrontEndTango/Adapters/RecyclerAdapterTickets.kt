@@ -5,10 +5,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.una.FrontEndTango.DataClasses.Request
+import com.una.FrontEndTango.DataClasses.Ticket
 import com.una.FrontEndTango.R
 
-class RecyclerAdapterRequests(private val requestList:ArrayList<Request>) : RecyclerView.Adapter<RecyclerAdapterRequests.ViewHolder>(){
+class RecyclerAdapterTickets(private val requestList:ArrayList<Ticket>) : RecyclerView.Adapter<RecyclerAdapterTickets.ViewHolder>(){
 
     // --- Listener para agregar funcionalidad a las secciones del recycler ---
     private lateinit var itemListener : onItemClickListener
@@ -69,8 +69,5 @@ class RecyclerAdapterRequests(private val requestList:ArrayList<Request>) : Recy
 
 
 }
-
-
-
 
 

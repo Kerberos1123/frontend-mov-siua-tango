@@ -21,9 +21,26 @@ class MenuGuarda : Fragment() {
 
         // --- Boton Requests
         val botonRequests: ImageButton = view.findViewById(R.id.btRequestGuarda)
-
         botonRequests.setOnClickListener {
             findNavController().navigate(R.id.action_menuGuarda_to_requestsGuarda)
+        }
+
+        // --- Boton Report
+        val botonReport: ImageButton = view.findViewById(R.id.btReportsGuarda)
+        botonReport.setOnClickListener {
+            findNavController().navigate(R.id.action_menuGuarda_to_createReport)
+        }
+
+        // --- Boton Ticket
+        val botonTicket: ImageButton = view.findViewById(R.id.btTicketGuarda)
+        botonTicket.setOnClickListener {
+            findNavController().navigate(R.id.action_menuGuarda_to_createTicket)
+        }
+
+        // --- Boton Clases
+        val botonClases: ImageButton = view.findViewById(R.id.btClasesGuarda)
+        botonClases.setOnClickListener {
+            findNavController().navigate(R.id.action_menuGuarda_to_clasesGuarda)
         }
 
 

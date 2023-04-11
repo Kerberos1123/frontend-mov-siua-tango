@@ -12,23 +12,7 @@
         android:id="@+id/menuApp"
         android:name="com.una.FrontEndTango.Fragments.MenuApp"
         android:label="fragment_menu_user"
-        tools:layout="@layout/fragment_menu_user" >
-        <action
-            android:id="@+id/action_menuApp_to_profileMenu"
-            app:destination="@id/profileMenu" />
-        <action
-            android:id="@+id/action_menuApp_to_menuRequests"
-            app:destination="@id/menuRequests" />
-        <action
-            android:id="@+id/action_menuApp_to_menuReports"
-            app:destination="@id/menuReports" />
-        <action
-            android:id="@+id/action_menuApp_to_menuTicket"
-            app:destination="@id/menuTicket" />
-        <action
-            android:id="@+id/action_menuApp_to_menuProfe"
-            app:destination="@id/menuProfe" />
-    </fragment>
+        tools:layout="@layout/fragment_menu_user" />
     <fragment
         android:id="@+id/profileMenu"
         android:name="com.una.FrontEndTango.Fragments.ProfileMenu"
@@ -37,33 +21,6 @@
         <action
             android:id="@+id/action_profileMenu_to_changePassword"
             app:destination="@id/changePassword" />
-    </fragment>
-    <fragment
-        android:id="@+id/menuRequests"
-        android:name="com.una.FrontEndTango.Fragments.MenuRequests"
-        android:label="fragment_menu_requests"
-        tools:layout="@layout/fragment_menu_requests" >
-        <action
-            android:id="@+id/action_menuRequests_to_menuApp"
-            app:destination="@id/menuApp" />
-    </fragment>
-    <fragment
-        android:id="@+id/menuReports"
-        android:name="com.una.FrontEndTango.Fragments.MenuReports"
-        android:label="fragment_menu_reports"
-        tools:layout="@layout/fragment_menu_reports" >
-        <action
-            android:id="@+id/action_menuReports_to_menuApp"
-            app:destination="@id/menuApp" />
-    </fragment>
-    <fragment
-        android:id="@+id/menuTicket"
-        android:name="com.una.FrontEndTango.Fragments.MenuTicket"
-        android:label="fragment_menu_ticket"
-        tools:layout="@layout/fragment_menu_ticket" >
-        <action
-            android:id="@+id/action_menuTicket_to_menuApp"
-            app:destination="@id/menuApp" />
     </fragment>
     <fragment
         android:id="@+id/menuGuarda"
@@ -76,6 +33,12 @@
         <action
             android:id="@+id/action_menuGuarda_to_createReport"
             app:destination="@id/createReport" />
+        <action
+            android:id="@+id/action_menuGuarda_to_clasesGuarda"
+            app:destination="@id/clasesGuarda" />
+        <action
+            android:id="@+id/action_menuGuarda_to_createTicket"
+            app:destination="@id/createTicket" />
     </fragment>
     <fragment
         android:id="@+id/requestsGuarda"
@@ -194,8 +157,11 @@
         android:label="fragment_menu_admin"
         tools:layout="@layout/fragment_menu_admin" >
         <action
-            android:id="@+id/action_menuAdmin_to_createClass1"
-            app:destination="@id/createClass1" />
+            android:id="@+id/action_menuAdmin_to_clasesAdmin"
+            app:destination="@id/clasesAdmin" />
+        <action
+            android:id="@+id/action_menuAdmin_to_ticketsAdmin"
+            app:destination="@id/ticketsAdmin" />
     </fragment>
     <fragment
         android:id="@+id/createClass1"
@@ -206,8 +172,8 @@
             android:id="@+id/action_createClass1_to_createClass2"
             app:destination="@id/createClass2" />
         <action
-            android:id="@+id/action_createClass1_to_menuAdmin"
-            app:destination="@id/menuAdmin" />
+            android:id="@+id/action_createClass1_to_clasesAdmin"
+            app:destination="@id/clasesAdmin" />
     </fragment>
     <fragment
         android:id="@+id/createClass2"
@@ -215,8 +181,8 @@
         android:label="fragment_create_class2"
         tools:layout="@layout/fragment_create_class2" >
         <action
-            android:id="@+id/action_createClass2_to_menuAdmin"
-            app:destination="@id/menuAdmin" />
+            android:id="@+id/action_createClass2_to_createClass1"
+            app:destination="@id/createClass1" />
     </fragment>
     <fragment
         android:id="@+id/createReport"
@@ -262,5 +228,28 @@
         <action
             android:id="@+id/action_requestEstudiante_to_menuEstudiante"
             app:destination="@id/menuEstudiante" />
+    </fragment>
+    <fragment
+        android:id="@+id/clasesAdmin"
+        android:name="com.una.FrontEndTango.Fragments.ClasesAdmin"
+        android:label="fragment_clases_admin"
+        tools:layout="@layout/fragment_clases_admin" >
+        <action
+            android:id="@+id/action_clasesAdmin_to_createClass1"
+            app:destination="@id/createClass1" />
+    </fragment>
+    <fragment
+        android:id="@+id/ticketsAdmin"
+        android:name="com.una.FrontEndTango.Fragments.TicketsAdmin"
+        android:label="fragment_tickets_admin"
+        tools:layout="@layout/fragment_tickets_admin" />
+    <fragment
+        android:id="@+id/clasesGuarda"
+        android:name="com.una.FrontEndTango.Fragments.ClasesGuarda"
+        android:label="fragment_clases_guarda"
+        tools:layout="@layout/fragment_clases_guarda" >
+        <action
+            android:id="@+id/action_clasesGuarda_to_unitStatus"
+            app:destination="@id/unitStatus" />
     </fragment>
 </navigation>
