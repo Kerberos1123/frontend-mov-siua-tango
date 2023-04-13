@@ -9,9 +9,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
-    private var user_type = 0 // 0: ADMIN - 1:GUARDA - 2:PROFE - 3:ESTUDIANTE - 4:DEBUG
+    private var user_type = 1 // 0: ADMIN - 1:GUARDA - 2:PROFE - 3:ESTUDIANTE - 4:DEBUG
     private val fragment_directions = linkedMapOf(0 to R.id.menuAdmin, 1 to R.id.menuGuarda,
-        2 to R.id.menuProfe, 3 to R.id.menuEstudiante, 4 to R.id.menuApp)
+        2 to R.id.menuProfe, 3 to R.id.menuEstudiante, 4 to R.id.buttonHome)
 
     // Variables de control del grafo de navegacion
     private lateinit var navController: NavController
@@ -36,11 +36,15 @@ class MainActivity : AppCompatActivity() {
 
         // Navegacion de la barra de abajo
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+
         bottomNavigationView.setOnNavigationItemSelectedListener {
             when(it.itemId) {
-                //R.id.bottomMenu1 ->navController.navigate(R.id.menuApp)
-                R.id.menuApp -> fragment_directions[user_type]?.let { it1 -> navController.navigate(it1) }
-                R.id.profileMenu ->navController.navigate(R.id.profileMenu)
+
+                //R.id.buttonBack ->navController.navigate(R.id.buttonHome)
+                R.id.buttonHome -> fragment_directions[user_type]?.let { it1 -> navController.navigate(it1) }
+                R.id.buttonProfile ->navController.navigate(R.id.buttonProfile)
+
+
             }
             true
             }

@@ -24,14 +24,14 @@ class SelectUnit : Fragment() {
         // --- Crear una lista dropdown con opciones seleccionables ---
         val lista_display : AutoCompleteTextView = view.findViewById(R.id.lista_tipos_unidad_sel) // Referencia al display
         val items_lista = resources.getStringArray(R.array.unidades_estudiante) // Sacar los datos de un array de strings.xml para meter en la lista
-        val adaptador_lista = getActivity()?.let { ArrayAdapter(it.getApplicationContext(),R.layout.item_lista,items_lista) } // Crear adaptador, item_lista es el diseño que tiene cada item en el dropdown
+        val adaptador_lista = getActivity()?.let { ArrayAdapter(it.getApplicationContext(),R.layout.layout_item_lista,items_lista) } // Crear adaptador, layout_item_lista es el diseño que tiene cada item en el dropdown
         lista_display.setAdapter(adaptador_lista) // Ponerle el adaptador a la lista
         // --- ---
 
         // --- Crear una lista con opciones seleccionables ---
         val lista_display2 : ListView = view.findViewById(R.id.l_unidades_disponibles) // Referencia al display
         val items_lista2 = resources.getStringArray(R.array.ej_unidades) // Sacar los datos de un array de strings.xml para meter en la lista
-        val adaptador_lista2 = getActivity()?.let { ArrayAdapter(it.getApplicationContext(),R.layout.item_lista,items_lista2) } // Crear adaptador, item_lista es el diseño que tiene cada item en el dropdown
+        val adaptador_lista2 = getActivity()?.let { ArrayAdapter(it.getApplicationContext(),R.layout.layout_item_lista,items_lista2) } // Crear adaptador, layout_item_lista es el diseño que tiene cada item en el dropdown
         lista_display2.setAdapter(adaptador_lista2) // Ponerle el adaptador a la lista
         // --- ---
 

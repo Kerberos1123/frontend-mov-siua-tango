@@ -3,18 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/menuApp">
+    app:startDestination="@id/buttonHome">
 
     <action
         android:id="@+id/action_selectUnit_to_unitRequest"
         app:destination="@id/unitRequest" />
     <fragment
-        android:id="@+id/menuApp"
+        android:id="@+id/buttonHome"
         android:name="com.una.FrontEndTango.Fragments.MenuApp"
         android:label="fragment_menu_user"
         tools:layout="@layout/fragment_menu_user" />
     <fragment
-        android:id="@+id/profileMenu"
+        android:id="@+id/buttonProfile"
         android:name="com.una.FrontEndTango.Fragments.ProfileMenu"
         android:label="fragment_profile_menu"
         tools:layout="@layout/fragment_profile_menu" >
@@ -137,7 +137,7 @@
         tools:layout="@layout/fragment_change_password" >
         <action
             android:id="@+id/action_changePassword_to_profileMenu"
-            app:destination="@id/profileMenu" />
+            app:destination="@id/buttonProfile" />
     </fragment>
     <fragment
         android:id="@+id/requestDetails"
