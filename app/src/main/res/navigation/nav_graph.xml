@@ -10,12 +10,12 @@
         app:destination="@id/unitRequest" />
     <fragment
         android:id="@+id/buttonHome"
-        android:name="com.una.FrontEndTango.Fragments.MenuApp"
+        android:name="com.una.FrontEndTango.View.User.MenuApp"
         android:label="fragment_menu_user"
         tools:layout="@layout/fragment_menu_user" />
     <fragment
         android:id="@+id/buttonProfile"
-        android:name="com.una.FrontEndTango.Fragments.ProfileMenu"
+        android:name="com.una.FrontEndTango.View.User.ProfileMenu"
         android:label="fragment_profile_menu"
         tools:layout="@layout/fragment_profile_menu" >
         <action
@@ -24,7 +24,7 @@
     </fragment>
     <fragment
         android:id="@+id/menuGuarda"
-        android:name="com.una.FrontEndTango.Fragments.MenuGuarda"
+        android:name="com.una.FrontEndTango.View.Guarda.MenuGuarda"
         android:label="fragment_menu_guarda"
         tools:layout="@layout/fragment_menu_guarda" >
         <action
@@ -42,7 +42,7 @@
     </fragment>
     <fragment
         android:id="@+id/requestsGuarda"
-        android:name="com.una.FrontEndTango.Fragments.RequestsGuarda"
+        android:name="com.una.FrontEndTango.View.Guarda.RequestsGuarda"
         android:label="fragment_requests_guarda"
         tools:layout="@layout/fragment_requests_guarda" >
         <action
@@ -54,7 +54,7 @@
     </fragment>
     <fragment
         android:id="@+id/menuProfe"
-        android:name="com.una.FrontEndTango.Fragments.MenuProfe"
+        android:name="com.una.FrontEndTango.View.Profesor.MenuProfe"
         android:label="fragment_menu_profe"
         tools:layout="@layout/fragment_menu_profe" >
         <action
@@ -69,7 +69,7 @@
     </fragment>
     <fragment
         android:id="@+id/clasesProfe"
-        android:name="com.una.FrontEndTango.Fragments.ClasesProfe"
+        android:name="com.una.FrontEndTango.View.Profesor.ClasesProfe"
         android:label="fragment_clases_profe"
         tools:layout="@layout/fragment_clases_profe" >
         <action
@@ -78,7 +78,7 @@
     </fragment>
     <fragment
         android:id="@+id/unitStatus"
-        android:name="com.una.FrontEndTango.Fragments.UnitStatus"
+        android:name="com.una.FrontEndTango.View.Unit.UnitStatus"
         android:label="fragment_unit_status"
         tools:layout="@layout/fragment_unit_status" >
         <action
@@ -87,7 +87,7 @@
     </fragment>
     <fragment
         android:id="@+id/unitRequest"
-        android:name="com.una.FrontEndTango.Fragments.UnitRequest"
+        android:name="com.una.FrontEndTango.View.Request.UnitRequest"
         android:label="fragment_unit_request"
         tools:layout="@layout/fragment_unit_request" >
         <action
@@ -99,7 +99,7 @@
     </fragment>
     <fragment
         android:id="@+id/createTicket"
-        android:name="com.una.FrontEndTango.Fragments.CreateTicket"
+        android:name="com.una.FrontEndTango.View.Tickets.CreateTicket"
         android:label="fragment_create_ticket"
         tools:layout="@layout/fragment_create_ticket" >
         <action
@@ -108,7 +108,7 @@
     </fragment>
     <fragment
         android:id="@+id/menuEstudiante"
-        android:name="com.una.FrontEndTango.Fragments.MenuEstudiante"
+        android:name="com.una.FrontEndTango.View.Estudiante.MenuEstudiante"
         android:label="fragment_menu_estudiante"
         tools:layout="@layout/fragment_menu_estudiante" >
         <action
@@ -123,7 +123,7 @@
     </fragment>
     <fragment
         android:id="@+id/selectUnit"
-        android:name="com.una.FrontEndTango.Fragments.SelectUnit"
+        android:name="com.una.FrontEndTango.View.Unit.SelectUnit"
         android:label="fragment_select_unit"
         tools:layout="@layout/fragment_select_unit" >
         <action
@@ -132,7 +132,7 @@
     </fragment>
     <fragment
         android:id="@+id/changePassword"
-        android:name="com.una.FrontEndTango.Fragments.ChangePassword"
+        android:name="com.una.FrontEndTango.View.User.ChangePassword"
         android:label="fragment_change_password"
         tools:layout="@layout/fragment_change_password" >
         <action
@@ -141,7 +141,7 @@
     </fragment>
     <fragment
         android:id="@+id/requestDetails"
-        android:name="com.una.FrontEndTango.Fragments.RequestDetails"
+        android:name="com.una.FrontEndTango.View.Request.RequestDetails"
         android:label="fragment_request_details"
         tools:layout="@layout/fragment_request_details" >
         <action
@@ -153,7 +153,7 @@
     </fragment>
     <fragment
         android:id="@+id/menuAdmin"
-        android:name="com.una.FrontEndTango.Fragments.MenuAdmin"
+        android:name="com.una.FrontEndTango.View.Admin.MenuAdmin"
         android:label="fragment_menu_admin"
         tools:layout="@layout/fragment_menu_admin" >
         <action
@@ -165,7 +165,7 @@
     </fragment>
     <fragment
         android:id="@+id/createClass1"
-        android:name="com.una.FrontEndTango.Fragments.CreateClass1"
+        android:name="com.una.FrontEndTango.View.Class.CreateClass1"
         android:label="fragment_create_class1"
         tools:layout="@layout/fragment_create_class1" >
         <action
@@ -177,7 +177,7 @@
     </fragment>
     <fragment
         android:id="@+id/createClass2"
-        android:name="com.una.FrontEndTango.Fragments.CreateClass2"
+        android:name="com.una.FrontEndTango.View.Class.CreateClass2"
         android:label="fragment_create_class2"
         tools:layout="@layout/fragment_create_class2" >
         <action
@@ -186,7 +186,7 @@
     </fragment>
     <fragment
         android:id="@+id/createReport"
-        android:name="com.una.FrontEndTango.Fragments.CreateReport"
+        android:name="com.una.FrontEndTango.View.Report.CreateReport"
         android:label="fragment_create_report"
         tools:layout="@layout/fragment_create_report" >
         <action
@@ -195,7 +195,7 @@
     </fragment>
     <dialog
         android:id="@+id/requestPopUp"
-        android:name="com.una.FrontEndTango.Fragments.RequestPopUp"
+        android:name="com.una.FrontEndTango.View.Request.RequestPopUp"
         android:label="fragment_request_pop_up"
         tools:layout="@layout/fragment_request_pop_up" >
         <action
@@ -204,7 +204,7 @@
     </dialog>
     <fragment
         android:id="@+id/activeUnits"
-        android:name="com.una.FrontEndTango.Fragments.ActiveUnits"
+        android:name="com.una.FrontEndTango.View.Unit.ActiveUnits"
         android:label="fragment_active_units"
         tools:layout="@layout/fragment_active_units" >
         <action
@@ -213,7 +213,7 @@
     </fragment>
     <fragment
         android:id="@+id/createTicketUser"
-        android:name="com.una.FrontEndTango.Fragments.CreateTicketUser"
+        android:name="com.una.FrontEndTango.View.Tickets.CreateTicketUser"
         android:label="fragment_create_ticket_user"
         tools:layout="@layout/fragment_create_ticket_user" >
         <action
@@ -222,7 +222,7 @@
     </fragment>
     <fragment
         android:id="@+id/requestEstudiante"
-        android:name="com.una.FrontEndTango.Fragments.RequestEstudiante"
+        android:name="com.una.FrontEndTango.View.Estudiante.RequestEstudiante"
         android:label="fragment_request_estudiante"
         tools:layout="@layout/fragment_request_estudiante" >
         <action
@@ -231,7 +231,7 @@
     </fragment>
     <fragment
         android:id="@+id/clasesAdmin"
-        android:name="com.una.FrontEndTango.Fragments.ClasesAdmin"
+        android:name="com.una.FrontEndTango.View.Admin.ClasesAdmin"
         android:label="fragment_clases_admin"
         tools:layout="@layout/fragment_clases_admin" >
         <action
@@ -240,12 +240,12 @@
     </fragment>
     <fragment
         android:id="@+id/ticketsAdmin"
-        android:name="com.una.FrontEndTango.Fragments.TicketsAdmin"
+        android:name="com.una.FrontEndTango.View.Tickets.TicketsAdmin"
         android:label="fragment_tickets_admin"
         tools:layout="@layout/fragment_tickets_admin" />
     <fragment
         android:id="@+id/clasesGuarda"
-        android:name="com.una.FrontEndTango.Fragments.ClasesGuarda"
+        android:name="com.una.FrontEndTango.View.Guarda.ClasesGuarda"
         android:label="fragment_clases_guarda"
         tools:layout="@layout/fragment_clases_guarda" >
         <action

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/grey"
-    tools:context=".Fragments.ClasesGuarda">
+    tools:context=".View.Guarda.ClasesGuarda">
 
     <LinearLayout
         android:layout_width="match_parent"
