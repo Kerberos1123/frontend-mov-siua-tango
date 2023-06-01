@@ -5,10 +5,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.una.FrontEndTango.Model.Clase
+import com.una.FrontEndTango.Model.Class
 import com.una.FrontEndTango.R
 
-class RecyclerAdapterClases(private val claseList:ArrayList<Clase>) : RecyclerView.Adapter<RecyclerAdapterClases.ViewHolder>(){
+class RecyclerAdapterClass(private val classList:ArrayList<Class>) : RecyclerView.Adapter<RecyclerAdapterClass.ViewHolder>(){
 
     // --- Listener para agregar funcionalidad a las secciones del recycler ---
     private lateinit var itemListener : onItemClickListener
@@ -52,7 +52,7 @@ class RecyclerAdapterClases(private val claseList:ArrayList<Clase>) : RecyclerVi
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
         //obtenemos item actual
-        val currentItem = claseList[position]
+        val currentItem = classList[position]
 
         //seteamos textos o imagenes de item actual
         holder.title.text = currentItem.title
@@ -62,7 +62,7 @@ class RecyclerAdapterClases(private val claseList:ArrayList<Clase>) : RecyclerVi
     override fun getItemCount(): Int {
 
         //devuelve tamaño de la lista de clases
-        return claseList.size
+        return classList.size
     }
 
 

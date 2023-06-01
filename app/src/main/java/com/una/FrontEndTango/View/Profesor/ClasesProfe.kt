@@ -9,16 +9,16 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.una.FrontEndTango.R
-import com.una.FrontEndTango.Adapter.RecyclerAdapterClases
-import com.una.FrontEndTango.Model.Clase
+import com.una.FrontEndTango.Adapter.RecyclerAdapterClass
+import com.una.FrontEndTango.Model.Class
 
 class ClasesProfe : Fragment() {
 
     //variables de referencia
-    private lateinit var adapter : RecyclerAdapterClases
+    private lateinit var adapter : RecyclerAdapterClass
     private lateinit var recyclerView: RecyclerView
 
-    private lateinit var claseArrayList: ArrayList<Clase>
+    private lateinit var classArrayList: ArrayList<Class>
 
     //Arrays para titulos y descripciones
     lateinit var titulo : Array<String>
@@ -47,11 +47,11 @@ class ClasesProfe : Fragment() {
 
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
-        adapter = RecyclerAdapterClases(claseArrayList)
+        adapter = RecyclerAdapterClass(classArrayList)
         recyclerView.adapter = adapter
 
         // Agregar el click listener
-        adapter.setOnItemClickListener(object: RecyclerAdapterClases.onItemClickListener{
+        adapter.setOnItemClickListener(object: RecyclerAdapterClass.onItemClickListener{
             override fun onItemClick(position: Int) { // Implementar logica al hacer click en seccion de recycler
                 findNavController().navigate(R.id.action_clasesProfe_to_unitStatus)
             }
@@ -63,7 +63,7 @@ class ClasesProfe : Fragment() {
     private fun dataInitialize(){ //inicializacion de datos
 
 
-        claseArrayList = arrayListOf<Clase>()    //se crea arraylist que almacena el contenido de las clases
+        classArrayList = arrayListOf<Class>()    //se crea arraylist que almacena el contenido de las clases
 
         titulo = arrayOf(
             //se inicializan datos de los titulos
@@ -80,10 +80,10 @@ class ClasesProfe : Fragment() {
 
             //creamos objeto clase
 
-            val clase = Clase(titulo[i],descripcion[i])
+            val `class` = Class(titulo[i],descripcion[i])
 
             //se añade a la lista
-            claseArrayList.add(clase)
+            classArrayList.add(`class`)
         }
     }
 

@@ -5,8 +5,17 @@ import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.NavGraph
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.navigateUp
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.una.FrontEndTango.R
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
+import com.una.FrontEndTango.databinding.ActivityMainBinding
+
+
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,9 +29,38 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navGraph : NavGraph
     private lateinit var navHostFragment : NavHostFragment
 
+
+    //PARA VIEWBINDING
+    private lateinit var binding: ActivityMainBinding
+    private lateinit var appBarConfiguration: AppBarConfiguration
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        // With View Binding
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        val navHostFragment = supportFragmentManager.findFragmentById(
+            R.id.nav_host_container
+        ) as NavHostFragment
+        navController = navHostFragment.navController
+
+        // Setup the bottom navigation view with navController
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+        bottomNavigationView.setupWithNavController(navController)
+
+        // Setup the ActionBar with navController and 3 top level destinations
+        appBarConfiguration = AppBarConfiguration(
+            setOf(R.id.buttonHome, R.id.buttonProfile)
+        )
+
+        setupActionBarWithNavController(navController, appBarConfiguration)
+
+
+
+        /* sin viewbinding
 
         // Seleccionar el view display de fragments y seleccionarlo como el host de navegacion de fragments
         navHostFragment = supportFragmentManager.findFragmentById(R.id.app_fragment) as NavHostFragment
@@ -50,6 +88,11 @@ class MainActivity : AppCompatActivity() {
             }
             true
             }
-        }
 
+         */
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp(appBarConfiguration)
+    }
 }
