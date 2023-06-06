@@ -252,4 +252,9 @@
             android:id="@+id/action_clasesGuarda_to_unitStatus"
             app:destination="@id/unitStatus" />
     </fragment>
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.una.FrontEndTango.View.LoginActivity"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login" />
 </navigation>

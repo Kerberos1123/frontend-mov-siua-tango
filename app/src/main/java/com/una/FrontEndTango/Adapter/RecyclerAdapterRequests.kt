@@ -13,13 +13,11 @@ class RecyclerAdapterRequests(private val requestList:ArrayList<Request>) : Recy
     // --- Listener para agregar funcionalidad a las secciones del recycler ---
     private lateinit var itemListener : onItemClickListener
 
-    interface onItemClickListener
-    {
+    interface onItemClickListener {
         fun onItemClick(position: Int)
     }
 
-    fun setOnItemClickListener(listener: onItemClickListener)
-    {
+    fun setOnItemClickListener(listener: onItemClickListener) {
         itemListener = listener
     }
 

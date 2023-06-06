@@ -13,17 +13,13 @@ class RecyclerAdapterClass(private val classList:ArrayList<Class>) : RecyclerVie
     // --- Listener para agregar funcionalidad a las secciones del recycler ---
     private lateinit var itemListener : onItemClickListener
 
-    interface onItemClickListener
-    {
+    interface onItemClickListener {
         fun onItemClick(position: Int)
     }
 
-    fun setOnItemClickListener(listener: onItemClickListener)
-    {
+    fun setOnItemClickListener(listener: onItemClickListener) {
         itemListener = listener
     }
-
-    // ---  ---
 
     class ViewHolder(itemView: View, listener: onItemClickListener) : RecyclerView.ViewHolder(itemView){
 
@@ -57,6 +53,10 @@ class RecyclerAdapterClass(private val classList:ArrayList<Class>) : RecyclerVie
         //seteamos textos o imagenes de item actual
         holder.title.text = currentItem.title
         holder.description.text = currentItem.description
+
+
+        //aqui se puede poner un setOnClickListener
+
     }
 
     override fun getItemCount(): Int {
