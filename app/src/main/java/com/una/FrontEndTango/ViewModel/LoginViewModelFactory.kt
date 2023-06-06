@@ -19,7 +19,7 @@ class LoginViewModelFactory : ViewModelProvider.Factory {
                 )
             ) as T
         } else {
-            throw IllegalArgumentException("ViewModel Not Found")
+            throw IllegalArgumentException("LoginModel Not Found")
         }
     }
 }

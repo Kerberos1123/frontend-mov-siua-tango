@@ -7,7 +7,7 @@ import com.una.FrontEndTango.Service.ClassService
 
 
 @Suppress("UNCHECKED_CAST")
-class TaskViewModelFactory : ViewModelProvider.Factory {
+class ClassViewModelFactory : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return if (modelClass.isAssignableFrom(ClassViewModel::class.java)) {
             ClassViewModel(
@@ -16,7 +16,7 @@ class TaskViewModelFactory : ViewModelProvider.Factory {
                 )
             ) as T
         } else {
-            throw IllegalArgumentException("ViewModel Not Found")
+            throw IllegalArgumentException("ClassModel Not Found")
         }
     }
 }

@@ -1,35 +1,28 @@
 package com.una.FrontEndTango.ViewModel
 
-
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.una.FrontEndTango.Model.ClassRequest
-import com.una.FrontEndTango.Model.ClassResponse
-import com.una.FrontEndTango.Repository.ClassRepository
+import com.una.FrontEndTango.Model.TaskRequest
+import com.una.FrontEndTango.Model.TaskResponse
+import com.una.FrontEndTango.Repository.TaskRepository
 import kotlinx.coroutines.*
 
-
-sealed class StateClass { //CREO QUE ESTO SE DEBE CAMBIAR A STATECLASS
-
-    object Loading : StateClass()
-
-    data class Success(val classs: ClassResponse?) : StateClass()
-
-    data class SuccessDelete(val deleted: Boolean?) : StateClass()
-
-    data class SuccessList(val classList: List<ClassResponse>?) : StateClass()
-
-    data class Error(val message: String) : StateClass()
+sealed class StateTask {
+    object Loading : StateTask()
+    data class Success(val task: TaskResponse?) : StateTask()
+    data class SuccessDelete(val deleted: Boolean?) : StateTask()
+    data class SuccessList(val taskList: List<TaskResponse>?) : StateTask()
+    data class Error(val message: String) : StateTask()
 }
 
-class ClassViewModel constructor(
-    private val classRepository: ClassRepository,
+class TaskViewModel constructor(
+    private val taskRepository: TaskRepository,
 ) : ViewModel() {
 
     // this is just a way to keep the mutable LiveData private, so it can't be updated
-    private val _state = MutableLiveData<StateClass>()
-    val state: LiveData<StateClass> get() = _state
+    private val _state = MutableLiveData<StateTask>()
+    val state: LiveData<StateTask> get() = _state
 
     private var job: Job? = null
     private val errorMessage = MutableLiveData<String>()
@@ -39,85 +32,95 @@ class ClassViewModel constructor(
         onError("Exception handled: ${throwable.localizedMessage}")
     }
 
-    fun getClass(id: Long) {
-        _state.value = StateClass.Loading
+    /**
+     * When we call getTask() suspend method, then it suspends our coroutine.
+     * The coroutine on the main thread will be resumed with the result as soon as the
+     * withContext block is complete.
+     */
+    fun getTask(id: Long) {
+        _state.value = StateTask.Loading
         job = CoroutineScope(Dispatchers.IO + exceptionHandler).launch {
             loading.postValue(true)
-            val response = classRepository.getClassById(id)
+            val response = taskRepository.getTaskById(id)
             withContext(Dispatchers.Main) {
                 // if you're using postValue I don't think you need to switch to Dispatchers.Main?
                 _state.postValue(
                     // when you get a response, the state is now either Success or Error
-                    if (response.isSuccessful) StateClass.Success(response.body())
-                    else StateClass.Error("Error : ${response.message()} ")
+                    if (response.isSuccessful) StateTask.Success(response.body())
+                    else StateTask.Error("Error : ${response.message()} ")
                 )
             }
         }
     }
 
-    fun findAllClass() {
-        _state.value = StateClass.Loading
+    /**
+     * When we call findAllTask() suspend method, then it suspends our coroutine.
+     * The coroutine on the main thread will be resumed with the result as soon as the
+     * withContext block is complete.
+     */
+    fun findAllTask() {
+        _state.value = StateTask.Loading
         job = CoroutineScope(Dispatchers.IO + exceptionHandler).launch {
             loading.postValue(true)
-            val response = classRepository.getAllClass()
+            val response = taskRepository.getAllTask()
             withContext(Dispatchers.Main) {
                 // if you're using postValue I don't think you need to switch to Dispatchers.Main?
                 _state.postValue(
                     // when you get a response, the state is now either Success or Error
-                    if (response.isSuccessful) StateClass.SuccessList(response.body())
-                    else StateClass.Error("Error : ${response.message()} ")
+                    if (response.isSuccessful) StateTask.SuccessList(response.body())
+                    else StateTask.Error("Error : ${response.message()} ")
                 )
             }
         }
     }
 
-    fun deleteClassById(id: Long) {
-        _state.value = StateClass.Loading
+    fun deleteTaskById(id: Long) {
+        _state.value = StateTask.Loading
         job = CoroutineScope(Dispatchers.IO + exceptionHandler).launch {
             loading.postValue(true)
-            val response = classRepository.deleteClassById(id)
+            val response = taskRepository.deleteTaskById(id)
             withContext(Dispatchers.Main) {
                 // if you're using postValue I don't think you need to switch to Dispatchers.Main?
                 _state.postValue(
                     // when you get a response, the state is now either Success or Error
-                    if (response.isSuccessful) StateClass.SuccessDelete(true)
-                    else StateClass.Error("Error : ${response.message()} ")
+                    if (response.isSuccessful) StateTask.SuccessDelete(true)
+                    else StateTask.Error("Error : ${response.message()} ")
                 )
             }
         }
     }
 
-    fun createClass(classRequest: ClassRequest) {
-        _state.value = StateClass.Loading
+    fun createTask(taskRequest: TaskRequest) {
+        _state.value = StateTask.Loading
         job = CoroutineScope(Dispatchers.IO + exceptionHandler).launch {
             loading.postValue(true)
-            val response = classRepository.createClass(classRequest)
+            val response = taskRepository.createTask(taskRequest)
             withContext(Dispatchers.Main) {
                 // if you're using postValue I don't think you need to switch to Dispatchers.Main?
                 _state.postValue(
                     // when you get a response, the state is now either Success or Error
                     (if (response.isSuccessful) {
-                        StateClass.Success(response.body() as ClassResponse)
+                        StateTask.Success(response.body() as TaskResponse)
                     } else {
-                        StateClass.Error("Error : ${response.message()} ")
+                        StateTask.Error("Error : ${response.message()} ")
                         onError("Error : ${response.message()}")
-                    }) as StateClass?
+                    }) as StateTask?
                 )
             }
         }
     }
 
-    fun updateTask(classRequest: ClassRequest) {
-        _state.value = StateClass.Loading
+    fun updateTask(taskRequest: TaskRequest) {
+        _state.value = StateTask.Loading
         job = CoroutineScope(Dispatchers.IO + exceptionHandler).launch {
             loading.postValue(true)
-            val response = classRepository.updateClass(classRequest)
+            val response = taskRepository.updateTask(taskRequest)
             withContext(Dispatchers.Main) {
                 // if you're using postValue I don't think you need to switch to Dispatchers.Main?
                 _state.postValue(
                     // when you get a response, the state is now either Success or Error
-                    if (response.isSuccessful) StateClass.Success(response.body())
-                    else StateClass.Error("Error : ${response.message()} ")
+                    if (response.isSuccessful) StateTask.Success(response.body())
+                    else StateTask.Error("Error : ${response.message()} ")
                 )
             }
         }
@@ -132,9 +135,4 @@ class ClassViewModel constructor(
         super.onCleared()
         job?.cancel()
     }
-
-
-
-
-
 }
