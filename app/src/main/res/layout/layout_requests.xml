@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/linearLayout"
-    android:layout_margin="5dp"
-    app:cardBackgroundColor="@color/azul"
+    android:layout_margin="20dp"
+    app:cardBackgroundColor="@color/black"
     app:cardCornerRadius="12dp"
     app:cardElevation="3dp"
-    app:contentPadding="4dp"
-    >
+    app:contentPadding="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/azul"
         android:padding="16dp"
         tools:ignore="ExtraText">
 
@@ -27,7 +27,7 @@
             android:layout_height="100dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/icon_group" />
+            app:srcCompat="@drawable/icon_requests" />
 
         //titulo
 
@@ -35,8 +35,12 @@
             android:id="@+id/itemTitle"
             android:layout_width="236dp"
             android:layout_height="39dp"
-            android:layout_marginStart="16dp"
-            android:textSize="30sp"
+            android:layout_marginLeft="16dp"
+            android:text="REQUEST 1"
+            android:textAlignment="viewStart"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"
             app:layout_constraintLeft_toRightOf="@id/itemImage"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -44,10 +48,14 @@
 
         <TextView
             android:id="@+id/itemDetails"
-            android:layout_width="236dp"
-            android:layout_height="16dp"
-            android:layout_marginStart="16dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
+            android:text="CLASSROOM C19"
+            android:textAlignment="textStart"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
             app:layout_constraintLeft_toRightOf="@id/itemImage"
             app:layout_constraintTop_toBottomOf="@+id/itemTitle" />
 

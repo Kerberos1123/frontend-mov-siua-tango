@@ -4,7 +4,7 @@ import java.util.*
 
 data class Class(
     var title: String,
-    var description:String,
+    var description: String,
 )
 data class ClassRequest(
     var title: String,

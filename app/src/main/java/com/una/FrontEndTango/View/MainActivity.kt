@@ -15,7 +15,7 @@ import com.una.FrontEndTango.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    private var user_type = 2 // 0: ADMIN - 1:GUARDA - 2:PROFE - 3:ESTUDIANTE - 4:DEBUG
+    private var user_type = 1 // 0: ADMIN - 1:GUARDA - 2:PROFE - 3:ESTUDIANTE - 4:DEBUG
     private val fragment_directions = linkedMapOf(0 to R.id.menuAdmin, 1 to R.id.menuGuarda,
         2 to R.id.menuProfe, 3 to R.id.menuEstudiante, 4 to R.id.buttonHome
     )

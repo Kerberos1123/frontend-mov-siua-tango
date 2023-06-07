@@ -7,12 +7,26 @@
     android:background="@color/grey"
     tools:context=".View.Guarda.RequestsGuarda">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/reciclerView"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="vertical"
-        tools:listitem="@layout/layout_requests" />
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="REQUESTS"
+            android:textAlignment="center"
+            android:textAppearance="@style/title_style" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/reciclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            tools:listitem="@layout/layout_requests" />
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
