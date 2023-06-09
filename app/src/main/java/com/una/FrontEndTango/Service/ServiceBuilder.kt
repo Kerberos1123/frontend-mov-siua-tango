@@ -34,7 +34,8 @@ object ServiceBuilder {
             .addInterceptor(AuthorizationInterceptor()).build()
 
     private val retrofit = Retrofit.Builder()
-        .baseUrl(BuildConfig.BASE_URL) // change this IP for testing by your actual machine IP
+        //.baseUrl(BuildConfig.BASE_URL) // change this IP for testing by your actual machine IP
+        .baseUrl("https://648170e829fa1c5c5031637a.mockapi.io/") // change this IP for testing by your actual machine IP
         .addConverterFactory(GsonConverterFactory.create(gson))
         .client(client)
         .build()

@@ -7,6 +7,7 @@ import com.una.FrontEndTango.Model.TaskRequest
 import com.una.FrontEndTango.Model.TaskResponse
 import com.una.FrontEndTango.Repository.TaskRepository
 import kotlinx.coroutines.*
+import androidx.compose.runtime.mutableStateOf
 
 sealed class StateTask {
     object Loading : StateTask()
@@ -16,7 +17,7 @@ sealed class StateTask {
     data class Error(val message: String) : StateTask()
 }
 
-class TaskViewModel constructor(
+class TaskViewModel  constructor(
     private val taskRepository: TaskRepository,
 ) : ViewModel() {
 
