@@ -1,5 +1,6 @@
 package com.una.FrontEndTango.View.Request
 
+import android.app.AlertDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -13,84 +14,97 @@ import androidx.navigation.fragment.findNavController
 import com.una.FrontEndTango.R
 import com.una.FrontEndTango.Repository.TaskRepository
 import com.una.FrontEndTango.Service.TaskService
-import com.una.FrontEndTango.ViewModel.TaskViewModel
-import com.una.FrontEndTango.ViewModel.TaskViewModelFactory
 import com.una.FrontEndTango.databinding.FragmentRequestDetailsBinding
 import com.una.FrontEndTango.Adapter.TaskAdapter.Companion.TASK_ID
-import com.una.FrontEndTango.ViewModel.StateTask
 import androidx.compose.runtime.getValue
+import androidx.core.os.bundleOf
+import com.una.FrontEndTango.Adapter.RecyclerAdapterRequests
+import com.una.FrontEndTango.ViewModel.*
 import com.una.FrontEndTango.databinding.ActivityMainBinding
 
 
 class RequestDetails : Fragment() {
 
-    private lateinit var binding : FragmentRequestDetailsBinding
-    private val taskViewModel: TaskViewModel by activityViewModels()
+    // Definition of the binding variable
+    private var _binding: FragmentRequestDetailsBinding? = null
+    private val binding get() = _binding!!
 
+    // Shared view model
+    private val requestViewModel : RequestViewModel by activityViewModels()
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentRequestDetailsBinding.inflate(layoutInflater)
-        val view = binding.root
 
-        //binding.TaskList.adapter = adapter
+        _binding = FragmentRequestDetailsBinding.inflate(inflater,container,false)
 
-        //Retrofit
-        //val taskService = TaskService.getInstance()
-        //val taskRepository = TaskRepository(taskService)
+        val requestId : String = arguments?.getString(RecyclerAdapterRequests.REQUEST_ID) ?: "0"
 
-        //ViewModelFactory
-        //var taskViewModel = ViewModelProvider(this, TaskViewModelFactory(taskRepository))[TaskViewModel::class.java]
-
-        //taskViewModel.state.observe(this){
-        //    binding.textUserName2.text = it.title
-        //    binding.textUserRole.text = it.notes
-        //}
-
-        val taskId: String = arguments?.getString(TASK_ID) ?: "1"
-
-        // Observer method to bind data of task into text views
-        taskViewModel.state.observe(viewLifecycleOwner) { state ->
+        requestViewModel.state.observe(viewLifecycleOwner){ state ->
             // this lets us avoid repeating 'binding.frameNews' before everything
             with(binding.root) {
                 when (state) {
                     // just checking equality because Loading is a -singleton object instance-
-                    StateTask.Loading -> {
+                    StateRequest.Loading -> {
                         // TODO: If you need do something in loading
                     }
                     // Error and Success are both -classes- so we need to check their type with 'is'
-                    is StateTask.Error -> {
+                    is StateRequest.Error -> {
                         // TODO: If you need do something in error
                     }
-                    is StateTask.Success -> {
-                        state.task?.let {
-                            binding.textUserName2.text = it.title
-                            binding.textUserRole.text = it.notes
+                    is StateRequest.Success -> {
+                        state.request?.let {
+
+                            binding.textUserName2.text = it.user_name
+                            binding.textRole.text = it.user_role
+                            binding.textItem.text = it.item_name
+                            binding.textUserClass.text = it.classroom_name
                         }
                     }
                     else -> {
                         // TODO: Not state loaded
                     }
                 }
+
             }
         }
 
-        //Boton Deny
-        val botonDeny: Button = binding.btnDeny
-
-        //Funcionalidad temporal Boton Deny
-        botonDeny.setOnClickListener{
-            // Hacer la navegacion de un fragment a otro, segun ruta encontrada en grafico de navegacion
-            findNavController().navigate(R.id.action_requestDetails_to_requestsGuarda)
+        binding.btnDeny.setOnClickListener {
+            val dialogBuilder = AlertDialog.Builder(requireActivity())
+            dialogBuilder.setMessage("Are you sure?")
+                // if the dialog is cancelable
+                .setCancelable(true)
+                .setPositiveButton("Ok") { dialog, _ ->
+                    requestViewModel.deleteRequestById(requestId.toLong())
+                    findNavController().navigate(R.id.requestsGuarda)
+                    dialog.dismiss()
+                }
+                .setNegativeButton("No") { dialog, _ ->
+                    dialog.dismiss()
+                }
+            val alert = dialogBuilder.create()
+            alert.setTitle("Delete Task")
+            alert.show()
         }
 
-        //taskViewModel.getTask(taskId.toLong())
+        binding.btnConfirm.setOnClickListener {
 
-        return view
+            val bundle = bundleOf(RecyclerAdapterRequests.REQUEST_ID to requestId)
+
+            //requestViewModel.deleteRequestById(re)
+            findNavController().navigate(R.id.action_requestDetails_to_requestsGuarda)
+
+        }
+
+        requestViewModel.getRequest(requestId.toLong())
+
+        return binding.root
     }
+    //-------------     Comentado para binding y mockapi
 
+    /*
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -105,4 +119,8 @@ class RequestDetails : Fragment() {
 
     }
 
+
+     */
+
+    //-------------
 }

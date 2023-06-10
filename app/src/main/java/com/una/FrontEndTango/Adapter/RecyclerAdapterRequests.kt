@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.una.FrontEndTango.Model.Request
+import com.una.FrontEndTango.Model.RequestResponse
 import com.una.FrontEndTango.R
 
 class RecyclerAdapterRequests(private val requestList:ArrayList<Request>) : RecyclerView.Adapter<RecyclerAdapterRequests.ViewHolder>(){
@@ -21,23 +22,26 @@ class RecyclerAdapterRequests(private val requestList:ArrayList<Request>) : Recy
         itemListener = listener
     }
 
-    // ---  ---
-
     class ViewHolder(itemView: View, listener: onItemClickListener) : RecyclerView.ViewHolder(itemView){
 
         val title : TextView = itemView.findViewById(R.id.itemTitle)
         val description : TextView = itemView.findViewById(R.id.itemDetails)
 
-        // --- Agregar un ClickListener para poder hacerle click ---
+        //  Agregar un ClickListener para poder hacerle click
         init {
-
             itemView.setOnClickListener{
                 listener.onItemClick(adapterPosition)
             }
-
         }
-        // --- ---
+    }
 
+
+    private var requestResponseList = mutableListOf<RequestResponse>()
+
+    fun setRequestList(requestResponseList: List<RequestResponse>){
+        this.requestResponseList.clear()
+        this.requestResponseList.addAll(requestResponseList.toMutableList())
+        this.notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -64,7 +68,9 @@ class RecyclerAdapterRequests(private val requestList:ArrayList<Request>) : Recy
         return requestList.size
     }
 
-
+    companion object {
+        const val REQUEST_ID = "request_id"
+    }
 
 }
 
