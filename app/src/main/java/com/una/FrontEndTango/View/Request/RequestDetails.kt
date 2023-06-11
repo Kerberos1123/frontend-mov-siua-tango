@@ -6,21 +6,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.una.FrontEndTango.R
-import com.una.FrontEndTango.Repository.TaskRepository
-import com.una.FrontEndTango.Service.TaskService
 import com.una.FrontEndTango.databinding.FragmentRequestDetailsBinding
-import com.una.FrontEndTango.Adapter.TaskAdapter.Companion.TASK_ID
-import androidx.compose.runtime.getValue
+import com.una.FrontEndTango.Adapter.RecyclerAdapterRequests.Companion.REQUEST_ID
 import androidx.core.os.bundleOf
 import com.una.FrontEndTango.Adapter.RecyclerAdapterRequests
 import com.una.FrontEndTango.ViewModel.*
-import com.una.FrontEndTango.databinding.ActivityMainBinding
 
 
 class RequestDetails : Fragment() {
@@ -40,7 +33,7 @@ class RequestDetails : Fragment() {
 
         _binding = FragmentRequestDetailsBinding.inflate(inflater,container,false)
 
-        val requestId : String = arguments?.getString(RecyclerAdapterRequests.REQUEST_ID) ?: "0"
+        val requestId : String = arguments?.getString(REQUEST_ID) ?: "0"
 
         requestViewModel.state.observe(viewLifecycleOwner){ state ->
             // this lets us avoid repeating 'binding.frameNews' before everything
@@ -102,8 +95,9 @@ class RequestDetails : Fragment() {
 
         return binding.root
     }
-    //-------------     Comentado para binding y mockapi
 
+
+    //-------------     Comentado para binding y mockapi
     /*
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -122,5 +116,4 @@ class RequestDetails : Fragment() {
 
      */
 
-    //-------------
 }
