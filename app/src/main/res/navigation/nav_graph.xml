@@ -162,6 +162,9 @@
         <action
             android:id="@+id/action_menuAdmin_to_ticketsAdmin"
             app:destination="@id/ticketsAdmin" />
+        <action
+            android:id="@+id/action_menuAdmin_to_viewReports"
+            app:destination="@id/viewReports" />
     </fragment>
     <fragment
         android:id="@+id/createClass1"
@@ -257,4 +260,9 @@
         android:name="com.una.FrontEndTango.View.LoginActivity"
         android:label="activity_login"
         tools:layout="@layout/activity_login" />
+    <fragment
+        android:id="@+id/viewReports"
+        android:name="com.una.FrontEndTango.View.Report.ViewReports"
+        android:label="fragment_view_reports"
+        tools:layout="@layout/fragment_view_reports" />
 </navigation>

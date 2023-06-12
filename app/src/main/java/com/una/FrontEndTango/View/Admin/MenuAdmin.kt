@@ -35,6 +35,14 @@ class MenuAdmin : Fragment() {
             findNavController().navigate(R.id.action_menuAdmin_to_ticketsAdmin)
         }
 
+        // --- Boton Reportes ---
+        // Variable donde tenemos el boton
+        val botonReportes: ImageButton = view.findViewById(R.id.bt3Admin)
+        botonReportes.setOnClickListener{
+            // Hacer la navegacion de un fragment a otro, segun ruta encontrada en grafico de navegacion
+            findNavController().navigate(R.id.action_menuAdmin_to_viewReports)
+        }
+
 
         return view
     }
