@@ -15,7 +15,6 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="20dp"
             android:text="CLASSES"
             android:textAlignment="center"
             android:textAppearance="@style/title_style"
@@ -25,9 +24,9 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_clases_admin"
             android:layout_width="match_parent"
-            android:layout_height="460dp"
+            android:layout_height="480dp"
             android:scrollbars="vertical"
-            tools:listitem="@layout/layout_clases" >
+            tools:listitem="@layout/layout_clases">
 
         </androidx.recyclerview.widget.RecyclerView>
 
@@ -36,7 +35,9 @@
             style="@style/button_style"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:text="CREATE CLASS" />
+            android:layout_marginHorizontal="100dp"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="@color/purple_700"
+            android:text="NEW CLASS" />
     </LinearLayout>
 </FrameLayout>
