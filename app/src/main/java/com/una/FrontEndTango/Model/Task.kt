@@ -4,18 +4,22 @@ import java.util.*
 
 data class TaskRequest(
     var id: Long? = null,
-    var title: String,
+    var create_date: Date,
+    var due_date: Date,
     var notes: String,
-    var dueDate: Date,
-    var priority: Priority,
+    var title: String,
+    var priority_id: Long?=null,
+    var status_id: Long?=null,
+    var user_id:Long?=null,
 )
 
 data class TaskResponse (
     var id: Long? = null,
-    var title: String,
+    var create_date: Date,
+    var due_date: Date,
     var notes: String,
-    var createDate: Date,
-    var dueDate: Date,
-    var priority: Priority,
-    var status: Status,
+    var title: String,
+    var priority_id: Long?=null,
+    var status_id: Long?=null,
+    var user_id:Long?=null,
 )
