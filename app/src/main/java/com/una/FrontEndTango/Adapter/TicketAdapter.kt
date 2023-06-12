@@ -2,6 +2,7 @@ package com.una.FrontEndTango.Adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.recyclerview.widget.RecyclerView
 import com.una.FrontEndTango.Model.TicketResponse
 import com.una.FrontEndTango.databinding.LayoutRequestsBinding
@@ -28,24 +29,27 @@ class TicketAdapter : RecyclerView.Adapter<TicketViewHolder>() {
         //obtenemos item actual
         val currentItem = ticketResponseList[position]
 
+        // Seteamos textos o imagenes del item actual
+        holder.binding.itemTitle.text = currentItem.title
+        holder.binding.itemDetails.text = currentItem.description
 
-        /*holder.itemView.setOnClickListener(){
-            val bundle = bundleOf(REQUEST_ID to ticketResponseList[position].id.toString())
+        holder.itemView.setOnClickListener(){
+            val bundle = bundleOf(TICKET_ID to ticketResponseList[position].id.toString())
 
-            holder.itemView.findNavController().navigate(
-                R.id.action_ticketsGuarda_to_ticketDetails, bundle
-            )
-        }*/
+            //holder.itemView.findNavController().navigate(
+            //    R.id.action_ticketsGuarda_to_ticketDetails, bundle
+            //)
+        }
 
     }
 
     override fun getItemCount(): Int {
-        //devulve tamaño de la lista de tickets
+        //Devuelve tamaño de la lista de tickets
         return ticketResponseList.size
     }
 
     companion object {
-        const val REQUEST_ID = "ticket_id"
+        const val TICKET_ID = "ticket_id"
     }
 
 }

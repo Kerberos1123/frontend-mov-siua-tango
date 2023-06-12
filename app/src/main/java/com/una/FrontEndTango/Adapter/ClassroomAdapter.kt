@@ -45,7 +45,7 @@ class ClassroomAdapter : RecyclerView.Adapter<ClassroomViewHolder>() {
     }
 
     companion object {
-        const val REQUEST_ID = "classroom_id"
+        const val CLASSROOM_ID = "classroom_id"
     }
 
 }

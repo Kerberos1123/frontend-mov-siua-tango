@@ -45,7 +45,7 @@ class UserAdapter : RecyclerView.Adapter<UserViewHolder>() {
     }
 
     companion object {
-        const val REQUEST_ID = "user_id"
+        const val USER_ID = "user_id"
     }
 
 }

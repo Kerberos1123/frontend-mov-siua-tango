@@ -1,89 +1,67 @@
 package com.una.FrontEndTango.View.Tickets
 
+//IMPORTS VIEJOS
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.una.FrontEndTango.Adapter.RecyclerAdapterTickets
-import com.una.FrontEndTango.R
-import com.una.FrontEndTango.Model.Ticket
+import com.una.FrontEndTango.ViewModel.TicketViewModel
+import com.una.FrontEndTango.ViewModel.TicketViewModelFactory
+
+//IMPORTS NUEVOS
+import com.una.FrontEndTango.databinding.FragmentTicketsAdminBinding
+import com.una.FrontEndTango.Adapter.TicketAdapter
+import com.una.FrontEndTango.ViewModel.StateTicket
 
 class TicketsAdmin : Fragment() {
 
-    //variables de referencia
-    private lateinit var adapter : RecyclerAdapterTickets
-    private lateinit var recyclerView: RecyclerView
+    private var _binding: FragmentTicketsAdminBinding? = null
+    private val binding get() = _binding!!
 
-    private lateinit var requestArrayList: ArrayList<Ticket>
+    private val ticketViewModel: TicketViewModel by activityViewModels{
+        TicketViewModelFactory()
+    }
 
-    //Arrays para titulos y descripciones
-    lateinit var titulo : Array<String>
-    lateinit var descripcion :Array<String>
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tickets_admin, container, false)
+    ): View {
+        val adapter = TicketAdapter()
 
-    }
+        _binding = FragmentTicketsAdminBinding.inflate(inflater,container,false)
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        binding.recyclerTicketsAdmin.adapter = adapter
 
-        super.onViewCreated(view, savedInstanceState)
-
-        //se inicializa data
-        dataInitialize()
-
-        //seteamos parametros del recycle view y su layout manager
         val layoutManager = LinearLayoutManager(context)
+        binding.recyclerTicketsAdmin.layoutManager = layoutManager
 
-        recyclerView = view.findViewById(R.id.recycler_tickets_admin)
+        // Traemos todas los tickets del webservice
+        ticketViewModel.findAllTicket()
+        ticketViewModel.state.observe(viewLifecycleOwner) { state ->
 
-        recyclerView.layoutManager = layoutManager
-        recyclerView.setHasFixedSize(true)
-        adapter = RecyclerAdapterTickets(requestArrayList)
-        recyclerView.adapter = adapter
-
-
-        // Agregar el click listener
-        adapter.setOnItemClickListener(object: RecyclerAdapterTickets.onItemClickListener{
-            override fun onItemClick(position: Int) { // Implementar logica al hacer click en seccion de recycler
-                //findNavController().navigate(R.id.action_requestsGuarda_to_requestDetails)
+            when (state) {
+                StateTicket.Loading -> {
+                    // TODO: If you need do something in loading
+                }
+                is StateTicket.Error -> {
+                    // TODO: If you need do something in error
+                }
+                is StateTicket.SuccessList -> {
+                    state.ticketList?.let { adapter.setTicketList(it) }
+                }
+                else -> {
+                    // TODO: Not state loaded
+                }
             }
-        })
-        // --- ---
 
-    }
-    private fun dataInitialize(){ //inicializacion de datos
-
-
-        requestArrayList = arrayListOf<Ticket>()    //se crea arraylist que almacena el contenido de las request
-
-        titulo = arrayOf( //se inicializan datos de los titulos
-
-            getString(R.string.T1)
-        )
-        descripcion = arrayOf( //se inicializan datos de los descripcion
-
-            getString(R.string.D1)
-        )
-
-        for ( i in titulo.indices){
-
-            //creamos objeto ticket
-
-            val ticket = Ticket(titulo[i],descripcion[i])
-
-            //se añade a la lista
-            requestArrayList.add(ticket)
         }
+
+        return binding.root
+
     }
-
-
-
 }

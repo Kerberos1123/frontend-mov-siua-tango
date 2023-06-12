@@ -28,6 +28,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scrollbars="vertical"
-            tools:listitem="@layout/fragment_requests_guarda" />
+            tools:listitem="@layout/layout_requests" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
