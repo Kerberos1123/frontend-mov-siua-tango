@@ -2,16 +2,16 @@ package com.una.FrontEndTango.Model
 
 import java.util.*
 
-data class Ticket(
+data class User(
     var title: String,
     var description: String,
 )
-data class TicketRequest(
+data class UserRequest(
     var id: Long? = null,
     var title: String,
     var description:String,
 )
-data class TicketResponse(
+data class UserResponse(
     var id: Long? = null,
     var title: String,
     var description:String,

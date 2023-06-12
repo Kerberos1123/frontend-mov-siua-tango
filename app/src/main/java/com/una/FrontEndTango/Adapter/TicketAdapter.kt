@@ -1,0 +1,54 @@
+package com.una.FrontEndTango.Adapter
+
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
+import com.una.FrontEndTango.Model.TicketResponse
+import com.una.FrontEndTango.databinding.LayoutRequestsBinding
+
+class TicketAdapter : RecyclerView.Adapter<TicketViewHolder>() {
+
+    private var ticketResponseList = mutableListOf<TicketResponse>()
+
+    fun setTicketList(ticketResponseList: List<TicketResponse>){
+        this.ticketResponseList.clear()
+        this.ticketResponseList.addAll(ticketResponseList.toMutableList())
+        this.notifyDataSetChanged()
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TicketViewHolder {
+        val inflater = LayoutInflater.from(parent.context)
+        val binding = LayoutRequestsBinding.inflate(inflater, parent, false)
+
+        return TicketViewHolder(binding)
+    }
+
+    override fun onBindViewHolder(holder: TicketViewHolder, position: Int) {
+
+        //obtenemos item actual
+        val currentItem = ticketResponseList[position]
+
+
+        /*holder.itemView.setOnClickListener(){
+            val bundle = bundleOf(REQUEST_ID to ticketResponseList[position].id.toString())
+
+            holder.itemView.findNavController().navigate(
+                R.id.action_ticketsGuarda_to_ticketDetails, bundle
+            )
+        }*/
+
+    }
+
+    override fun getItemCount(): Int {
+        //devulve tamaño de la lista de tickets
+        return ticketResponseList.size
+    }
+
+    companion object {
+        const val REQUEST_ID = "ticket_id"
+    }
+
+}
+class TicketViewHolder(
+    val binding : LayoutRequestsBinding
+): RecyclerView.ViewHolder(binding.root)
