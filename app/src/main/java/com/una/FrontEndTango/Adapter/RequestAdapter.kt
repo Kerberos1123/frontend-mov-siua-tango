@@ -10,7 +10,7 @@ import com.una.FrontEndTango.R
 import com.una.FrontEndTango.databinding.FragmentRequestDetailsBinding
 import com.una.FrontEndTango.databinding.LayoutRequestsBinding
 
-class RequestAdapter : RecyclerView.Adapter<MainViewHolder>() {
+class RequestAdapter : RecyclerView.Adapter<RequestViewHolder>() {
 
     private var requestResponseList = mutableListOf<RequestResponse>()
 
@@ -20,19 +20,19 @@ class RequestAdapter : RecyclerView.Adapter<MainViewHolder>() {
         this.notifyDataSetChanged()
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RequestViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = LayoutRequestsBinding.inflate(inflater, parent, false)
 
-        return MainViewHolder(binding)
+        return RequestViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: RequestViewHolder, position: Int) {
 
         //obtenemos item actual
         val currentItem = requestResponseList[position]
 
-        //seteamos textos o imagenes de item actual
+        // Seteamos textos o imagenes del item actual
         holder.binding.itemTitle.text = currentItem.item_name
         holder.binding.itemDetails.text = currentItem.classroom_name
 
@@ -56,6 +56,6 @@ class RequestAdapter : RecyclerView.Adapter<MainViewHolder>() {
     }
 
 }
-class MainViewHolder(
+class RequestViewHolder(
         val binding : LayoutRequestsBinding
 ): RecyclerView.ViewHolder(binding.root)

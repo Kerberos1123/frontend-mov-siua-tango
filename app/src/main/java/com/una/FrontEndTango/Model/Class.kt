@@ -7,10 +7,12 @@ data class Class(
     var description: String,
 )
 data class ClassRequest(
+    var id: Long? = null,
     var title: String,
     var description:String,
 )
 data class ClassResponse(
+    var id: Long? = null,
     var title: String,
     var description:String,
 )

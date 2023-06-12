@@ -40,7 +40,7 @@ class RecyclerAdapterClass(private val classList:ArrayList<Class>) : RecyclerVie
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
         //inflamos layout de clases
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.layout_clases_profe,parent,false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.layout_clases,parent,false)
 
         return ViewHolder(itemView, itemListener) // Se le agrega el listener
     }

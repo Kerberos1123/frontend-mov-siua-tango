@@ -49,7 +49,6 @@ class RequestDetails : Fragment() {
                     }
                     is StateRequest.Success -> {
                         state.request?.let {
-
                             binding.textUserName2.text = it.user_name
                             binding.textRole.text = it.user_role
                             binding.textItem.text = it.item_name

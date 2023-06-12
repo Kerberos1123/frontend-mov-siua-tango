@@ -27,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="460dp"
             android:scrollbars="vertical"
-            tools:listitem="@layout/layout_clases_profe" >
+            tools:listitem="@layout/layout_clases" >
 
         </androidx.recyclerview.widget.RecyclerView>
 
