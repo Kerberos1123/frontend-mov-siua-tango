@@ -21,8 +21,7 @@ sealed class StateRequest{
 
     data class Error(val message: String) : StateRequest()
 }
-
-class RequestViewModel constructor(
+class RequestViewModel  constructor(
     private val requestRepository: RequestRepository,
 ) : ViewModel() {
 

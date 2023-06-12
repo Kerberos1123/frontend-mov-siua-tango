@@ -116,6 +116,9 @@ class RequestsGuarda : Fragment() {
 
         binding.reciclerView.adapter = adapter
 
+        val layoutManager = LinearLayoutManager(context)
+        binding.reciclerView.layoutManager = layoutManager
+
         //traemos todas las requests del webservice
         requestViewModel.findAllRequest()
         requestViewModel.state.observe(viewLifecycleOwner) { state ->

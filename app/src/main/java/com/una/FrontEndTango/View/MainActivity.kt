@@ -2,12 +2,16 @@ package com.una.FrontEndTango.View
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.viewModels
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.NavController
 import androidx.navigation.NavGraph
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.una.FrontEndTango.R
+import com.una.FrontEndTango.ViewModel.RequestViewModel
+import com.una.FrontEndTango.ViewModel.RequestViewModelFactory
 import com.una.FrontEndTango.databinding.ActivityMainBinding
 
 
@@ -30,12 +34,17 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var appBarConfiguration: AppBarConfiguration
 
+    val requestViewModel by viewModels<RequestViewModel> ()
+
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         // With View Binding
         binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+
 
         navHostFragment = supportFragmentManager.findFragmentById(
             R.id.nav_host_container
@@ -51,6 +60,7 @@ class MainActivity : AppCompatActivity() {
 
         val bottomNavigationView = binding.bottomNavigationView
 
+
         bottomNavigationView.setOnNavigationItemSelectedListener {
             when(it.itemId) {
 
@@ -61,6 +71,7 @@ class MainActivity : AppCompatActivity() {
             true
             }
 
+        setContentView(binding.root)
     }
 
 }
