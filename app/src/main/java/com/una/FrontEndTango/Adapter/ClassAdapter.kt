@@ -46,6 +46,7 @@ class ClassAdapter : RecyclerView.Adapter<ClassViewHolder>() {
             {
                 R.id.clasesGuarda-> holder.itemView.findNavController().navigate(R.id.action_clasesGuarda_to_unitStatus, bundle)
                 R.id.clasesAdmin-> holder.itemView.findNavController().navigate(R.id.action_clasesAdmin_to_unitStatus, bundle)
+                R.id.clasesProfe-> holder.itemView.findNavController().navigate(R.id.action_clasesProfe_to_unitStatus, bundle)
             }
 
         }
