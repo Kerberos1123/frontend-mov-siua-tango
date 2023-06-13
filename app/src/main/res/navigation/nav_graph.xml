@@ -248,7 +248,11 @@
         android:id="@+id/ticketsAdmin"
         android:name="com.una.FrontEndTango.View.Tickets.TicketsAdmin"
         android:label="fragment_tickets_admin"
-        tools:layout="@layout/fragment_tickets_admin" />
+        tools:layout="@layout/fragment_tickets_admin" >
+        <action
+            android:id="@+id/action_ticketsAdmin_to_ticketDetails"
+            app:destination="@id/ticketDetails" />
+    </fragment>
     <fragment
         android:id="@+id/clasesGuarda"
         android:name="com.una.FrontEndTango.View.Guarda.ClasesGuarda"
@@ -267,5 +271,18 @@
         android:id="@+id/viewReports"
         android:name="com.una.FrontEndTango.View.Report.ViewReports"
         android:label="fragment_view_reports"
-        tools:layout="@layout/fragment_view_reports" />
+        tools:layout="@layout/fragment_view_reports" >
+        <action
+            android:id="@+id/action_viewReports_to_reportDetails"
+            app:destination="@id/reportDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/reportDetails"
+        android:name="com.una.FrontEndTango.View.Report.ReportDetails"
+        android:label="fragment_report_details"
+        tools:layout="@layout/fragment_report_details" />
+    <fragment
+        android:id="@+id/ticketDetails"
+        android:name="com.una.FrontEndTango.View.Ticket.TicketDetails"
+        android:label="TicketDetails" />
 </navigation>

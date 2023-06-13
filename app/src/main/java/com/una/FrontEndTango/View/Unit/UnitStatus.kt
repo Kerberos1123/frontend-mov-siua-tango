@@ -15,9 +15,11 @@ import com.una.FrontEndTango.R
 
 class UnitStatus : Fragment() {
 
-    var unitState = 1 // Estado de progreso
+    var unitState = -1 // Estado de progreso
 
     private fun setProgressIconsColors(view : View){ // Funcion para mostrar en que estado esta
+
+        if(unitState < 0){return} // Si no queremos colorear ningun circulo de progreso, se pone menor que 0
 
         var unitIcons : ArrayList<ImageView>
         unitIcons = arrayListOf<ImageView>()

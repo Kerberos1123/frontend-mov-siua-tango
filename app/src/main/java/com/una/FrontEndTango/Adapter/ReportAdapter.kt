@@ -3,8 +3,10 @@ package com.una.FrontEndTango.Adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.una.FrontEndTango.Model.ReportResponse
+import com.una.FrontEndTango.R
 import com.una.FrontEndTango.databinding.LayoutRequestsBinding
 
 class ReportAdapter : RecyclerView.Adapter<ReportViewHolder>() {
@@ -36,9 +38,7 @@ class ReportAdapter : RecyclerView.Adapter<ReportViewHolder>() {
         holder.itemView.setOnClickListener(){
             val bundle = bundleOf(REPORT_ID to reportResponseList[position].id.toString())
 
-            //holder.itemView.findNavController().navigate(
-            //    R.id.action_reportsGuarda_to_reportDetails, bundle
-            //)
+            holder.itemView.findNavController().navigate(R.id.action_viewReports_to_reportDetails, bundle)
         }
 
     }

@@ -3,8 +3,10 @@ package com.una.FrontEndTango.Adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.una.FrontEndTango.Model.TicketResponse
+import com.una.FrontEndTango.R
 import com.una.FrontEndTango.databinding.LayoutRequestsBinding
 
 class TicketAdapter : RecyclerView.Adapter<TicketViewHolder>() {
@@ -36,9 +38,7 @@ class TicketAdapter : RecyclerView.Adapter<TicketViewHolder>() {
         holder.itemView.setOnClickListener(){
             val bundle = bundleOf(TICKET_ID to ticketResponseList[position].id.toString())
 
-            //holder.itemView.findNavController().navigate(
-            //    R.id.action_ticketsGuarda_to_ticketDetails, bundle
-            //)
+            holder.itemView.findNavController().navigate(R.id.action_ticketsAdmin_to_ticketDetails, bundle)
         }
 
     }

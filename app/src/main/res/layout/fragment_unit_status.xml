@@ -29,7 +29,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="-14dp"
-                    android:text="UNIT LAPTOP 25"
+                    android:text="UNIT CLASSROOM C18"
                     android:textAlignment="center"
                     android:textAppearance="@style/title_style"
                     android:textSize="28dp" />
@@ -45,7 +45,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:text="STUDENT:"
+                        android:text="TEACHER:"
                         android:textAlignment="viewStart"
                         android:textAppearance="@style/label_style"
                         android:textSize="20dp" />
@@ -184,7 +184,7 @@
                             android:id="@+id/icon_progress2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/unit_progress1"
+                            android:src="@drawable/unit_progress2"
                             app:srcCompat="@drawable/unit_progress2" />
 
                         <ImageView
@@ -252,7 +252,8 @@
                             android:id="@+id/icon_progress3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/unit_progress1" />
+                            android:src="@drawable/unit_progress3"
+                            app:srcCompat="@drawable/unit_progress3"/>
 
                         <ImageView
                             android:id="@+id/imageView122"
@@ -319,7 +320,8 @@
                             android:id="@+id/icon_progress4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/unit_progress1" />
+                            android:src="@drawable/unit_progress4"
+                            app:srcCompat="@drawable/unit_progress4"/>
 
                     </LinearLayout>
 
