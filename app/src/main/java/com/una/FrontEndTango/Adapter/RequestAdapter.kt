@@ -33,8 +33,8 @@ class RequestAdapter : RecyclerView.Adapter<RequestViewHolder>() {
         val currentItem = requestResponseList[position]
 
         // Seteamos textos o imagenes del item actual
-        holder.binding.itemTitle.text = currentItem.item_name
-        holder.binding.itemDetails.text = currentItem.classroom_name
+        holder.binding.itemTitle.text = currentItem.asset_id.toString()
+        holder.binding.itemDetails.text = currentItem.classroom_id.toString()
 
         holder.itemView.setOnClickListener(){
             val bundle = bundleOf(REQUEST_ID to requestResponseList[position].id.toString())

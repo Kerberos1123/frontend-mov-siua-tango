@@ -10,9 +10,9 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.una.FrontEndTango.R
 import com.una.FrontEndTango.databinding.FragmentRequestDetailsBinding
-import com.una.FrontEndTango.Adapter.RecyclerAdapterRequests.Companion.REQUEST_ID
 import androidx.core.os.bundleOf
-import com.una.FrontEndTango.Adapter.RecyclerAdapterRequests
+import com.una.FrontEndTango.Adapter.RequestAdapter
+import com.una.FrontEndTango.Adapter.RequestAdapter.Companion.REQUEST_ID
 import com.una.FrontEndTango.ViewModel.*
 
 
@@ -49,10 +49,10 @@ class RequestDetails : Fragment() {
                     }
                     is StateRequest.Success -> {
                         state.request?.let {
-                            binding.textUserName2.text = it.user_name
-                            binding.textRole.text = it.user_role
-                            binding.textItem.text = it.item_name
-                            binding.textUserClass.text = it.classroom_name
+                            binding.textUserName2.text = it.classroom_id.toString()
+                            binding.textUserRole.text = it.asset_id.toString()
+                            binding.textUserItem.text = it.user_id.toString()
+                            binding.textUserClass.text = it.asset_id.toString()
                         }
                     }
                     else -> {
@@ -83,7 +83,7 @@ class RequestDetails : Fragment() {
 
         binding.btnConfirm.setOnClickListener {
 
-            val bundle = bundleOf(RecyclerAdapterRequests.REQUEST_ID to requestId)
+            val bundle = bundleOf(RequestAdapter.REQUEST_ID to requestId)
 
             //requestViewModel.deleteRequestById(re)
             findNavController().navigate(R.id.action_requestDetails_to_requestsGuarda)

@@ -30,8 +30,8 @@ class TicketAdapter : RecyclerView.Adapter<TicketViewHolder>() {
         val currentItem = ticketResponseList[position]
 
         // Seteamos textos o imagenes del item actual
-        holder.binding.itemTitle.text = currentItem.title
-        holder.binding.itemDetails.text = currentItem.description
+        holder.binding.itemTitle.text = currentItem.ticket_reason_id.toString()
+        holder.binding.itemDetails.text = currentItem.user_id.toString()
 
         holder.itemView.setOnClickListener(){
             val bundle = bundleOf(TICKET_ID to ticketResponseList[position].id.toString())

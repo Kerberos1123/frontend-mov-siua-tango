@@ -1,9 +1,11 @@
 package com.una.FrontEndTango.Adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.RecyclerView
 import com.una.FrontEndTango.Model.ClassResponse
 import com.una.FrontEndTango.R
@@ -32,16 +34,20 @@ class ClassAdapter : RecyclerView.Adapter<ClassViewHolder>() {
         // Obtenemos el item actual
         val currentItem = ClassResponseList[position]
 
-        holder.binding.titleClase.text = currentItem.title
-        holder.binding.itemDetails.text = currentItem.title
-        holder.binding.itemState.text = currentItem.description
+        holder.binding.titleClase.text = currentItem.name
+        holder.binding.itemDetails.text = currentItem.id_classroom.toString()
+        holder.binding.itemState.text = currentItem.name
 
         holder.itemView.setOnClickListener(){
             val bundle = bundleOf(Class_ID to ClassResponseList[position].id.toString())
 
-            holder.itemView.findNavController().navigate(
-                R.id.action_clasesGuarda_to_unitStatus, bundle
-            )
+            // Conectar al destino del NavController segun el fragment se encuentra en este momento
+            when(holder.itemView.findNavController().currentDestination?.id)
+            {
+                R.id.clasesGuarda-> holder.itemView.findNavController().navigate(R.id.action_clasesGuarda_to_unitStatus, bundle)
+                R.id.clasesAdmin-> holder.itemView.findNavController().navigate(R.id.action_clasesAdmin_to_unitStatus, bundle)
+            }
+
         }
 
     }
