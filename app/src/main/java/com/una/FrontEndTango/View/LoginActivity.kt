@@ -39,7 +39,7 @@ class LoginActivity : AppCompatActivity() {
 
             }else{ //los dos campos estan llenos
 
-                //abre el vista de dashboard
+                //abre la vista de dashboard
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
 
