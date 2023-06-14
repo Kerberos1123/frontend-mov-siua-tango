@@ -15,7 +15,7 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="160dp"
             android:layout_margin="20dp"
             android:background="@color/grey">
 
@@ -28,7 +28,7 @@
                     android:id="@+id/unit_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="-14dp"
+                    android:layout_marginBottom="-5dp"
                     android:text="UNIT CLASSROOM C18"
                     android:textAlignment="center"
                     android:textAppearance="@style/title_style"
@@ -37,7 +37,36 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="-10dp"
+                    android:layout_marginBottom="-5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/class_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="35dp"
+                        android:text="CLASS"
+                        android:textAlignment="viewEnd"
+                        android:textAppearance="@style/label_style"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/class_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:fontFamily="@font/segoeui"
+                        android:text="PROGRAMACION IV"
+                        android:textAlignment="viewStart"
+                        android:textAppearance="@style/label_style"
+                        android:textSize="20dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="-5dp"
                     android:orientation="horizontal">
 
                     <TextView
@@ -45,7 +74,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="35dp"
-                        android:text="TEACHER:"
+                        android:text="TEACHER"
                         android:textAlignment="viewStart"
                         android:textAppearance="@style/label_style"
                         android:textSize="20dp" />
@@ -54,7 +83,7 @@
                         android:id="@+id/textView6"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="3dp"
+                        android:layout_marginLeft="10dp"
                         android:fontFamily="@font/segoeui"
                         android:text="DANIEL VARGAS"
                         android:textAlignment="viewStart"
@@ -68,22 +97,24 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/class_label"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:id="@+id/user_type2"
+                        android:layout_width="280dp"
+                        android:layout_height="match_parent"
                         android:layout_marginLeft="35dp"
-                        android:text="CLASS:"
-                        android:textAlignment="viewEnd"
+                        android:layout_weight="1"
+                        android:text="PERMISSON"
+                        android:textAlignment="viewStart"
                         android:textAppearance="@style/label_style"
                         android:textSize="20dp" />
 
                     <TextView
-                        android:id="@+id/class_name"
+                        android:id="@+id/textView17"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="2dp"
+                        android:layout_marginHorizontal="3dp"
+                        android:layout_weight="1"
                         android:fontFamily="@font/segoeui"
-                        android:text="PROGRAMACION IV"
+                        android:text="GUARD"
                         android:textAlignment="viewStart"
                         android:textAppearance="@style/label_style"
                         android:textSize="20dp" />
@@ -365,12 +396,5 @@
             </FrameLayout>
         </LinearLayout>
 
-        <Button
-            android:id="@+id/back_button"
-            style="@style/button_style"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:text="BACK" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

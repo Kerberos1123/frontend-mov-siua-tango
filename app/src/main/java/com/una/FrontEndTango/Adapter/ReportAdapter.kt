@@ -34,6 +34,7 @@ class ReportAdapter : RecyclerView.Adapter<ReportViewHolder>() {
         // Seteamos textos o imagenes del item actual
         holder.binding.itemTitle.text = currentItem.title
         holder.binding.itemDetails.text = currentItem.description
+        holder.binding.itemImage.setImageResource(R.drawable.icon_reports)
 
         holder.itemView.setOnClickListener(){
             val bundle = bundleOf(REPORT_ID to reportResponseList[position].id.toString())

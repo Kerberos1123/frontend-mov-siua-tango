@@ -69,7 +69,7 @@ class ChangePassword : Fragment() {
         binding.btnChange.setOnClickListener {
 
             val dialogBuilder = AlertDialog.Builder(requireActivity())
-            dialogBuilder.setCancelable(true)
+            dialogBuilder.setCancelable(false)
 
             // Iniciar verificacion de password
             var pass = "1234" // Poner en esta variable el password del usuario sacandolo de la base de datos

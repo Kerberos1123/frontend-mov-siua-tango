@@ -24,6 +24,7 @@ class ProfileMenu : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_profile_menu, container, false)
 
+        // Cajas de texto del fragment
         val usernamebox : TextView = view.findViewById(R.id.textView13)
         val emailbox : TextInputEditText = view.findViewById(R.id.email_box)
         val phonebox : TextInputEditText = view.findViewById(R.id.phone_box)
@@ -38,16 +39,14 @@ class ProfileMenu : Fragment() {
 
         //Boton Change Password
         val botonChangePassword : Button = view.findViewById(R.id.btnChangePassword)
-        //Funcionalidad Boton Change Password
-        botonChangePassword.setOnClickListener{
-            // Hacer la navegacion de un fragment a otro, segun ruta encontrada en grafico de navegacion
+        botonChangePassword.setOnClickListener{ // Funcionalidad Boton Change Password
             findNavController().navigate(R.id.action_profileMenu_to_changePassword)
         }
 
         //Boton Logout
         val botonLogout: Button = view.findViewById(R.id.btnLogOut)
-        //Funcionalidad Boton Change Password
-        botonLogout.setOnClickListener{
+
+        botonLogout.setOnClickListener{ // Funcionalidad Boton Change Password
 
             val dialogBuilder = AlertDialog.Builder(requireActivity())
             dialogBuilder.setMessage("Are you sure?")

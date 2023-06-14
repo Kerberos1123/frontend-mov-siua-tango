@@ -37,6 +37,7 @@ class ClassAdapter : RecyclerView.Adapter<ClassViewHolder>() {
         holder.binding.titleClase.text = currentItem.name
         holder.binding.itemDetails.text = currentItem.id_classroom.toString()
         holder.binding.itemState.text = currentItem.name
+        holder.binding.itemImage.setImageResource(R.drawable.icon_group)
 
         holder.itemView.setOnClickListener(){
             val bundle = bundleOf(Class_ID to ClassResponseList[position].id.toString())
