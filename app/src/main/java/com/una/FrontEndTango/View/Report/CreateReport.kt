@@ -1,11 +1,13 @@
 package com.una.FrontEndTango.View.Report
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.text.Editable
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Button
@@ -49,7 +51,16 @@ class CreateReport : Fragment() {
                 findNavController().navigateUp()
             }
 
+            // Esconder teclado tocando afuera del EditText
+            view.setOnClickListener { it.hideKeyboard() }
+
             return view
+    }
+
+    @SuppressLint("ServiceCast")
+    fun View.hideKeyboard() { // Esconder teclado
+        val inputMethodManager = requireContext().getSystemService(android.content.Context.INPUT_METHOD_SERVICE) as? InputMethodManager
+        inputMethodManager?.hideSoftInputFromWindow(this.windowToken, 0)
     }
 
 }

@@ -1,11 +1,10 @@
 package com.una.FrontEndTango.View.Tickets
 
 
+import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import android.view.inputmethod.InputMethodManager
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Button
@@ -13,6 +12,9 @@ import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.una.FrontEndTango.R
+
+
+
 
 
 class CreateTicket : Fragment() {
@@ -53,8 +55,16 @@ class CreateTicket : Fragment() {
         }
         // --- -------------- ---
 
+        // Esconder teclado tocando afuera del EditText
+        view.setOnClickListener { it.hideKeyboard() }
 
         return view
+    }
+
+    @SuppressLint("ServiceCast")
+    fun View.hideKeyboard() { // Esconder teclado
+        val inputMethodManager = requireContext().getSystemService(android.content.Context.INPUT_METHOD_SERVICE) as? InputMethodManager
+        inputMethodManager?.hideSoftInputFromWindow(this.windowToken, 0)
     }
 
 }

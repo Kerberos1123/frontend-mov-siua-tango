@@ -40,9 +40,8 @@ class ProfileMenu : Fragment() {
                 // if the dialog is cancelable
                 .setCancelable(true)
                 .setPositiveButton("Yes") { dialog, _ ->
-                    // Salir de la cuenta
                     dialog.dismiss()
-
+                    // Salir de la cuenta y pasar al LoginActivity
                     val intent = Intent(this.activity, LoginActivity::class.java)
                     startActivity(intent)
                     this.activity?.finish()
