@@ -5,10 +5,6 @@ import androidx.lifecycle.ViewModelProvider
 import com.una.FrontEndTango.Repository.LoginRepository
 import com.una.FrontEndTango.Service.LoginService
 
-/**
- * ViewModel provider factory to instantiate LoginViewModel.
- * Required given LoginViewModel has a non-empty constructor
- */
 @Suppress("UNCHECKED_CAST")
 class LoginViewModelFactory : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
