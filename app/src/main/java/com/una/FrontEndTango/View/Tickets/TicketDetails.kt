@@ -61,33 +61,6 @@ class TicketDetails : Fragment() {
             }
         }
 
-        binding.btnDeny.setOnClickListener {
-            val dialogBuilder = AlertDialog.Builder(requireActivity())
-            dialogBuilder.setMessage("Are you sure?")
-                // if the dialog is cancelable
-                .setCancelable(true)
-                .setPositiveButton("Ok") { dialog, _ ->
-                    ticketViewModel.deleteTicketById(ticketId.toLong())
-                    findNavController().navigateUp()
-                    dialog.dismiss()
-                }
-                .setNegativeButton("No") { dialog, _ ->
-                    dialog.dismiss()
-                }
-            val alert = dialogBuilder.create()
-            alert.setTitle("Delete Task")
-            alert.show()
-        }
-
-        binding.btnConfirm.setOnClickListener {
-
-            val bundle = bundleOf(TicketAdapter.TICKET_ID to ticketId)
-
-            //ticketViewModel.deleteTicketById(re)
-            //findNavController().navigate(R.id.action_ticketDetails_to_ticketsGuarda)
-
-        }
-
         ticketViewModel.getTicket(ticketId.toLong())
 
         return binding.root

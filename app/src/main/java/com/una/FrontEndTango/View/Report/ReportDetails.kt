@@ -61,33 +61,6 @@ class ReportDetails : Fragment() {
             }
         }
 
-        binding.btnDeny.setOnClickListener {
-            val dialogBuilder = AlertDialog.Builder(requireActivity())
-            dialogBuilder.setMessage("Are you sure?")
-                // if the dialog is cancelable
-                .setCancelable(true)
-                .setPositiveButton("Ok") { dialog, _ ->
-                    reportViewModel.deleteReportById(reportId.toLong())
-                    findNavController().navigateUp()
-                    dialog.dismiss()
-                }
-                .setNegativeButton("No") { dialog, _ ->
-                    dialog.dismiss()
-                }
-            val alert = dialogBuilder.create()
-            alert.setTitle("Delete Task")
-            alert.show()
-        }
-
-        binding.btnConfirm.setOnClickListener {
-
-            val bundle = bundleOf(ReportAdapter.REPORT_ID to reportId)
-
-            //reportViewModel.deleteReportById(re)
-            //findNavController().navigate(R.id.action_reportDetails_to_reportsGuarda)
-
-        }
-
         reportViewModel.getReport(reportId.toLong())
 
         return binding.root
