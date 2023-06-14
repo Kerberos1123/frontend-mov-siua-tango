@@ -10,15 +10,21 @@ import android.widget.AutoCompleteTextView
 import android.widget.Button
 import android.widget.EditText
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.una.FrontEndTango.Model.ReportRequest
+import com.una.FrontEndTango.Model.TicketRequest
 import com.una.FrontEndTango.R
-
-
-
+import com.una.FrontEndTango.ViewModel.TicketViewModel
+import com.una.FrontEndTango.ViewModel.TicketViewModelFactory
 
 
 class CreateTicket : Fragment() {
 
+    // Shared view model
+    private val ticketViewModel : TicketViewModel by activityViewModels(){
+        TicketViewModelFactory()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,6 +48,13 @@ class CreateTicket : Fragment() {
             var reason: String = lista_display2.editableText.toString() // Motivo del ticket
             var details: String = view.findViewById<EditText?>(R.id.editTextTextMultiLine3).text.toString() // String con detalles proveidos por usuario
             //Log.i("Prueba", details) // Prueba
+
+            // Formar nuevo objeto con datos a agregar
+            var new_ticket: TicketRequest = TicketRequest(null, 1, 3, 6)
+
+            // Agregar nuevo report a la base de datos
+            ticketViewModel.createTicket(new_ticket)
+
             findNavController().navigateUp() // Hacer la navegacion de un fragment a otro, segun ruta encontrada en grafico de navegacion
         }
         // --- -------------- ---

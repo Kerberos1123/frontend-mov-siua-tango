@@ -1,5 +1,6 @@
 package com.una.FrontEndTango.View.User
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.AlertDialog
 import android.content.Context
@@ -105,6 +106,9 @@ class ChangePassword : Fragment() {
         }
 
         //userViewModel.getUser(userId.toLong())
+
+        // Esconder teclado tocando afuera del EditText
+        binding.root.setOnClickListener { context?.let { it1 -> HideKeyboard(it1, binding.root) }} // Esconder el teclado }
 
         return binding.root
     }

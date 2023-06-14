@@ -14,12 +14,24 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.compose.ui.node.getOrAddAdapter
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.textfield.TextInputLayout
+import com.una.FrontEndTango.Model.ReportRequest
+import com.una.FrontEndTango.Model.RequestRequest
 import com.una.FrontEndTango.R
+import com.una.FrontEndTango.ViewModel.ReportViewModel
+import com.una.FrontEndTango.ViewModel.ReportViewModelFactory
+import com.una.FrontEndTango.ViewModel.RequestViewModel
+import com.una.FrontEndTango.ViewModel.RequestViewModelFactory
 
 
 class CreateReport : Fragment() {
+
+    // Shared view model
+    private val reportViewModel : ReportViewModel by activityViewModels(){
+        ReportViewModelFactory()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,7 +53,14 @@ class CreateReport : Fragment() {
                 // --- Recobrar los datos para crear nuevo dato en la base de datos ---
                 var unit_selected = lista_display.editableText.toString() // Tipo de unidad seleccionada
                 var details: String = view.findViewById<EditText?>(R.id.new_report_details).text.toString() // String con detalles proveidos por usuario
-                Log.i("Unit type", unit_selected) // Prueba
+                //Log.i("Unit type", unit_selected) // Prueba
+
+                // Formar nuevo objeto con datos a agregar
+                var new_report: ReportRequest = ReportRequest(null, unit_selected, details)
+
+                // Agregar nuevo report a la base de datos
+                reportViewModel.createReport(new_report)
+
                 findNavController().navigateUp()
             }
 

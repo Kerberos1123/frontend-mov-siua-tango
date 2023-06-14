@@ -16,7 +16,6 @@ data class RequestRequest(
     var date_hour:Date,
     var user_id:Long?=null,
 
-
     )
 data class RequestResponse(
     var id: Long? = null,

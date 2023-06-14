@@ -8,12 +8,24 @@ import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Button
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.una.FrontEndTango.Model.Request
+import com.una.FrontEndTango.Model.RequestRequest
 import com.una.FrontEndTango.R
+import com.una.FrontEndTango.ViewModel.RequestViewModel
+import com.una.FrontEndTango.ViewModel.RequestViewModelFactory
+import java.text.SimpleDateFormat
+import java.time.LocalDate
+import java.util.*
 
 
 class UnitRequest : Fragment() {
 
+    // Shared view model
+    private val requestViewModel : RequestViewModel by activityViewModels(){
+        RequestViewModelFactory()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,9 +42,7 @@ class UnitRequest : Fragment() {
         // --- ---
 
         // --- Boton Select Unit ---
-        // Variable donde tenemos el boton
         val botonSelectUnit: Button = view.findViewById(R.id.btSelectUnit)
-        // Hacer funcion del boton tras hacerle click
         botonSelectUnit.setOnClickListener{
             // Hacer la navegacion de un fragment a otro, segun ruta encontrada en grafico de navegacion
             findNavController().navigate(R.id.action_unitRequest_to_selectUnit)
@@ -40,16 +50,22 @@ class UnitRequest : Fragment() {
         // --- -------------- ---
 
         // --- Boton Send Request ---
-        // Variable donde tenemos el boton
         val botonSend: Button = view.findViewById(R.id.btSendRequest)
 
-        // Hacer funcion del boton tras hacerle click
         botonSend.setOnClickListener{
             // Hacer la validacion de los datos
+            val date = Date()
+            var id: Long = 68 ; var asset_id: Long = 40; var clasroom_id: Long = 22; var user_id: Long = 24
 
-            // Hacer la navegacion de un fragment a otro, segun ruta encontrada en grafico de navegacion
+            // Formar nuevo objeto con datos a agregar
+            var new_request: RequestRequest = RequestRequest(null, asset_id, clasroom_id, date, user_id)
+
+            // Agregar nuevo request a la base de datos
+            requestViewModel.createRequest(new_request)
+
             findNavController().navigate(R.id.action_unitRequest_to_menuProfe)
         }
+
         // --- -------------- ---
 
         // --- Boton Cancel ---
