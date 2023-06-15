@@ -19,9 +19,9 @@ data class RequestRequest(
     )
 data class RequestResponse(
     var id: Long? = null,
-    var asset_id:Long? = null,
-    var classroom_id: Long? = null,
-    var date_hour:Date,
+    var assets_id:Long? = null,
+    var classroomId: Long? = null,
+    var dateHour:Date,
     var user_id:Long?=null,
 
 )

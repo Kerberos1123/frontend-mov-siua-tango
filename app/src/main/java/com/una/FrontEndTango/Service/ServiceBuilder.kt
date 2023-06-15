@@ -36,7 +36,7 @@ object ServiceBuilder {
     private val retrofit = Retrofit.Builder()
         //.baseUrl(BuildConfig.BASE_URL) // change this IP for testing by your actual machine IP
         //.baseUrl("https://648170e829fa1c5c5031637a.mockapi.io/") // change this IP for testing by your actual machine IP
-        //.baseUrl("http://localhost:8080")
+        //.baseUrl("https://localhost:8080")
         .baseUrl("https://backend-mov-siua-tango-v01.herokuapp.com/")
         .addConverterFactory(GsonConverterFactory.create(gson))
         .client(client)

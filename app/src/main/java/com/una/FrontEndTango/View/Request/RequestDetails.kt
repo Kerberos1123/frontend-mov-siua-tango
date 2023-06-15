@@ -50,9 +50,10 @@ class RequestDetails : Fragment() {
                     is StateRequest.Success -> {
                         state.request?.let {
                             binding.textUserName2.text = it.id.toString()
-                            binding.textUserRole.text = it.asset_id.toString()
-                            binding.textUserItem.text = it.user_id.toString()
-                            binding.textUserClass.text = it.asset_id.toString()
+                            binding.textUserRole.text = it.user_id.toString()
+                            binding.textUserItem.text = it.assets_id.toString()
+                            binding.textUserClass.text = it.classroomId.toString()
+                            binding.textUserHours.text = it.dateHour.toString()
                         }
                     }
                     else -> {
