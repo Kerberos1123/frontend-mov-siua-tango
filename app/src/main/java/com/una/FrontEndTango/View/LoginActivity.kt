@@ -1,27 +1,27 @@
 package com.una.FrontEndTango.View
 
+//IMPORTS NUEVOS
+
+import Globals
 import android.app.Activity
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.EditText
 import android.widget.Toast
 import androidx.annotation.StringRes
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.una.FrontEndTango.databinding.ActivityLoginBinding
-
-//IMPORTS NUEVOS
-
+import com.una.FrontEndTango.Model.LoggedInUserView
+import com.una.FrontEndTango.Model.LoginRequest
+import com.una.FrontEndTango.R
 import com.una.FrontEndTango.ViewModel.LoginViewModel
 import com.una.FrontEndTango.ViewModel.LoginViewModelFactory
-import androidx.lifecycle.Observer
-import com.una.FrontEndTango.Model.LoginRequest
-import com.una.FrontEndTango.Model.LoggedInUserView
-import com.una.FrontEndTango.R
+import com.una.FrontEndTango.databinding.ActivityLoginBinding
+
 
 // LOGIN ACTIVITY VIEJO
 
@@ -106,6 +106,9 @@ class LoginActivity : AppCompatActivity() {
             }
         })
 
+        val sharedData: Globals = Globals.instance
+
+
         loginViewModel.loginResponse.observe(this@LoginActivity, Observer {
             val loginResult = it ?: return@Observer
 
@@ -114,6 +117,7 @@ class LoginActivity : AppCompatActivity() {
                 showLoginFailed(loginResult.error)
             }*/
             if (loginResult.success != null) {
+                sharedData.value = binding.etEmail.text.toString()
                 updateUiWithUser(loginResult.success)
             }
             setResult(Activity.RESULT_OK)

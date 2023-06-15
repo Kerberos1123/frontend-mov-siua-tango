@@ -1,18 +1,22 @@
 package com.una.FrontEndTango.View
 
+import Globals
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.activity.viewModels
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.NavGraph
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.una.FrontEndTango.R
+import com.una.FrontEndTango.ViewModel.LoginViewModel
 import com.una.FrontEndTango.ViewModel.RequestViewModel
 import com.una.FrontEndTango.ViewModel.RequestViewModelFactory
 import com.una.FrontEndTango.databinding.ActivityMainBinding
@@ -38,9 +42,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
 
     val requestViewModel by viewModels<RequestViewModel> ()
-
-
-
+    val loginViewModel by viewModels<LoginViewModel> ()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,6 +55,13 @@ class MainActivity : AppCompatActivity() {
             R.id.nav_host_container
         ) as NavHostFragment
         navController = navHostFragment.navController
+
+        val users: ArrayList<String> =  resources.getStringArray(R.array.users).toList() as ArrayList<String>
+        val types: ArrayList<String> =  resources.getStringArray(R.array.usertypes).toList() as ArrayList<String>
+
+        val sharedData: Globals = Globals.instance
+        var type = types[users.indexOf(sharedData.value.toString())]
+        user_type = type.toInt()
 
         // Seleccionar el fragment inicial y navegar
         val graphInflater = navHostFragment.navController.navInflater

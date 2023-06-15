@@ -58,6 +58,18 @@
 
     //---------------------------------------
 
+    <string-array name="usertypes">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="users">
+        <item>admin@gmail.com</item>
+        <item>staff@gmail.com</item>
+        <item>user@gmail.com</item>
+    </string-array>
+
 
     <string name="appTitle">MVVM Simple Sample</string>
     <!-- Strings related to login -->
