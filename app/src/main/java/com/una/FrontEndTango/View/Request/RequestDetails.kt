@@ -49,7 +49,7 @@ class RequestDetails : Fragment() {
                     }
                     is StateRequest.Success -> {
                         state.request?.let {
-                            binding.textUserName2.text = it.classroom_id.toString()
+                            binding.textUserName2.text = it.id.toString()
                             binding.textUserRole.text = it.asset_id.toString()
                             binding.textUserItem.text = it.user_id.toString()
                             binding.textUserClass.text = it.asset_id.toString()

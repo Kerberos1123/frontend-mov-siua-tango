@@ -67,23 +67,4 @@ class ReportDetails : Fragment() {
     }
 
 
-    //-------------     Comentado para binding y mockapi
-    /*
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        //Boton Confirm
-        val botonConfirm:Button =view.findViewById(R.id.btnConfirm)
-
-        //Funcionalidad Boton Confirm
-        botonConfirm.setOnClickListener{
-            val popUpReport = ReportPopUp()
-            popUpReport.show((activity as AppCompatActivity).supportFragmentManager,"popUpReport")
-        }
-
-    }
-
-
-     */
-
 }
