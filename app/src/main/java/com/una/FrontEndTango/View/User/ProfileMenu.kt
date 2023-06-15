@@ -40,9 +40,8 @@ class ProfileMenu : Fragment() {
 
         //Remplazar variables por valores del usuario
         val sharedData: Globals = Globals.instance
-        var type = types[users.indexOf(sharedData.value.toString())]
-        role = resources.getStringArray(R.array.types).get(type.toInt()).toString()
-        email = sharedData.value.toString()
+        role = sharedData.i1?.let { resources.getStringArray(R.array.types).get(it).toString() }.toString()
+        email = sharedData.v1.toString()
 
         //Setear texto en cajas de texto
         userrolebox.setText(role); usernamebox.setText(username); emailbox.setText(email); phonebox.setText(phone)

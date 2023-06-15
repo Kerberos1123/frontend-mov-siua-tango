@@ -60,8 +60,8 @@ class MainActivity : AppCompatActivity() {
         val types: ArrayList<String> =  resources.getStringArray(R.array.usertypes).toList() as ArrayList<String>
 
         val sharedData: Globals = Globals.instance
-        var type = types[users.indexOf(sharedData.value.toString())]
-        user_type = type.toInt()
+        var type = types[users.indexOf(sharedData.v1.toString())].toInt()
+        sharedData.i1 = type ; user_type = type
 
         // Seleccionar el fragment inicial y navegar
         val graphInflater = navHostFragment.navController.navInflater

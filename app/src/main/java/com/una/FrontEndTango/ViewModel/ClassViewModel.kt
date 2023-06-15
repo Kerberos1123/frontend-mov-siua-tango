@@ -107,7 +107,7 @@ class ClassViewModel constructor(
         }
     }
 
-    fun updateTask(classRequest: ClassRequest) {
+    fun updateClass(classRequest: ClassRequest) {
         _state.value = StateClass.Loading
         job = CoroutineScope(Dispatchers.IO + exceptionHandler).launch {
             loading.postValue(true)

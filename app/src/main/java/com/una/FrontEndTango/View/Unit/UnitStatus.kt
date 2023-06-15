@@ -1,5 +1,6 @@
 package com.una.FrontEndTango.View.Unit
 
+import Globals
 import android.app.AlertDialog
 import android.graphics.Color
 import android.os.Bundle
@@ -18,10 +19,11 @@ import com.una.FrontEndTango.R
 
 class UnitStatus : Fragment() {
 
-    var unit_state = 3 // Estado de progreso
+    var unit_state = 1 // Estado de progreso
 
+    val sharedData: Globals = Globals.instance
     // Tipo de usuario que esta metido en este fragment, dependiendo de esto funciones variaran
-    var tipo_usuario = 1 // 0: ADMIN - 1:GUARDA - 2:PROFE
+    var tipo_usuario = sharedData.i1 // 0: ADMIN - 1:GUARDA - 2:PROFE
 
     private fun setProgressIconsColors(view : View){ // Funcion para mostrar en que estado esta
 
@@ -57,12 +59,7 @@ class UnitStatus : Fragment() {
         val caja_clase : TextView = view.findViewById(R.id.class_name)
 
         // Cambiar display tipo de usuario
-        when(tipo_usuario)
-        {
-            0-> caja_tipo_usuario.setText("ADMIN")
-            1-> caja_tipo_usuario.setText("GUARD")
-            2-> caja_tipo_usuario.setText("TEACHER")
-        }
+        caja_tipo_usuario.setText(sharedData.i1?.let { resources.getStringArray(R.array.types).get(it).toString() }.toString())
 
         setProgressIconsColors(view) // Colorear los iconos de progreso
 

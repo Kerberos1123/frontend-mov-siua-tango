@@ -17,10 +17,10 @@ interface ClassService {
     suspend fun deleteClassById(@Path("id") id: Long): Response<Void>
 
     @POST("v1/classes")
-    suspend fun createClass(@Body taskRequest: ClassRequest) : Response<ClassResponse>
+    suspend fun createClass(@Body classRequest: ClassRequest) : Response<ClassResponse>
 
     @PUT("v1/classes")
-    suspend fun updateClass(@Body taskRequest: ClassRequest) : Response<ClassResponse>
+    suspend fun updateClass(@Body classRequest: ClassRequest) : Response<ClassResponse>
 
     companion object{
         private var classService : ClassService? = null

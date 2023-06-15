@@ -11,6 +11,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.una.FrontEndTango.Adapter.ClassAdapter
+import com.una.FrontEndTango.Model.ClassRequest
+import com.una.FrontEndTango.Model.TicketRequest
 import com.una.FrontEndTango.R
 import com.una.FrontEndTango.ViewModel.ClassViewModelFactory
 
