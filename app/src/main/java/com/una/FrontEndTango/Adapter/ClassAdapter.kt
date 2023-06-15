@@ -34,7 +34,7 @@ class ClassAdapter : RecyclerView.Adapter<ClassViewHolder>() {
         // Obtenemos el item actual
         val currentItem = ClassResponseList[position]
 
-        holder.binding.titleClase.text = currentItem.name
+        holder.binding.titleClase.text = currentItem.id.toString()
         holder.binding.itemDetails.text = currentItem.id_classroom.toString()
         holder.binding.itemState.text = currentItem.name
         holder.binding.itemImage.setImageResource(R.drawable.icon_group)
