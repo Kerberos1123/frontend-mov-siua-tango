@@ -57,11 +57,18 @@
     </string-array>
 
     //---------------------------------------
+    <string-array name="types">
+        <item>ADMIN</item>
+        <item>GUARD</item>
+        <item>TEACHER</item>
+        <item>STUDENT</item>
+    </string-array>
 
     <string-array name="usertypes">
         <item>0</item>
         <item>1</item>
         <item>2</item>
+        <item>3</item>
     </string-array>
 
     <string-array name="users">

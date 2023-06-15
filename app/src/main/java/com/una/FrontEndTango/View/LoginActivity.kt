@@ -117,7 +117,7 @@ class LoginActivity : AppCompatActivity() {
                 showLoginFailed(loginResult.error)
             }*/
             if (loginResult.success != null) {
-                sharedData.value = binding.etEmail.text.toString()
+                sharedData.value = binding.etEmail.text.toString() // Poner en variable global usuario
                 updateUiWithUser(loginResult.success)
             }
             setResult(Activity.RESULT_OK)

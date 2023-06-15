@@ -50,7 +50,7 @@ class TicketDetails : Fragment() {
                     is StateTicket.Success -> {
                         state.ticket?.let {
                             binding.textUserName2.text = it.ticket_reason_id.toString()
-                            binding.editTextTextMultiLine2.setText(it.asset_type_id.toString())
+                            binding.editTextTextMultiLine2.setText(it.id.toString())
                         }
                     }
                     else -> {

@@ -19,10 +19,10 @@ interface TicketService {
     suspend fun deleteTicketById(@Path("id") id: Long): Response<Void>
 
     @POST("v1/tickets")
-    suspend fun createTicket(@Body taskRequest: TicketRequest) : Response<TicketResponse>
+    suspend fun createTicket(@Body ticketRequest: TicketRequest) : Response<TicketResponse>
 
     @PUT("v1/tickets")
-    suspend fun updateTicket(@Body taskRequest: TicketRequest) : Response<TicketResponse>
+    suspend fun updateTicket(@Body ticketRequest: TicketRequest) : Response<TicketResponse>
 
     companion object{
         private var ticketService : TicketService? = null
