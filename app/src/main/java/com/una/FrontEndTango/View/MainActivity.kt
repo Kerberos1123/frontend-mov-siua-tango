@@ -2,6 +2,8 @@ package com.una.FrontEndTango.View
 
 import Globals
 import android.annotation.SuppressLint
+import android.app.AlertDialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -76,7 +78,7 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView.setOnNavigationItemSelectedListener {
             when(it.itemId) {
 
-                //R.id.buttonBack ->navController.navigate(R.id.buttonHome)
+                R.id.buttonBack ->LogOut()
                 R.id.buttonHome -> fragment_directions[user_type]?.let { it1 -> navController.navigate(it1) }
                 R.id.buttonProfile ->navController.navigate(R.id.buttonProfile)
             }
@@ -84,6 +86,29 @@ class MainActivity : AppCompatActivity() {
             }
 
         setContentView(binding.root)
+    }
+
+    fun LogOut()
+    {
+        val dialogBuilder = AlertDialog.Builder(this)
+        dialogBuilder.setMessage("Are you sure?")
+            // if the dialog is cancelable
+            .setCancelable(true)
+            .setPositiveButton("Yes") { dialog, _ ->
+                dialog.dismiss()
+                // Salir de la cuenta y pasar al LoginActivity
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
+                this.finish()
+
+            }
+            .setNegativeButton("No") { dialog, _ ->
+                // Cancelar
+                dialog.dismiss()
+            }
+        val alert = dialogBuilder.create()
+        alert.setTitle("LogOut")
+        alert.show()
     }
 
 }

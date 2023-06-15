@@ -36,7 +36,7 @@ class UnitRequest : Fragment() {
 
         // --- Crear una lista con opciones seleccionables ---
         val lista_display : AutoCompleteTextView = view.findViewById(R.id.lista_clases_sel) // Referencia al display
-        val items_lista = resources.getStringArray(R.array.test_array) // Sacar los datos de un array de strings.xml para meter en la lista
+        val items_lista = resources.getStringArray(R.array.ej_clases) // Sacar los datos de un array de strings.xml para meter en la lista
         val adaptador_lista = getActivity()?.let { ArrayAdapter(it.getApplicationContext(),R.layout.layout_item_lista,items_lista) } // Crear adaptador, layout_item_lista es el diseño que tiene cada item en el dropdown
         lista_display.setAdapter(adaptador_lista) // Ponerle el adaptador a la lista
         // --- ---

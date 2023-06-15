@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">UniActivos SIUA</string>
     <string name="login">Login</string>
     <string name="password">Password</string>
     <string name="email">Email</string>
@@ -26,6 +26,7 @@
 
     <string-array name="motivos_ticket">
         <item>DAMAGE</item>
+        <item>SUGGESTION</item>
         <item>OTHER</item>
     </string-array>
 
@@ -44,6 +45,13 @@
         <item>C18</item>
         <item>C19</item>
         <item>D05</item>
+    </string-array>
+
+    <string-array name="ej_clases">
+        <item>PROGRAMACION 4</item>
+        <item>MOVILES</item>
+        <item>REDES</item>
+        <item>MATE PARA INFO</item>
     </string-array>
 
     <string-array name="ej_unidades">
