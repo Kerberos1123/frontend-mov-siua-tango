@@ -57,8 +57,11 @@ class RequestDetails : Fragment() {
                             //val json = JSONObject(it)
 
 
-                            binding.textUserName2.text = it.id.toString()
-                            //binding.textUserRole.text = it..toString()
+                            binding.textUserName2.text = it.user.firstName + " " + it.user.lastName
+
+                            var role = it.user.roleList[0].id.toInt()
+                            binding.textUserRole.text = resources.getStringArray(R.array.types)[role-1]
+
                             binding.textUserItem.text = it.assets.assetName
                             binding.textUserClass.text = it.classroomId.toString()
                            // binding.textUserHours.text = it.dateHour.toString()
