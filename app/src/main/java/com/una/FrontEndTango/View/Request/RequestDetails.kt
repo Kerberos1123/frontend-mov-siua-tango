@@ -14,6 +14,10 @@ import androidx.core.os.bundleOf
 import com.una.FrontEndTango.Adapter.RequestAdapter
 import com.una.FrontEndTango.Adapter.RequestAdapter.Companion.REQUEST_ID
 import com.una.FrontEndTango.ViewModel.*
+import org.json.JSONObject
+import com.google.gson.Gson
+import com.google.gson.JsonObject
+
 
 
 class RequestDetails : Fragment() {
@@ -49,11 +53,15 @@ class RequestDetails : Fragment() {
                     }
                     is StateRequest.Success -> {
                         state.request?.let {
+
+                            //val json = JSONObject(it)
+
+
                             binding.textUserName2.text = it.id.toString()
-                            binding.textUserRole.text = it.user_id.toString()
-                            binding.textUserItem.text = it.assets_id.toString()
+                            //binding.textUserRole.text = it..toString()
+                            binding.textUserItem.text = it.assets.assetName
                             binding.textUserClass.text = it.classroomId.toString()
-                            binding.textUserHours.text = it.dateHour.toString()
+                           // binding.textUserHours.text = it.dateHour.toString()
                         }
                     }
                     else -> {
