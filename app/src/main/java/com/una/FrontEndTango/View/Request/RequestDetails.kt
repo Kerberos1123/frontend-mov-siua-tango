@@ -56,14 +56,23 @@ class RequestDetails : Fragment() {
 
                             //val json = JSONObject(it)
 
+                            // Request Details textbox
+                            binding.txtResquestDetails.text = "REQUEST " + String.format("%02d", it.id)
 
+                            // Username
                             binding.textUserName2.text = it.user.firstName + " " + it.user.lastName
 
+                            // User Role
                             var role = it.user.roleList[0].id.toInt()
                             binding.textUserRole.text = resources.getStringArray(R.array.types)[role-1]
 
+                            // Asset
                             binding.textUserItem.text = it.assets.assetName
+
+                            // Class
                             binding.textUserClass.text = it.classroomId.toString()
+
+                            // Hours
                            // binding.textUserHours.text = it.dateHour.toString()
                         }
                     }
