@@ -67,10 +67,10 @@ class RequestDetails : Fragment() {
                             binding.textUserRole.text = resources.getStringArray(R.array.types)[role-1]
 
                             // Asset
-                            binding.textUserItem.text = it.assets.assetName
+                            binding.textUserItem.text = "CLASSROOM " + resources.getStringArray(R.array.ej_aulas)[it.classroomId?.toInt()!!]
 
                             // Class
-                            binding.textUserClass.text = it.classroomId.toString()
+                            binding.textUserClass.text = resources.getStringArray(R.array.ej_clases)[it.classroomId?.toInt()!!]
 
                             // Hours
                            // binding.textUserHours.text = it.dateHour.toString()
