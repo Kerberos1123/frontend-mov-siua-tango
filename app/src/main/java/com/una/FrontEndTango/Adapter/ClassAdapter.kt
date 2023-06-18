@@ -35,12 +35,15 @@ class ClassAdapter : RecyclerView.Adapter<ClassViewHolder>() {
         val currentItem = ClassResponseList[position]
 
         holder.binding.titleClase.text = "CLASS " + currentItem.id.toString()
-        holder.binding.itemDetails.text = currentItem.id_classroom.toString()
-        holder.binding.itemState.text = currentItem.id_teacher.toString()
+
+        holder.binding.itemDetails.text = currentItem.classClassroom.classroomName
+
+        //holder.binding.itemState.text = "STATE: " + currentItem.
+
         holder.binding.itemImage.setImageResource(R.drawable.icon_group)
 
         holder.itemView.setOnClickListener(){
-            val bundle = bundleOf(Class_ID to ClassResponseList[position].id.toString())
+            val bundle = bundleOf(CLASS_ID to ClassResponseList[position].id.toString())
 
             // Conectar al destino del NavController segun el fragment se encuentra en este momento
             when(holder.itemView.findNavController().currentDestination?.id)
@@ -60,7 +63,7 @@ class ClassAdapter : RecyclerView.Adapter<ClassViewHolder>() {
     }
 
     companion object {
-        const val Class_ID = "Class_id"
+        const val CLASS_ID = "Class_id"
     }
 
 }

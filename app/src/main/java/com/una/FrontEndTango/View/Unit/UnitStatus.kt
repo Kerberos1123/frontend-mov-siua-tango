@@ -13,11 +13,25 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.una.FrontEndTango.Adapter.ClassAdapter
+import com.una.FrontEndTango.Adapter.RequestAdapter
 import com.una.FrontEndTango.R
+import com.una.FrontEndTango.ViewModel.RequestViewModel
+
+
+import com.una.FrontEndTango.databinding.FragmentUnitStatusBinding
+import com.una.FrontEndTango.Adapter.ClassAdapter.Companion.CLASS_ID
+import com.una.FrontEndTango.ViewModel.ClassViewModel
+import com.una.FrontEndTango.ViewModel.StateClass
+import com.una.FrontEndTango.ViewModel.StateRequest
 
 
 class UnitStatus : Fragment() {
+
+
+    //----------------VIEJO
 
     var unit_state = 1 // Estado de progreso
 
@@ -45,21 +59,84 @@ class UnitStatus : Fragment() {
         }
     }
 
+    //-------------------------------------------------------------------------------
+
+
+
+
+
+
+    //--------------------------------------- BINDING -------------------------------
+
+    // Definition of the binding variable
+    private var _binding: FragmentUnitStatusBinding? = null
+    private val binding get() = _binding!!
+
+    // Shared view model
+    private val classViewModel : ClassViewModel by activityViewModels()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        //----------------------  BINDING ---------------------
+
+        _binding = FragmentUnitStatusBinding.inflate(inflater,container,false)
+
+        val classId : String = arguments?.getString(CLASS_ID) ?: "0"
+
+
+        classViewModel.state.observe(viewLifecycleOwner){ state ->
+
+            with(binding.root) {
+                when (state) {
+
+                    StateClass.Loading -> {
+
+                    }
+
+                    is StateClass.Error -> {
+                    }
+                    is StateClass.Success -> {
+                        state.classs?.let {
+
+                            // Request Details textbox
+                            binding.unitTitle.text = "CLASSROOM " + it.id.toString()
+                            binding.className.text= it.className
+                            binding.teacherName.text = it.classTeacher.firstName +" "+ it.classTeacher.lastName
+                            binding.roleTeacher.text = it.classTeacher.roleList[0].name
+
+                        }
+                    }
+                    else -> {
+
+                    }
+                }
+
+            }
+        }
+
+        classViewModel.getClass(classId.toLong())
+
+        return binding.root
+
+        //-------------- VIEJO-------------------------------
+
+        /*
+
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_unit_status, container, false)
 
+
         // Cajas de texto
-        val caja_titulo : TextView = view.findViewById(R.id.unit_title)
-        val caja_tipo_usuario : TextView = view.findViewById(R.id.textView17)
-        val caja_nombre : TextView = view.findViewById(R.id.textView6)
-        val caja_clase : TextView = view.findViewById(R.id.class_name)
+       // val caja_titulo : TextView = view.findViewById(R.id.unit_title)
+      //  val caja_tipo_usuario : TextView = view.findViewById(R.id.textView17)
+      //  val caja_nombre : TextView = view.findViewById(R.id.textView6)
+      //  val caja_clase : TextView = view.findViewById(R.id.class_name)
 
         // Cambiar display tipo de usuario
-        caja_tipo_usuario.setText(sharedData.i1?.let { resources.getStringArray(R.array.types).get(it).toString() }.toString())
+        // caja_tipo_usuario.setText(sharedData.i1?.let { resources.getStringArray(R.array.types).get(it).toString() }.toString())
 
         setProgressIconsColors(view) // Colorear los iconos de progreso
 
@@ -188,6 +265,8 @@ class UnitStatus : Fragment() {
         }
 
         return view
+        */
+
     }
 
 }
