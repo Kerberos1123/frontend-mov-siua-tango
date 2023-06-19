@@ -25,7 +25,8 @@
             android:layout_height="wrap_content"
             android:text="ALGEBRA"
             android:textAlignment="center"
-            android:textSize="26sp"
+            android:textColor="@color/white"
+            android:textSize="28sp"
             android:textStyle="bold" />
 
         <TextView

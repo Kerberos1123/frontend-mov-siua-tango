@@ -34,18 +34,18 @@ class ClassAdapter : RecyclerView.Adapter<ClassViewHolder>() {
         // Obtenemos el item actual
         val currentItem = ClassResponseList[position]
 
-        holder.binding.titleClase.text = "CLASS " + currentItem.id.toString()
+        holder.binding.titleClase.text = currentItem.className
 
-        holder.binding.itemDetails.text = currentItem.classClassroom.classroomName
+        holder.binding.itemDetails.text = "CLASSROOM " + currentItem.classClassroom.classroomName
 
-        //holder.binding.itemState.text = "STATE: " + currentItem.
+        holder.binding.itemState.text = "STATE: " + currentItem.classClassroom.classroomState.id.toString()
 
         holder.binding.itemImage.setImageResource(R.drawable.icon_group)
 
         holder.itemView.setOnClickListener(){
             val bundle = bundleOf(CLASS_ID to ClassResponseList[position].id.toString())
 
-            // Conectar al destino del NavController segun el fragment se encuentra en este momento
+            // Conectar al destino del NavController segun en que fragment se encuentra en este momento
             when(holder.itemView.findNavController().currentDestination?.id)
             {
                 R.id.clasesGuarda-> holder.itemView.findNavController().navigate(R.id.action_clasesGuarda_to_unitStatus, bundle)

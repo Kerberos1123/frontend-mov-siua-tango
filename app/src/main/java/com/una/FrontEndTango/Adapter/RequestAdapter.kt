@@ -5,10 +5,12 @@ import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import android.widget.ArrayAdapter
 import com.una.FrontEndTango.Model.RequestResponse
 import com.una.FrontEndTango.R
 import com.una.FrontEndTango.databinding.FragmentRequestDetailsBinding
 import com.una.FrontEndTango.databinding.LayoutRequestsBinding
+
 
 class RequestAdapter : RecyclerView.Adapter<RequestViewHolder>() {
 
@@ -33,9 +35,12 @@ class RequestAdapter : RecyclerView.Adapter<RequestViewHolder>() {
         val currentItem = requestResponseList[position]
 
         // Seteamos textos o imagenes del item actual
-        //holder.binding.itemTitle.text = currentItem.asset_id.toString()
-        holder.binding.itemTitle.text = currentItem.id.toString()
-        holder.binding.itemDetails.text = currentItem.assets.assetName
+
+        // Request ID
+        holder.binding.itemTitle.text = "REQUEST " + currentItem.id?.let { String.format("%02d", it.toInt()) }
+
+        // User Requesting
+        holder.binding.itemDetails.text = currentItem.user.firstName + " " + currentItem.user.lastName
 
         holder.itemView.setOnClickListener(){
             val bundle = bundleOf(REQUEST_ID to requestResponseList[position].id.toString())

@@ -38,7 +38,7 @@ class MenuGuarda : Fragment() {
         }
 
         // --- Boton Clases
-        val botonClases: ImageButton = view.findViewById(R.id.btClasesGuarda)
+        val botonClases: ImageButton = view.findViewById(R.id.btActiveUnitsGuarda) // Se intercambio el boton de clases y active units a ultima hora
         botonClases.setOnClickListener {
             findNavController().navigate(R.id.action_menuGuarda_to_clasesGuarda)
         }

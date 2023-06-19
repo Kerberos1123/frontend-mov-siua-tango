@@ -43,5 +43,12 @@ data class RoleTeacher(
 data class ClassClassroom(
     val id: Long,
     val classroomName: String,
+    val classroomState: ClassroomState,
     // Add other properties if needed
+)
+
+data class ClassroomState(
+    val id: Long,
+    val name: String,
+    val createDate: String,
 )

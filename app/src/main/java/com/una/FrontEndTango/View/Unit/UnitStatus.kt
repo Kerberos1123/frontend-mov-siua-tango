@@ -30,9 +30,6 @@ import com.una.FrontEndTango.ViewModel.StateRequest
 
 class UnitStatus : Fragment() {
 
-
-    //----------------VIEJO
-
     var unit_state = 1 // Estado de progreso
 
     val sharedData: Globals = Globals.instance
@@ -54,15 +51,12 @@ class UnitStatus : Fragment() {
         // Colorear los iconos de progreso
         for(i in 0..3){
             if(i <= unit_state-1){
-                unitIcons.get(i).setColorFilter(ContextCompat.getColor(view.context, R.color.progress_green))
+                unitIcons[i].setColorFilter(ContextCompat.getColor(view.context, R.color.progress_green))
             }
         }
     }
 
     //-------------------------------------------------------------------------------
-
-
-
 
 
 
@@ -86,7 +80,6 @@ class UnitStatus : Fragment() {
 
         val classId : String = arguments?.getString(CLASS_ID) ?: "0"
 
-
         classViewModel.state.observe(viewLifecycleOwner){ state ->
 
             with(binding.root) {
@@ -102,10 +95,15 @@ class UnitStatus : Fragment() {
                         state.classs?.let {
 
                             // Request Details textbox
-                            binding.unitTitle.text = "CLASSROOM " + it.id.toString()
+                            binding.unitTitle.text = "CLASSROOM " + it.classClassroom.classroomName
                             binding.className.text= it.className
                             binding.teacherName.text = it.classTeacher.firstName +" "+ it.classTeacher.lastName
-                            binding.roleTeacher.text = it.classTeacher.roleList[0].name
+                            //binding.roleTeacher.text = it.classTeacher.roleList[0].name
+
+                            // Recuperar de base de datos el estado actual de la clase
+                            unit_state = it.classClassroom.classroomState.id.toInt()
+                            setProgressIconsColors(binding.root)
+                            //Log.i("state", unit_state.toString())
 
                         }
                     }
@@ -119,41 +117,33 @@ class UnitStatus : Fragment() {
 
         classViewModel.getClass(classId.toLong())
 
-        return binding.root
 
-        //-------------- VIEJO-------------------------------
-
-        /*
-
-        // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_unit_status, container, false)
-
+        // --------------------------- Funcionalidad Botones Progreso-------------------------------
 
         // Cajas de texto
-       // val caja_titulo : TextView = view.findViewById(R.id.unit_title)
-      //  val caja_tipo_usuario : TextView = view.findViewById(R.id.textView17)
-      //  val caja_nombre : TextView = view.findViewById(R.id.textView6)
-      //  val caja_clase : TextView = view.findViewById(R.id.class_name)
-
-        // Cambiar display tipo de usuario
-        // caja_tipo_usuario.setText(sharedData.i1?.let { resources.getStringArray(R.array.types).get(it).toString() }.toString())
-
-        setProgressIconsColors(view) // Colorear los iconos de progreso
+        val caja_titulo = binding.unitTitle
+        val caja_tipo_usuario = binding.roleTeacher
+        val caja_nombre = binding.teacherName
+        val caja_clase = binding.className
 
         // Iconos de progreso
-        val progress_icon1: ImageView = view.findViewById(R.id.icon_progress1)
-        val progress_icon2: ImageView = view.findViewById(R.id.icon_progress2)
-        val progress_icon3: ImageView = view.findViewById(R.id.icon_progress3)
-        val progress_icon4: ImageView = view.findViewById(R.id.icon_progress4)
+        val progress_icon1 = binding.iconProgress1
+        val progress_icon2 = binding.iconProgress2
+        val progress_icon3 = binding.iconProgress3
+        val progress_icon4 = binding.iconProgress4
+
+        // Cambiar display tipo de usuario
+        caja_tipo_usuario.setText(sharedData.i1?.let { resources.getStringArray(R.array.types).get(it).toString() }.toString())
+
 
         // --- Icono1 ---
         progress_icon1.setOnClickListener{
-            Log.i("Test", "Test message1")
+            Log.i("Test1", "Test message1")
         }
 
         // --- Icono2 ---
         progress_icon2.setOnClickListener{
-            Log.i("Test", "Test message2")
+            Log.i("Test2", "Test message2")
 
             // Si estamos en el primer estado y es un guarda, puede entregar aula
             if(unit_state == 1 && tipo_usuario == 1)
@@ -166,7 +156,7 @@ class UnitStatus : Fragment() {
                         //requestViewModel.deleteRequestById(requestId.toLong())
                         // Entregar el aula
                         unit_state = 2 // Cambiar estado
-                        setProgressIconsColors(view)
+                        setProgressIconsColors(binding.root)
                         dialog.dismiss()
                     }
                     .setNegativeButton("No") { dialog, _ ->
@@ -195,7 +185,7 @@ class UnitStatus : Fragment() {
 
         // --- Icono3 ---
         progress_icon3.setOnClickListener{
-            Log.i("Test", "Test message3")
+            Log.i("Test3", "Test message3")
 
             // Si estamos en el segundo estado y es un profesor, puede regresar el aula
             if(unit_state == 2 && tipo_usuario == 2)
@@ -208,7 +198,7 @@ class UnitStatus : Fragment() {
                         //requestViewModel.deleteRequestById(requestId.toLong())
                         // Regresar el aula
                         unit_state = 3 // Cambiar estado
-                        setProgressIconsColors(view)
+                        setProgressIconsColors(binding.root)
                         dialog.dismiss()
                     }
                     .setNegativeButton("No") { dialog, _ ->
@@ -238,7 +228,7 @@ class UnitStatus : Fragment() {
 
         // --- Icono4 ---
         progress_icon4.setOnClickListener{
-            Log.i("Test", "Test message4")
+            Log.i("Test4", "Test message4")
 
             // Si estamos en el tercer estado y es un guarda, puede cerrar el aula
             if(unit_state == 3 && tipo_usuario == 1)
@@ -251,7 +241,7 @@ class UnitStatus : Fragment() {
                         //requestViewModel.deleteRequestById(requestId.toLong())
                         // Cerrar el aula
                         unit_state = 4 // Cambiar estado
-                        setProgressIconsColors(view)
+                        setProgressIconsColors(binding.root)
                         dialog.dismiss()
                     }
                     .setNegativeButton("No") { dialog, _ ->
@@ -264,8 +254,7 @@ class UnitStatus : Fragment() {
 
         }
 
-        return view
-        */
+        return binding.root
 
     }
 

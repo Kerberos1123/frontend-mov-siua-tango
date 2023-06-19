@@ -73,7 +73,7 @@ class RequestDetails : Fragment() {
                             binding.textUserClass.text = resources.getStringArray(R.array.ej_clases)[it.classroomId?.toInt()!!]
 
                             // Hours
-                           // binding.textUserHours.text = it.dateHour.toString()
+                            //binding.textUserHours.text = it.dateHour.toString()
                         }
                     }
                     else -> {

@@ -48,6 +48,14 @@
         <item>C20</item>
     </string-array>
 
+    <string-array name="estados_clase">
+        <item>INACTIVE</item>
+        <item>CHECKED OUT</item>
+        <item>IN PROGRESS</item>
+        <item>FINISHED</item>
+        <item>CHECKED IN</item>
+    </string-array>
+
     <string-array name="ej_clases">
         <item>PROGRAMACION 4</item>
         <item>MOVILES</item>

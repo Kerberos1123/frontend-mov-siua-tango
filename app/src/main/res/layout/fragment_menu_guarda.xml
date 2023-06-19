@@ -86,14 +86,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:contentDescription="ActiveUnits"
-                    android:src="@drawable/icon_my_units" />
+                    android:src="@drawable/icon_group" />
 
                 <TextView
                     android:id="@+id/textActiveUnits"
                     android:layout_width="123dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-black"
-                    android:text="ACTIVE UNITS"
+                    android:text="CLASSES"
                     android:textAlignment="center"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -127,7 +127,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginHorizontal="32dp"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:visibility="invisible">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -140,14 +141,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:contentDescription="Classes"
-                    android:src="@drawable/icon_group" />
+                    android:src="@drawable/icon_active_units" />
 
                 <TextView
                     android:id="@+id/textClasses"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-black"
-                    android:text="CLASSES"
+                    android:text="ACTIVE\nUNITS"
                     android:textAlignment="center"
                     android:textSize="20sp"
                     android:textStyle="bold" />
