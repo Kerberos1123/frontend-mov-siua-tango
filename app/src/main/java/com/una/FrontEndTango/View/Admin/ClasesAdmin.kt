@@ -68,7 +68,7 @@ class ClasesAdmin : Fragment() {
         // --- Boton CreateClass
         val botonCreateClass: Button = binding.btCreateClass
         botonCreateClass.setOnClickListener {
-            findNavController().navigate(R.id.action_clasesAdmin_to_createClass1)
+            findNavController().navigate(R.id.action_clasesAdmin_to_createClass2)
         }
 
         return binding.root

@@ -9,11 +9,35 @@ data class Class(
     var id_teacher: Long? = null,
 )
 data class ClassRequest(
-    var id:Long? =null,
-    var id_classroom:Long? = null,
-    var name: String,
-    var id_teacher: Long? = null,
+    //var id:Long? =null,
+    //var id_classroom:Long? = null,
+    //var name: String,
+   // var id_teacher: Long? = null,
+
+    val className: String,
+    val classTeacher: Teacher,
+    val classClassroom: Classroom
+
 )
+data class Teacher(
+    val id: Int,
+    val firstName: String,
+    val lastName: String,
+    val email: String,
+    val password: String,
+    val tokenExpired: Boolean,
+    val createDate: String,
+    val roleList: List<String>
+)
+
+data class Classroom(
+    val id: Int,
+    val classroomName: String,
+    val classroomState: ClassroomState,
+    val createDate: String
+)
+
+// ----------------------
 data class ClassResponse(
     var id:Long? =null,
     //var id_classroom:Long? = null,

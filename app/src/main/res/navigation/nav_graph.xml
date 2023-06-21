@@ -170,22 +170,15 @@
         android:id="@+id/createClass1"
         android:name="com.una.FrontEndTango.View.Class.CreateClass1"
         android:label="fragment_create_class1"
-        tools:layout="@layout/fragment_create_class1" >
-        <action
-            android:id="@+id/action_createClass1_to_createClass2"
-            app:destination="@id/createClass2" />
-        <action
-            android:id="@+id/action_createClass1_to_clasesAdmin"
-            app:destination="@id/clasesAdmin" />
-    </fragment>
+        tools:layout="@layout/fragment_create_class1" />
     <fragment
         android:id="@+id/createClass2"
         android:name="com.una.FrontEndTango.View.Class.CreateClass2"
         android:label="fragment_create_class2"
         tools:layout="@layout/fragment_create_class2" >
         <action
-            android:id="@+id/action_createClass2_to_createClass1"
-            app:destination="@id/createClass1" />
+            android:id="@+id/action_createClass2_to_clasesAdmin"
+            app:destination="@id/clasesAdmin" />
     </fragment>
     <fragment
         android:id="@+id/createReport"
@@ -238,11 +231,11 @@
         android:label="fragment_clases_admin"
         tools:layout="@layout/fragment_clases_admin" >
         <action
-            android:id="@+id/action_clasesAdmin_to_createClass1"
-            app:destination="@id/createClass1" />
-        <action
             android:id="@+id/action_clasesAdmin_to_unitStatus"
             app:destination="@id/unitStatus" />
+        <action
+            android:id="@+id/action_clasesAdmin_to_createClass2"
+            app:destination="@id/createClass2" />
     </fragment>
     <fragment
         android:id="@+id/ticketsAdmin"

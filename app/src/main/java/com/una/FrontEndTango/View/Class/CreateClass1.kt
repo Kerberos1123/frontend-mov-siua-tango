@@ -24,14 +24,14 @@ class CreateClass1 : Fragment() {
         val botonNext: Button = view.findViewById(R.id.btNextCreateClass)
         botonNext.setOnClickListener{ // Hacer funcion del boton tras hacerle click
             // Hacer la navegacion de un fragment a otro, segun ruta encontrada en grafico de navegacion
-            findNavController().navigate(R.id.action_createClass1_to_createClass2)
+           // findNavController().navigate(R.id.action_createClass1_to_createClass2)
         }
 
         // --- Boton CANCEL ---
         val botonCancel: Button = view.findViewById(R.id.btCancelCreateClass)
         botonCancel.setOnClickListener{ // Hacer funcion del boton tras hacerle click
             // Hacer la navegacion de un fragment a otro, segun ruta encontrada en grafico de navegacion
-            findNavController().navigate(R.id.action_createClass1_to_clasesAdmin)
+          //  findNavController().navigate(R.id.action_createClass1_to_clasesAdmin)
         }
 
         return view

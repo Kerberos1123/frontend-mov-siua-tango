@@ -21,7 +21,7 @@ import com.una.FrontEndTango.R
 import com.una.FrontEndTango.ViewModel.LoginViewModel
 import com.una.FrontEndTango.ViewModel.LoginViewModelFactory
 import com.una.FrontEndTango.databinding.ActivityLoginBinding
-
+import android.view.View
 
 // LOGIN ACTIVITY VIEJO
 
@@ -112,10 +112,10 @@ class LoginActivity : AppCompatActivity() {
         loginViewModel.loginResponse.observe(this@LoginActivity, Observer {
             val loginResult = it ?: return@Observer
 
-            /*binding.loading.visibility = View.GONE
+            binding.loading.visibility = View.GONE
             if (loginResult.error != null) {
                 showLoginFailed(loginResult.error)
-            }*/
+            }
             if (loginResult.success != null) {
                 sharedData.v1 = binding.etEmail.text.toString() // Poner en variable global usuario
                 updateUiWithUser(loginResult.success)
