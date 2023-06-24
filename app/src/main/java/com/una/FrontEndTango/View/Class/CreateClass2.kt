@@ -70,8 +70,8 @@ class CreateClass2 : Fragment() {
 
                 ClassRequest(
                     className = binding.editClassName.text.toString(),
-                    classTeacher = Teacher(id = 22, firstName = binding.listaProfes2.text.toString(), lastName = "", email =binding.listaProfes2.text.toString() + "@gmail.com", password = "12345", tokenExpired = false, createDate = "2023-06-20T22:23:47.995+00:00", roleList = emptyList() ),
-                    classClassroom = Classroom(id = 22, classroomName = binding.listaAulas2.text.toString(), ClassroomState(id = 22, name = "prueba" , createDate = "2023-06-20T22:23:47.995+00:00"), createDate = "2023-06-20T22:23:47.995+00:00" )
+                    classTeacher = Teacher(id = 1, firstName = binding.listaProfes2.text.toString(), lastName = "", email =binding.listaProfes2.text.toString() + "@gmail.com", password = "12345", tokenExpired = false, createDate = "2023-06-20T22:23:47.995+00:00", roleList = emptyList() ),
+                    classClassroom = Classroom(id = 1, classroomName = binding.listaAulas2.text.toString(), ClassroomState(id = 22, name = "prueba" , createDate = "2023-06-20T22:23:47.995+00:00"), createDate = "2023-06-20T22:23:47.995+00:00" )
 
 
 
