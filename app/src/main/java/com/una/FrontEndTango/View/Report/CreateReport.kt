@@ -50,6 +50,10 @@ class CreateReport : Fragment() {
             // Boton Create
             val botonCreate: Button = view.findViewById(R.id.btCreateReport)
             botonCreate.setOnClickListener{ // Hacer funcion del boton tras hacerle click
+
+
+
+                /*
                 // --- Recobrar los datos para crear nuevo dato en la base de datos ---
                 var unit_selected = lista_display.editableText.toString() // Tipo de unidad seleccionada
                 var details: String = view.findViewById<EditText?>(R.id.new_report_details).text.toString() // String con detalles proveidos por usuario
@@ -61,7 +65,12 @@ class CreateReport : Fragment() {
                 // Agregar nuevo report a la base de datos
                 reportViewModel.createReport(new_report)
 
+
+
                 findNavController().navigateUp()
+
+                */
+
             }
 
             // --- Boton Cancel ---

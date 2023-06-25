@@ -44,6 +44,9 @@ class CreateTicket : Fragment() {
         // --- Boton Create ---
         val botonCreate: Button = view.findViewById(R.id.btCreateTicket)
         botonCreate.setOnClickListener{ // Hacer funcion del boton tras hacerle click
+
+            /*
+
             // --- Recobrar los datos para crear nuevo dato en la base de datos ---
             var reason: String = lista_display2.editableText.toString() // Motivo del ticket
             var details: String = view.findViewById<EditText?>(R.id.editTextTextMultiLine3).text.toString() // String con detalles proveidos por usuario
@@ -56,8 +59,11 @@ class CreateTicket : Fragment() {
             ticketViewModel.createTicket(new_ticket)
 
             findNavController().navigateUp() // Hacer la navegacion de un fragment a otro, segun ruta encontrada en grafico de navegacion
+
+            */
+
         }
-        // --- -------------- ---
+
 
 
         // --- Boton Cancel ---
@@ -66,7 +72,6 @@ class CreateTicket : Fragment() {
             // Hacer la navegacion de un fragment a otro, segun ruta encontrada en grafico de navegacion
             findNavController().navigateUp()
         }
-        // --- -------------- ---
 
         // Esconder teclado tocando afuera del EditText
         view.setOnClickListener { it.hideKeyboard() }

@@ -53,6 +53,8 @@ class UnitRequest : Fragment() {
         val botonSend: Button = view.findViewById(R.id.btSendRequest)
 
         botonSend.setOnClickListener{
+            /*
+
             // Hacer la validacion de los datos
             val date = Date()
             var id: Long = 68 ; var asset_id: Long = 40; var clasroom_id: Long = 22; var user_id: Long = 24
@@ -64,6 +66,8 @@ class UnitRequest : Fragment() {
             requestViewModel.createRequest(new_request)
 
             findNavController().navigate(R.id.action_unitRequest_to_menuProfe)
+            */
+
         }
 
         // --- -------------- ---
